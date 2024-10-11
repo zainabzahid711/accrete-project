@@ -15,10 +15,10 @@ const MedicalPractice = () => {
         <div className="flex justify-center mt-7 mb-6">
           <div className="border-t-2 w-52 border-orange-500"></div>
         </div>
-        <div className="flex justify-center flex-col md:flex-row mt-16 gap-60">
-          <img src={DotsImage.src} alt="Dots" />
-          <img src={DotsImage.src} alt="Dots" />
-          <img src={DotsImage.src} alt="Dots" />
+        <div className="flex justify-center flex-col md:flex-row items-center mt-16 md:gap-60 gap-20">
+          <img className="w-20" src={DotsImage.src} alt="Dots" />
+          <img className="w-20" src={DotsImage.src} alt="Dots" />
+          <img className="w-20" src={DotsImage.src} alt="Dots" />
         </div>
       </section>
     </>

@@ -36,7 +36,7 @@ const NavBar = () => {
         {navItems.map((item) => (
           <li
             key={item}
-            className={`cursor-pointer font-bold hover:underline text-center md:text-left ${
+            className={`cursor-pointer font-bold hover:underline pt-8 text-center md:text-left ${
               active === item ? "text-[#17A2B8]" : ""
             }`}
             style={{
