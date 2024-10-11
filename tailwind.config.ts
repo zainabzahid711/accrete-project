@@ -12,6 +12,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         btnBackground: "#FFA500",
+        prupleColor: "#281EFF",
       },
     },
   },

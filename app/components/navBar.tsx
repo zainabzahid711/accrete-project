@@ -1,6 +1,6 @@
 "use client";
 
-import Logo from "@/public/logo-final1.png";
+import Logo from "@/public/logoFinal.png";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 

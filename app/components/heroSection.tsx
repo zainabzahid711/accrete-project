@@ -1,7 +1,7 @@
 const HeroSection = () => {
   return (
     <>
-      <section className="z-0 md:p-40 text-white p-10 bg-[url('/bgHeroSec.webp')] bg-cover bg-center w-full">
+      <section className="z-0 md:pl-40 md:pr-40 pt-24 text-white p-10 bg-[url('/bgHeroSec.webp')] bg-cover bg-center w-full">
         <h1 className="text-3xl md:text-6xl font-bold ">
           Reclaim your Revenue: Transform Uncollected Claims into Financial
           Success
@@ -11,7 +11,7 @@ const HeroSection = () => {
           Care
         </p>
         <p className="font-extralight w-[100%] md:w-[60%]">
-          Transform your medical practice with Accrete Concierge's specialized
+          Transform your medical practice with Accrete Concierges specialized
           administrative and billing solutions. Trusted by healthcare providers
           for our excellence in boosting collections and reducing operational
           costs, we enable you to concentrate on patient care.
