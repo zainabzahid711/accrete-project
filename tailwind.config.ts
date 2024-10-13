@@ -18,8 +18,18 @@ const config: Config = {
         footerBackground: "#374A5E",
         footerSecond: "#EA5356",
       },
+      fontSize: {
+        "mobile-xl": ["3rem", { lineHeight: "1.2" }], // Custom size for large text on mobile
+        "mobile-lg": ["2rem", { lineHeight: "1.2" }], // Custom size for medium text on mobile
+        "mobile-md": ["0.875rem", { lineHeight: "1.5" }], // Custom size for smaller text on mobile
+      },
+      spacing: {
+        "mobile-gap": "1rem", // Custom spacing for mobile
+        "mobile-padding": "1rem", // Custom padding for mobile
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
