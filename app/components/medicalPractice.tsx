@@ -1,27 +1,52 @@
-import DotsImage from "@/public/headingDots.png";
+import healthCare from "@/public/logoSlider/healthCare.jpg";
+import healthWealth from "@/public/logoSlider/healthWealth.png";
+import priority from "@/public/logoSlider/priority.png";
+import medicleCore from "@/public/logoSlider/medicleCore.png";
+import medicleCenter from "@/public/logoSlider/medicleCenter.png";
 
 const MedicalPractice = () => {
   return (
-    <>
-      <section className="md:pl-40 md:pr-40 pt-8 p-10">
-        <div className="flex justify-center mt-4 mb-6">
-          <div className="border-t-2 w-52 border-orange-500"></div>
-        </div>
-        <h1 className=" text-2xl md:text-5xl font-bold text-center">
-          We help medical practices focus on their patients while improving
-          their Revenue Cycle Management
-        </h1>
+    <section className="md:pl-40 md:pr-40 pt-8 p-10">
+      <div className="flex justify-center mt-4 mb-6">
+        <div className="border-t-2 w-52 border-orange-500"></div>
+      </div>
+      <h1 className="text-2xl md:text-5xl font-bold text-center">
+        We help medical practices focus on their patients while improving their
+        Revenue Cycle Management
+      </h1>
 
-        <div className="flex justify-center mt-7 mb-6">
-          <div className="border-t-2 w-52 border-orange-500"></div>
+      <div className="flex justify-center mt-7 mb-6">
+        <div className="border-t-2 w-52 border-orange-500"></div>
+      </div>
+
+      <div className="flex justify-center overflow-hidden">
+        <div className="logo_slider scrolling-images">
+          {/* Duplicate the images to create an infinite effect */}
+          <div className="scrolling-images">
+            {/* Original images */}
+            <img className="w-32" src={healthCare.src} alt="Health Care" />
+            <img className="w-32" src={healthWealth.src} alt="Health Wealth" />
+            <img className="w-32" src={priority.src} alt="Priority" />
+            <img className="w-32" src={medicleCore.src} alt="Medicle Core" />
+            <img
+              className="w-32"
+              src={medicleCenter.src}
+              alt="Medicle Center"
+            />
+            {/* Duplicated images for seamless effect */}
+            <img className="w-32" src={healthCare.src} alt="Health Care" />
+            <img className="w-32" src={healthWealth.src} alt="Health Wealth" />
+            <img className="w-32" src={priority.src} alt="Priority" />
+            <img className="w-32" src={medicleCore.src} alt="Medicle Core" />
+            <img
+              className="w-32"
+              src={medicleCenter.src}
+              alt="Medicle Center"
+            />
+          </div>
         </div>
-        <div className="flex justify-center flex-col md:flex-row items-center mt-16 md:gap-60 gap-20">
-          <img className="w-20" src={DotsImage.src} alt="Dots" />
-          <img className="w-20" src={DotsImage.src} alt="Dots" />
-          <img className="w-20" src={DotsImage.src} alt="Dots" />
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

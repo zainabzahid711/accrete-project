@@ -103,7 +103,6 @@ const HeroSection = () => {
     );
   };
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") handleNext();
@@ -132,7 +131,7 @@ const HeroSection = () => {
         </div>
       )}
 
-      {/* Content with Smooth Transition */}
+      {/* Content with Transition */}
       <div
         className={`relative z-10 transition-opacity duration-1000 ${
           imageLoaded ? "opacity-100" : "opacity-0"
