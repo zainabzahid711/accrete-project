@@ -8,8 +8,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        "bounce-slow": {
+          "0%, 100%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(0px)" },
+        },
+      },
+      animation: {
+        "bounce-slow": "bounce-slow 3s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "hero-bg": "url('/homePage/heroBg.jpeg')",
+      },
       colors: {
-        background: "var(--background)",
+        background: "#C2DFF2",
+        textColor: "#274760",
         foreground: "var(--foreground)",
         btnBackground: "#FFA500",
         prupleColor: "#281EFF",
