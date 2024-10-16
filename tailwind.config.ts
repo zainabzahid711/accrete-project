@@ -27,6 +27,7 @@ const config: Config = {
         btnBackground: "#FFA500",
         prupleColor: "#281EFF",
         greyBackground: "#252A34",
+        blueBackground: "#307BC4",
         iconBackground: "#454A52",
         footerBackground: "#374A5E",
         footerSecond: "#EA5356",
