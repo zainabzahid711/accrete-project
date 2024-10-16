@@ -28,14 +28,14 @@ const HeroSection = () => {
             <img
               className="w-48 h-16 -mr-14 z-10"
               src={patients.src}
-              alt="recovers"
+              alt="recover"
             />
             <img
               src={doctor.src}
               alt="Doctor"
               className="w-full h-auto max-w-md"
             />
-            <div className="absolute -top-20 -right-32 hidden md:flex justify-start items-start">
+            <div className="absolute -top-4 -right-32 hidden md:flex justify-start items-start">
               <img src={feedBack.src} alt="nothing" />
             </div>
           </div>
