@@ -7,6 +7,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIconProps
+import HealthLogo from "@/public/homePage/logoIcon.svg";
+import FooterBg from "@/public/homePage/footerBg.svg";
 
 type SocialMediaIconType = {
   icon: FontAwesomeIconProps["icon"];
@@ -34,19 +36,15 @@ const SocialMediaIcon = ({ icon }: SocialMediaIconProps) => (
 const Footer = () => {
   return (
     <>
-      <section className="bg-footerBackground text-white md:p-20 p-10 flex flex-col gap-5">
-        <div className="flex md:flex-row flex-col md:gap-56 gap-20">
+      <section className="text-white md:pr-20 md:pl-20 md:pb-20 p-10 pt-0 flex flex-col gap-5 relative">
+        <img src={HealthLogo.src} className="w-52 mx-auto z-10" />
+        <div className="text-textColor flex md:flex-row flex-col md:gap-56 gap-20 z-10">
           <div>
             <h2 className="font-bold text-2xl">ACCERETE CONCIERGE SERVICES</h2>
             <p className="font-bold mt-5">
               Empowering your practices financial health with precision and
               care.
             </p>
-            <div className="flex gap-4 mt-28">
-              {socialMediaIcons.map(({ icon, id }) => (
-                <SocialMediaIcon key={id} icon={icon} />
-              ))}
-            </div>
           </div>
           <div>
             <h2 className="font-bold mb-10">Useful Links</h2>
@@ -63,12 +61,28 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="absolute inset-0">
+          <img
+            src={FooterBg.src}
+            alt="FooterBackground"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </section>
+
+      <div className="bg-[#307BC4] flex p-5 flex-col md:flex-row items-center justify-around">
+        <div className="flex gap-4 mt-2 items-center">
+          <h3>Follow us</h3>
+          {socialMediaIcons.map(({ icon, id }) => (
+            <SocialMediaIcon key={id} icon={icon} />
+          ))}
+        </div>
         <div>
           <h5 className="font-thin">
             ©2023 Accrete Concierge. All Rights Reserved.
           </h5>
         </div>
-      </section>
+      </div>
     </>
   );
 };

@@ -126,3 +126,17 @@ body {
   background-clip: text;
   text-fill-color: transparent;
 }
+
+/* ------footer clip path ------------- */
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  background-color: #333; /* Your desired background color */
+  position: relative;
+}
+
+.logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
