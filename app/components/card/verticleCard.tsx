@@ -1,7 +1,7 @@
 import React from "react";
-import phoneIcon from "@/public/homePage/mobile.svg";
-import stethoScope from "@/public/homePage/ambulance.svg";
-import location from "@/public/homePage/pin.svg";
+import phoneIcon from "@/public/homePage/svg/mobile.svg";
+import stethoScope from "@/public/homePage/svg/ambulance.svg";
+import location from "@/public/homePage/svg/pin.svg";
 
 interface Card {
   icon: { src: string };

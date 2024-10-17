@@ -1,29 +1,26 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import brandOne from "@/public/homePage/brandOne.png";
+import brandTwo from "@/public/homePage/brandTwo.png";
+import brandThree from "@/public/homePage/brandThree.png";
+import brandFour from "@/public/homePage/brandFour.png";
+import brandFive from "@/public/homePage/brandFive.png";
+import brandSix from "@/public/homePage/brandSix.png";
+import brandSeven from "@/public/homePage/brandSeven.png";
+import brandEight from "@/public/homePage/brandEight.png";
 
 const Contact = () => {
   return (
-    <section className="bg-black md:p-20 p-10 flex md:flex-row flex-col gap-3">
-      <div className="bg-greyBackground flex md:w-[50%] w-[100%] p-10 rounded-sm items-center">
-        <div className="bg-iconBackground rounded-full flex items-center justify-center h-12 w-12 mr-4">
-          <FontAwesomeIcon icon={faPhone} className="h-6 w-6 text-white" />
-        </div>
-        <div className="flex flex-col">
-          <p className="text-white">PHONE</p>
-          <p className="text-white cursor-pointer ">(678) 525-0996</p>
-        </div>
+    <section className="md:px-28 px-10 p-16 flex flex-col gap-10 justify-center items-center">
+      <div className="flex md:flex-row flex-col gap-28">
+        <img className="w-32 h-20" src={brandOne.src} />
+        <img className="w-32 h-20" src={brandTwo.src} />
+        <img className="w-32 h-20" src={brandThree.src} />
+        <img className="w-32 h-20" src={brandFour.src} />
       </div>
-
-      <div className="bg-greyBackground flex md:w-[50%] w-[100%] p-10 rounded-sm items-center">
-        <div className="bg-iconBackground rounded-full flex items-center justify-center h-12 w-12 mr-4">
-          <FontAwesomeIcon icon={faEnvelope} className="h-6 w-6 text-white" />
-        </div>
-        <div className="flex flex-col">
-          <p className="text-white ">MAIL</p>
-          <p className="text-white w-[100%] cursor-pointer">
-            info@accreteconcierge.com
-          </p>
-        </div>
+      <div className="flex md:flex-row flex-col gap-28">
+        <img className="w-32 h-20" src={brandFive.src} />
+        <img className="w-32 h-20" src={brandSix.src} />
+        <img className="w-32 h-20" src={brandSeven.src} />
+        <img className="w-32 h-20" src={brandEight.src} />
       </div>
     </section>
   );

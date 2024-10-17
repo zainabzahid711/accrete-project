@@ -5,10 +5,14 @@ import {
   faLinkedinIn,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIconProps
-import HealthLogo from "@/public/homePage/logoIcon.svg";
-import FooterBg from "@/public/homePage/footerBg.svg";
+import HealthLogo from "@/public/homePage/svg/logoIcon.svg";
+import FooterBg from "@/public/homePage/svg/footerBg.svg";
+import phoneIcon from "@/public/homePage/svg/mobile.svg";
+import location from "@/public/homePage/svg/pin.svg";
+import mail from "@/public/homePage/svg/mail.svg";
 
 type SocialMediaIconType = {
   icon: FontAwesomeIconProps["icon"];
@@ -45,18 +49,55 @@ const Footer = () => {
               Empowering your practices financial health with precision and
               care.
             </p>
+            <div className="mt-4 flex flex-col gap-3">
+              <div className="flex gap-1 ">
+                <div className="p-2 bg-blue-400 rounded-full">
+                  <img
+                    className="w-3 text-white"
+                    src={phoneIcon.src}
+                    alt={"phones"}
+                  />
+                </div>
+                <p className="font-medium">123 - 456 - 7890</p>
+              </div>
+              <div className="flex gap-1 ">
+                <div className="p-2 bg-blue-400 rounded-full">
+                  <img
+                    className="w-3 text-white"
+                    src={location.src}
+                    alt={"phones"}
+                  />
+                </div>
+                <p className="font-medium">123 anywhere USA</p>
+              </div>
+              <div className="flex gap-1 ">
+                <div className="p-2 bg-blue-400 rounded-full">
+                  <img
+                    className="w-3 text-white"
+                    src={mail.src}
+                    alt={"phones"}
+                  />
+                </div>
+                <p className="font-medium">accreteConcierge@gmail.com</p>
+              </div>
+            </div>
           </div>
           <div>
             <h2 className="font-bold mb-10">Useful Links</h2>
             <div className="flex gap-20">
               <ul className="cursor-pointer flex flex-col gap-7">
-                <li>Home</li>
-                <li>Contact</li>
-                <li>Resources</li>
+                <li>About Us</li>
+                <li>Departments</li>
+                <li>Doctors</li>
+                <li>TimeTable</li>
+                <li>Appointemnt</li>
+                <li>Testimonials</li>
               </ul>
               <ul className="cursor-pointer flex flex-col gap-7">
-                <li>About</li>
-                <li>Careers</li>
+                <li>Blog</li>
+                <li>Contact Us</li>
+                <li>FAQs</li>
+                <li>Terms&Conditions</li>
               </ul>
             </div>
           </div>

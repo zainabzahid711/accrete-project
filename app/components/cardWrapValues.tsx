@@ -1,9 +1,9 @@
 "use client";
 import Card from "./card/card";
-import CompassionIcon from "@/public/homePage/compassion.svg";
-import ExcellenceIcon from "@/public/homePage/excellence.svg";
-import teamWork from "@/public/homePage/teamwork.svg";
-import integrity from "@/public/homePage/integrity.svg";
+import CompassionIcon from "@/public/homePage/svg/compassion.svg";
+import ExcellenceIcon from "@/public/homePage/svg/excellence.svg";
+import teamWork from "@/public/homePage/svg/teamwork.svg";
+import integrity from "@/public/homePage/svg/integrity.svg";
 
 const CardValues = () => {
   return (
