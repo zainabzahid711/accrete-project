@@ -64,8 +64,8 @@ const NavBar = () => {
   return (
     <>
       {/* ------header------------ */}
-      <div className="flex gap-6 p-2 px-28 bg-[#23BFEF]">
-        <div className="flex  gap-5">
+      <div className="flex md:flex-row flex-col gap-6 p-2 px-10 md:px-28 bg-[#23BFEF]">
+        <div className="flex md:flex-row flex-col md:gap-5 gap-2">
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white" icon={faPhone} />
             <p className="font-bold">(871 432-0034)</p>
@@ -75,7 +75,7 @@ const NavBar = () => {
             <p className="font-bold">accreteconcierge@gmail.com</p>
           </div>
         </div>
-        <div className="flex gap-2 justify-end items-end ml-auto">
+        <div className="flex gap-2 justify-start items-start md:justify-end md:items-end md:ml-auto">
           {socialMediaIcons.map(({ icon, id }) => (
             <SocialMediaIcon key={id} icon={icon} />
           ))}
@@ -83,7 +83,7 @@ const NavBar = () => {
       </div>
       {/* -------navBar----------- */}
       <div
-        className={`flex px-28 pt-6 w-full pb-6 items-center transition-colors duration-300 ${
+        className={`flex gap-16 md:gap-0 px-10 md:px-28 pt-6 w-full pb-6 items-center transition-colors duration-300 ${
           isScrolled ? "bg-blue-300 fixed top-0 left-0 z-20" : "bg-transparent"
         }`}
       >
@@ -109,7 +109,7 @@ const NavBar = () => {
         </div>
 
         <ul
-          className={`flex md:flex-row flex-col gap-3 z-20 justify-start items-start md:justify-end md:items-end ml-auto pl-8 absolute md:static top-[80px] left-0 h-screen md:h-auto w-full md:w-auto bg-blue-300 md:bg-transparent py-4 md:py-0 md:z-auto transition-all duration-500 ease-in-out ${
+          className={`flex md:flex-row flex-col gap-3 z-20 justify-start items-start md:justify-end md:items-end md:ml-auto pl-8 absolute md:static top-[80px] left-0 h-screen md:h-auto w-full md:w-auto bg-blue-300 md:bg-transparent py-4 md:py-0 md:z-auto transition-all duration-500 ease-in-out ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } md:translate-x-0`}
         >
