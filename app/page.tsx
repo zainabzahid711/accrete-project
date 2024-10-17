@@ -4,6 +4,7 @@ import MedicalPractice from "./components/medicalPractice";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
 import CardValues from "./components/cardWrapValues";
+import ChooseAccrete from "./components/choiceSection";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <NavBar />
       <HeroSection />
       <CardValues />
+      <ChooseAccrete />
       <MedicalPractice />
       <Contact />
       <Footer />
