@@ -19,7 +19,7 @@
     "@types/react-bootstrap": "^0.32.37",
     "autoprefixer": "^10.4.20",
     "bootstrap": "^5.3.3",
-    "framer-motion": "^11.11.8",
+    "framer-motion": "^11.11.9",
     "jquery": "^3.7.1",
     "next": "14.2.15",
     "react": "^18",

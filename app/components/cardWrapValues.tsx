@@ -7,7 +7,7 @@ import integrity from "@/public/homePage/svg/integrity.svg";
 
 const CardValues = () => {
   return (
-    <section className="pt-0 md:px-28 px-10">
+    <section className="md:pt-0 pt-16 md:px-28 px-10">
       <h4 className="mb-8 text-black font-bold text-center md:text-5xl text-xl">
         Our Values
       </h4>

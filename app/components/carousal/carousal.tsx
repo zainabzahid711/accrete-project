@@ -75,8 +75,8 @@ const Carousel: React.FC = () => {
       ></div>
 
       {/* Content wrapper (Text) */}
-      <div className="relative z-10 md:px-28 px-16 flex md:flex-row flex-col justify-between items-center h-full">
-        <div className="text-black w-[60%]">
+      <div className="relative z-10 md:px-28 px-10 flex md:flex-row flex-col md:justify-between md:items-center h-full">
+        <div className="text-black md:w-[60%] md:pt-0 pt-20">
           <h2 className="text-5xl font-bold">
             {carouselData[currentIndex].title}
           </h2>
