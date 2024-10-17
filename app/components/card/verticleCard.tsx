@@ -49,7 +49,7 @@ const cardData: Card[] = [
 
 const VerticleCard: React.FC = () => {
   return (
-    <section className="absoulte transform -translate-y-[50%] z-40 shadow-2xl w-[90%] mx-auto gap-6 md:gap-0 flex flex-col md:flex-row justify-around items-center md:p-16 p-8 rounded-3xl bg-gray-100">
+    <section className="absoulte transform -translate-y-[50%] z-40 shadow-3xl w-[85%] mx-auto gap-6 md:gap-0 flex flex-col md:flex-row justify-around items-center md:p-16 p-8 rounded-3xl bg-gray-100">
       {cardData.map((card, index) => (
         <div
           key={index}

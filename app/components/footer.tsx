@@ -40,7 +40,7 @@ const SocialMediaIcon = ({ icon }: SocialMediaIconProps) => (
 const Footer = () => {
   return (
     <>
-      <section className="text-white md:pr-20 md:pl-20 md:pb-20 p-10 pt-0 flex flex-col gap-5 relative">
+      <section className="text-white md:px-28 px-16 md:pb-20 p-10 pt-0 flex flex-col gap-5 relative">
         <img src={HealthLogo.src} className="w-52 mx-auto z-10" />
         <div className="text-textColor flex md:flex-row flex-col md:gap-56 gap-20 z-10">
           <div>
