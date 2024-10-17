@@ -7,12 +7,12 @@ import integrity from "@/public/homePage/svg/integrity.svg";
 
 const CardValues = () => {
   return (
-    <section className="pt-0 md:px-28  px-10">
+    <section className="pt-0 md:px-28 px-10">
       <h4 className="mb-8 text-black font-bold text-center md:text-5xl text-xl">
         Our Values
       </h4>
       <div className="flex items-center justify-center flex-col gap-14">
-        <div className="flex md:flex-row flex-col gap-16">
+        <div className="flex md:flex-row flex-col justify-center items-center gap-16">
           <Card
             icon={CompassionIcon}
             text="Compassion"
@@ -21,10 +21,10 @@ const CardValues = () => {
           <Card
             icon={ExcellenceIcon}
             text="Excellence"
-            description="We commit to providing the highest quality care by continually improving our services and expertise."
+            description="We commit to providing the highest quality care by continually improving our services and expertise. Our commitment lies in delivering tailored solutions."
           />
         </div>
-        <div className="flex md:flex-row flex-col gap-16">
+        <div className="flex md:flex-row flex-col justify-center items-center gap-16">
           <Card
             icon={integrity}
             text="Integrity"

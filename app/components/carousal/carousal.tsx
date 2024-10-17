@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import heroImage from "@/public/homePage/heroImage.png";
 
 // Define the data type for carousel items
 interface CarouselItem {
@@ -31,6 +32,17 @@ const carouselData: CarouselItem[] = [
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
+  // Automatic slide change every 3-4 seconds
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === carouselData.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // 4 seconds
+
+    return () => clearInterval(slideInterval);
+  }, []);
+
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === carouselData.length - 1 ? 0 : prevIndex + 1
@@ -58,13 +70,13 @@ const Carousel: React.FC = () => {
 
       {/* Dark overlay (on top of background but below text) */}
       <div
-        className="absolute inset-0 bg-black"
-        style={{ opacity: 0.25 }}
+        className="absolute inset-0 bg-blue-400"
+        style={{ opacity: 0.5 }}
       ></div>
 
       {/* Content wrapper (Text) */}
-      <div className="relative z-10 md:px-28 px-16 flex items-center md:w-[60%] h-full">
-        <div className="text-black">
+      <div className="relative z-10 md:px-28 px-16 flex md:flex-row flex-col justify-between items-center h-full">
+        <div className="text-black w-[60%]">
           <h2 className="text-5xl font-bold">
             {carouselData[currentIndex].title}
           </h2>
@@ -72,18 +84,23 @@ const Carousel: React.FC = () => {
             {carouselData[currentIndex].description}
           </p>
         </div>
+        <div className="flex justify-end items-end ml-auto">
+          <img className="-z-10" src={heroImage.src} />
+        </div>
       </div>
 
       {/* Navigation buttons */}
       <button
         className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-opacity-60 rounded-full p-2 shadow-lg z-20"
         onClick={prevSlide}
+        aria-label="Previous Slide"
       >
         &lt;
       </button>
       <button
         className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-opacity-60 rounded-full p-2 shadow-lg z-20"
         onClick={nextSlide}
+        aria-label="Next Slide"
       >
         &gt;
       </button>
@@ -97,6 +114,7 @@ const Carousel: React.FC = () => {
               currentIndex === index ? "bg-blue-600" : "bg-gray-300"
             }`}
             onClick={() => setCurrentIndex(index)}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div> */}

@@ -8,7 +8,7 @@ const HeroSection: React.FC = () => {
   return (
     <>
       <div className="relative">
-        <Carousel /> {/* Use the Carousel component here */}
+        <Carousel />
         <div className="relative">
           <VerticleCard />
         </div>
