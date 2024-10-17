@@ -11,16 +11,16 @@ const Contact = () => {
   return (
     <section className="md:px-28 px-10 p-16 flex flex-col gap-10 justify-center items-center">
       <div className="flex md:flex-row flex-col gap-28">
-        <img className="w-32 h-20" src={brandOne.src} />
-        <img className="w-32 h-20" src={brandTwo.src} />
-        <img className="w-32 h-20" src={brandThree.src} />
-        <img className="w-32 h-20" src={brandFour.src} />
+        <img className="w-32 h-20" src={brandOne.src} alt="brands" />
+        <img className="w-32 h-20" src={brandTwo.src} alt="brands" />
+        <img className="w-32 h-20" src={brandThree.src} alt="brands" />
+        <img className="w-32 h-20" src={brandFour.src} alt="brands" />
       </div>
       <div className="flex md:flex-row flex-col gap-28">
-        <img className="w-32 h-20" src={brandFive.src} />
-        <img className="w-32 h-20" src={brandSix.src} />
-        <img className="w-32 h-20" src={brandSeven.src} />
-        <img className="w-32 h-20" src={brandEight.src} />
+        <img className="w-32 h-20" src={brandFive.src} alt="brands" />
+        <img className="w-32 h-20" src={brandSix.src} alt="brands" />
+        <img className="w-32 h-20" src={brandSeven.src} alt="brands" />
+        <img className="w-32 h-20" src={brandEight.src} alt="brands" />
       </div>
     </section>
   );

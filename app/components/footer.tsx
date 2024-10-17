@@ -41,7 +41,11 @@ const Footer = () => {
   return (
     <>
       <section className="text-white md:px-28 px-16 md:pb-20 p-10 pt-0 flex flex-col gap-5 relative">
-        <img src={HealthLogo.src} className="w-52 mx-auto z-10" />
+        <img
+          src={HealthLogo.src}
+          className="w-52 mx-auto z-10"
+          alt="healthlogo"
+        />
         <div className="text-textColor flex md:flex-row flex-col md:gap-56 gap-20 z-10">
           <div>
             <h2 className="font-bold text-2xl">ACCERETE CONCIERGE SERVICES</h2>
@@ -55,7 +59,7 @@ const Footer = () => {
                   <img
                     className="w-3 text-white"
                     src={phoneIcon.src}
-                    alt={"phones"}
+                    alt="phones"
                   />
                 </div>
                 <p className="font-medium">123 - 456 - 7890</p>
