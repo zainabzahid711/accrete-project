@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import CardValues from "./components/cardWrapValues";
 import ChooseAccrete from "./components/choiceSection";
 import Services from "./components/services";
+import Department from "./components/departments";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <CardValues />
       <ChooseAccrete />
       <Services />
+      <Department />
       <Contact />
       <Footer />
     </main>

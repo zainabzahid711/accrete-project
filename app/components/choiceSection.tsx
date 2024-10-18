@@ -62,7 +62,7 @@ const ChooseAccrete: React.FC = () => {
 
       {/* Container for the text section */}
       <div className="md:w-2/3 flex flex-col justify-center items-center">
-        <h3 className="text-center font-bold text-3xl md:text-5xl">
+        <h3 className="font-bold text-3xl md:text-5xl">
           Why Choose Accrete Concierge for your Services Provider?
         </h3>
         <p className="mt-12">
