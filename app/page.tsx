@@ -1,10 +1,10 @@
 import NavBar from "./components/navBar";
 import HeroSection from "./components/heroSection";
-import MedicalPractice from "./components/medicalPractice";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
 import CardValues from "./components/cardWrapValues";
 import ChooseAccrete from "./components/choiceSection";
+import Services from "./components/services";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <HeroSection />
       <CardValues />
       <ChooseAccrete />
-      <MedicalPractice />
+      <Services />
       <Contact />
       <Footer />
     </main>

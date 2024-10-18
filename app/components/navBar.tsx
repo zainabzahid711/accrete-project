@@ -67,11 +67,11 @@ const NavBar = () => {
       <div className="flex md:flex-row flex-col gap-6 p-2 px-10 md:px-28 bg-[#23BFEF]">
         <div className="flex md:flex-row flex-col md:gap-5 gap-2">
           <div className="flex items-center gap-2">
-            <FontAwesomeIcon className="text-white" icon={faPhone} />
+            <FontAwesomeIcon className="text-white w-4" icon={faPhone} />
             <p className="font-bold">(871 432-0034)</p>
           </div>
           <div className="flex items-center gap-2">
-            <FontAwesomeIcon className="text-white" icon={faEnvelope} />
+            <FontAwesomeIcon className="text-white w-4" icon={faEnvelope} />
             <p className="font-bold">accreteconcierge@gmail.com</p>
           </div>
         </div>
