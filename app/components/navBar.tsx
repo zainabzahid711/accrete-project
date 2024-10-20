@@ -6,13 +6,19 @@ import {
   faLinkedinIn,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPhone,
+  faEnvelope,
+  faChevronDown, // indicator for dropdown
+} from "@fortawesome/free-solid-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Logo from "@/public/logoFinal.png";
 import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 type SocialMediaIconType = {
   icon: FontAwesomeIconProps["icon"];
@@ -32,30 +38,61 @@ type SocialMediaIconProps = {
 };
 
 const SocialMediaIcon = ({ icon }: SocialMediaIconProps) => (
-  <div className="bg-gray-800 rounded-full flex items-center justify-center h-6 w-6 cursor-pointer">
+  <div className="bg-gray-500 rounded-full flex items-center justify-center h-6 w-6 cursor-pointer">
     <FontAwesomeIcon icon={icon} className="text-white w-3" />
   </div>
 );
 
 const NavBar = () => {
-  const [active, setActive] = useState("HOME");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const pathname = usePathname();
 
-  const navItems = ["HOME", "ABOUT", "SERVICES", "CONTACT"];
+  const navItems = [
+    { name: "HOME", route: "/home" },
+    { name: "ABOUT", route: "/about" },
+    { name: "SERVICES", route: "/services" }, // This is the main services item
+    { name: "CONTACT", route: "/contact" },
+  ];
+
+  const serviceItems = [
+    { name: "Billing and Coding", route: "/services/billing-and-coding" },
+    {
+      name: "Credentials and Contracting",
+      route: "/services/credentials-and-contracting",
+    },
+    { name: "Accounts Management", route: "/services/accounts-management" },
+    { name: "Network Negotiation", route: "/services/network-negotiation" },
+    {
+      name: "Eligibility and Benefits",
+      route: "/services/eligibility-and-benefits",
+    },
+    { name: "Complete RCM", route: "/services/complete-rcm" },
+  ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isMenuOpen) {
+        setIsMenuOpen(false);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMenuOpen]);
 
-    // Cleanup the event listener on component unmount
+  const handleServicesToggle = () => {
+    if (window.innerWidth < 768) {
+      setIsServicesOpen(!isServicesOpen);
+    }
+  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -64,15 +101,15 @@ const NavBar = () => {
   return (
     <>
       {/* ------header------------ */}
-      <div className="flex md:flex-row flex-col gap-6 p-2 px-10 md:px-28 bg-[#23BFEF]">
+      <div className="flex md:flex-row flex-col gap-6 p-4 px-10 md:px-28 bg-[#91cbdd]">
         <div className="flex md:flex-row flex-col md:gap-5 gap-2">
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faPhone} />
-            <p className="font-bold">(871 432-0034)</p>
+            <p className="font-medium">(871) 432-0034</p>
           </div>
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faEnvelope} />
-            <p className="font-bold">accreteconcierge@gmail.com</p>
+            <p className="font-medium">accreteconcierge@gmail.com</p>
           </div>
         </div>
         <div className="flex gap-2 justify-start items-start md:justify-end md:items-end md:ml-auto">
@@ -81,10 +118,11 @@ const NavBar = () => {
           ))}
         </div>
       </div>
+
       {/* -------navBar----------- */}
       <div
-        className={`flex gap-16 md:gap-0 px-10 md:px-28 pt-6 w-full pb-6 items-center transition-colors duration-300 ${
-          isScrolled ? "bg-blue-300 fixed top-0 left-0 z-20" : "bg-transparent"
+        className={`z-10 relative flex gap-16 md:gap-0 px-10 md:px-28 pt-6 w-full pb-6 items-center transition-colors duration-300 ${
+          isScrolled ? "bg-blue-300 fixed top-0 left-0" : "bg-transparent"
         }`}
       >
         <Image
@@ -109,26 +147,67 @@ const NavBar = () => {
         </div>
 
         <ul
-          className={`flex md:flex-row flex-col gap-3 z-20 justify-start items-start md:justify-end md:items-end md:ml-auto pl-8 absolute md:static top-[80px] left-0 h-screen md:h-auto w-full md:w-auto bg-blue-300 md:bg-transparent py-4 md:py-0 md:z-auto transition-all duration-500 ease-in-out ${
+          className={`flex md:flex-row flex-col md:gap-16 gap-3 justify-start items-start md:justify-end md:items-end md:ml-auto pl-8 absolute md:static top-[80px] left-0 h-screen md:h-auto w-full md:w-auto bg-blue-300 md:bg-transparent py-4 md:py-0 md:z-auto transition-all duration-500 ease-in-out ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } md:translate-x-0`}
         >
-          {navItems.map((item) => (
+          {navItems.map(({ name, route }, index) => (
             <li
-              key={item}
-              className={`cursor-pointer font-bold hover:underline text-center md:text-left ${
-                active === item ? "text-[#17A2B8]" : ""
-              }`}
-              style={{
-                textDecorationThickness: "2px",
-                textUnderlineOffset: "17px",
-              }}
-              onClick={() => {
-                setActive(item);
-                setIsMenuOpen(false);
-              }}
+              key={index}
+              className={`cursor-pointer font-medium px-2 py-1 border-b-2 border-transparent relative ${
+                pathname === route
+                  ? "text-[#6BD4F4] border-[#6BD4F4]"
+                  : "text-gray-600"
+              } hover:text-[#6BD4F4] hover:border-[#6BD4F4]`}
+              onMouseEnter={() =>
+                name === "SERVICES" && setIsServicesOpen(true)
+              } // Open dropdown on hover
+              onMouseLeave={() =>
+                name === "SERVICES" && setIsServicesOpen(false)
+              } // Close dropdown on leave
             >
-              {item}
+              <Link href={route} className="flex items-center">
+                {name}
+                {/* Add a dropdown indicator icon */}
+                {name === "SERVICES" && (
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className="text-sm ml-1 w-3"
+                  />
+                )}
+              </Link>
+
+              {/* Dropdown for Services */}
+              {name === "SERVICES" && isServicesOpen && (
+                <ul
+                  className="absolute top-8 left-0 bg-blue-50 shadow-lg rounded-md mt-1 py-2 w-64"
+                  onMouseEnter={() => setIsServicesOpen(true)}
+                  onMouseLeave={() => setIsServicesOpen(false)}
+                >
+                  {serviceItems.map((service, index) => (
+                    <li
+                      onClick={handleServicesToggle} // Handle click on mobile
+                      onMouseEnter={() =>
+                        name === "SERVICES" && setIsServicesOpen(true)
+                      }
+                      onMouseLeave={() =>
+                        name === "SERVICES" && setIsServicesOpen(false)
+                      }
+                      key={index}
+                      className="p-5 text-gray-800 py-1 rounded-md hover:bg-[#91cbdd]"
+                    >
+                      <Link
+                        href={service.route}
+                        onClick={() => {
+                          setIsMenuOpen(false); // Close the main menu if open
+                        }}
+                      >
+                        {service.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ul>

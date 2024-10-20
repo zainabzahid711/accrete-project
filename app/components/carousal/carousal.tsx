@@ -70,7 +70,7 @@ const Carousel: React.FC = () => {
 
       {/* Dark overlay (on top of background but below text) */}
       <div
-        className="absolute inset-0 bg-blue-400"
+        className="absolute inset-0 bg-blue-100"
         style={{ opacity: 0.5 }}
       ></div>
 

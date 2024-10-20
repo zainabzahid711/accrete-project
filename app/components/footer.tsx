@@ -32,21 +32,21 @@ type SocialMediaIconProps = {
 };
 
 const SocialMediaIcon = ({ icon }: SocialMediaIconProps) => (
-  <div className="bg-gray-800 rounded-full flex items-center justify-center h-10 w-10 cursor-pointer">
-    <FontAwesomeIcon icon={icon} className="text-white w-4" />
+  <div className="bg-gray-500 rounded-full flex items-center justify-center h-8 w-8 cursor-pointer">
+    <FontAwesomeIcon icon={icon} className="text-white w-3" />
   </div>
 );
 
 const Footer = () => {
   return (
     <>
-      <section className="text-white md:px-28 px-16 md:pb-20 p-10 pt-0 flex flex-col gap-5 relative">
+      <section className="text-white flex flex-col relative">
         <img
           src={HealthLogo.src}
           className="w-52 mx-auto z-10"
           alt="healthlogo"
         />
-        <div className="text-textColor flex md:flex-row flex-col md:gap-56 gap-20 z-10">
+        <div className="text-textColor md:px-28 md:py-12 px-10 flex md:flex-row flex-col z-10">
           <div>
             <h2 className="font-bold text-2xl">ACCERETE CONCIERGE SERVICES</h2>
             <p className="font-bold mt-5">
@@ -86,9 +86,9 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="ml-auto">
             <h2 className="font-bold mb-10">Useful Links</h2>
-            <div className="flex gap-20">
+            <div className="flex gap-32">
               <ul className="cursor-pointer flex flex-col gap-7">
                 <li>About Us</li>
                 <li>Departments</li>
@@ -115,15 +115,15 @@ const Footer = () => {
         </div>
       </section>
 
-      <div className="bg-[#307BC4] flex p-5 flex-col md:flex-row items-center justify-around">
+      <div className="bg-[#307BC4] px-28 flex p-3 flex-col md:flex-row items-center">
         <div className="flex gap-4 mt-2 items-center">
-          <h3>Follow us</h3>
+          <h3 className="text-white">Follow us</h3>
           {socialMediaIcons.map(({ icon, id }) => (
             <SocialMediaIcon key={id} icon={icon} />
           ))}
         </div>
-        <div>
-          <h5 className="font-thin">
+        <div className="ml-auto">
+          <h5 className="font-thin text-white">
             ©2023 Accrete Concierge. All Rights Reserved.
           </h5>
         </div>

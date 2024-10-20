@@ -17,6 +17,9 @@ const config: Config = {
       animation: {
         "bounce-slow": "bounce-slow 3s ease-in-out infinite",
       },
+      zIndex: {
+        "-1": "-1", // Add a negative z-index
+      },
       backgroundImage: {
         "hero-bg": "url('/homePage/heroBg.jpeg')",
       },

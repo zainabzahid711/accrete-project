@@ -57,8 +57,9 @@ const services = [
 const Services = () => {
   return (
     <section className="md:px-28 px-10">
-      <h1 className="text-center mb-5 md:text-5xl text-3xl font-bold">
-        {/* <TypeAnimation
+      <div className="text-center">
+        <h1 className="hover-border cursor-pointer flex text-center mb-12 md:text-5xl text-3xl font-bold">
+          {/* <TypeAnimation
           sequence={[
             "Medical Billing Services we Offer", // Text to type
             2000,
@@ -67,8 +68,9 @@ const Services = () => {
           wrapper="span"
           repeat={0}
         /> */}
-        Medical Billing Services we Offer
-      </h1>
+          Medical Billing Services we Offer
+        </h1>
+      </div>
       <div className="flex md:flex-row flex-col gap-3 mb-3">
         {services.slice(0, 3).map((service) => (
           <ServiceCard

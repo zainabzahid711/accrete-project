@@ -156,3 +156,23 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+
+/* --------hover text class -------------- */
+.hover-border {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 20px; /* Adjust this value to increase or decrease space between text and border */
+  transition: border-bottom 0.3s ease; /* Smooth transition for the border */
+}
+
+.hover-border::after {
+  content: ""; /* Required to create the pseudo-element */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Aligns the border with the bottom of the text */
+  height: 2px; /* Adjust this value for the thickness of the border */
+  background-color: #91cbdd; /* Border color */
+  transform: scaleX(0); /* Initially hidden */
+  transition: transform 0.3s ease; /* Smooth transition for the border */
+}
