@@ -62,12 +62,12 @@ const Department = () => {
   return (
     <>
       <section
-        className="group rounded-3xl md:px-10 p-16 bg-cover bg-center md:mx-28 mx-10 my-20 md:mt-28 md:mb-52  relative"
+        className="group rounded-3xl md:px-28 px-10 p-16 bg-cover bg-center md:mx-28 mx-8 my-20 md:mt-28 mb-52  relative"
         style={{ backgroundImage: `url(${departmentBG.src})`, height: "250px" }}
       >
         <div className="text-center">
           <h3 className="hover-border cursor-pointer font-bold text-center text-2xl md:text-3xl mb-8">
-            Departments
+            Experties
           </h3>
         </div>
 
@@ -90,12 +90,12 @@ const Department = () => {
             {/* Duplicate content for infinite scroll illusion */}
             {[...Array(2)].map((_, idx) => (
               <div className="flex gap-10" key={idx}>
-                <IconCard icon={depOne} text="emergency department" />
-                <IconCard icon={depTwo} text="pediatric department" />
-                <IconCard icon={depThree} text="gynecology department" />
-                <IconCard icon={depFour} text="cardiology department" />
-                <IconCard icon={depFive} text="neurology department" />
-                <IconCard icon={depSix} text="psychiatry department" />
+                <IconCard icon={depOne} text="emergency experties" />
+                <IconCard icon={depTwo} text="pediatric experties" />
+                <IconCard icon={depThree} text="gynecology experties" />
+                <IconCard icon={depFour} text="cardiology experties" />
+                <IconCard icon={depFive} text="neurology experties" />
+                <IconCard icon={depSix} text="psychiatry experties" />
               </div>
             ))}
           </div>

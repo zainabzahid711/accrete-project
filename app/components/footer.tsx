@@ -8,7 +8,7 @@ import {
 
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIconProps
-import HealthLogo from "@/public/homePage/svg/logoIcon.svg";
+import AccreteLogo from "@/public/homePage/accreteLogo.png";
 import FooterBg from "@/public/homePage/svg/footerBg.svg";
 import phoneIcon from "@/public/homePage/svg/mobile.svg";
 import location from "@/public/homePage/svg/pin.svg";
@@ -40,16 +40,18 @@ const SocialMediaIcon = ({ icon }: SocialMediaIconProps) => (
 const Footer = () => {
   return (
     <>
-      <section className="text-white flex flex-col relative">
+      <section className="text-white pb-8 md:pb-0 flex flex-col relative">
         <img
-          src={HealthLogo.src}
-          className="w-52 mx-auto z-10"
+          src={AccreteLogo.src}
+          className="md:w-52 w-20 mx-auto z-10"
           alt="healthlogo"
         />
         <div className="text-textColor md:px-28 md:py-12 px-10 flex md:flex-row flex-col z-10">
           <div>
-            <h2 className="font-bold text-2xl">ACCERETE CONCIERGE SERVICES</h2>
-            <p className="font-bold mt-5">
+            <h2 className="font-bold text-2xl mt-12">
+              ACCERETE CONCIERGE SERVICES
+            </h2>
+            <p className="font-medium mt-5">
               Empowering your practices financial health with precision and
               care.
             </p>
@@ -87,8 +89,8 @@ const Footer = () => {
             </div>
           </div>
           <div className="ml-auto">
-            <h2 className="font-bold mb-10">Useful Links</h2>
-            <div className="flex gap-32">
+            <h2 className="font-bold mb-5 mt-12">Useful Links</h2>
+            <div className="flex gap-20 md:gap-32">
               <ul className="cursor-pointer flex flex-col gap-7">
                 <li>About Us</li>
                 <li>Departments</li>
@@ -115,15 +117,17 @@ const Footer = () => {
         </div>
       </section>
 
-      <div className="bg-[#307BC4] px-28 flex p-3 flex-col md:flex-row items-center">
-        <div className="flex gap-4 mt-2 items-center">
+      <div className="bg-[#307BC4] px-10 md:px-28 flex p-3 flex-col md:flex-row items-center">
+        <div className="flex flex-col md:flex-row gap-4 mt-2 items-center">
           <h3 className="text-white">Follow us</h3>
-          {socialMediaIcons.map(({ icon, id }) => (
-            <SocialMediaIcon key={id} icon={icon} />
-          ))}
+          <div className="flex gap-4">
+            {socialMediaIcons.map(({ icon, id }) => (
+              <SocialMediaIcon key={id} icon={icon} />
+            ))}
+          </div>
         </div>
-        <div className="ml-auto">
-          <h5 className="font-thin text-white">
+        <div className="md:ml-auto mt-8 md:mt-0">
+          <h5 className="font-thin text-sm text-white">
             ©2023 Accrete Concierge. All Rights Reserved.
           </h5>
         </div>

@@ -57,7 +57,7 @@ const VerticleCard: React.FC = () => {
   return (
     <section
       ref={ref} // Attach the ref to the section to monitor visibility
-      className="absoulte transform transition-all duration-300 md:-translate-y-[41%] translate-y-[1%] z-40 shadow-3xl w-[85%] mx-auto gap-6 md:gap-0 flex flex-col md:flex-row justify-around items-center md:p-16 p-8 rounded-3xl bg-gray-100"
+      className="absoulte transform transition-all duration-300 md:-translate-y-[41%] -translate-y-[16%] z-40 shadow-3xl w-[85%] mx-auto gap-6 md:gap-0 flex flex-col md:flex-row justify-around items-center md:p-16 p-8 rounded-3xl bg-gray-100"
     >
       {cardData.map((card, index) => (
         <motion.div
