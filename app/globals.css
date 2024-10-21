@@ -176,3 +176,21 @@ body {
   transform: scaleX(0); /* Initially hidden */
   transition: transform 0.3s ease; /* Smooth transition for the border */
 }
+
+/* -------hero section------ */
+
+@keyframes colorChange {
+  0% {
+    color: #46abca;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: #0d80a3;
+  }
+}
+
+.color-changing {
+  animation: colorChange 2s infinite; /* Change duration and repeat behavior as needed */
+}

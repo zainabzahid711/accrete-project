@@ -101,15 +101,15 @@ const NavBar = () => {
   return (
     <>
       {/* ------header------------ */}
-      <div className="flex md:flex-row flex-col gap-6 p-4 px-10 md:px-28 bg-[#91cbdd]">
+      <div className="flex md:flex-row flex-col gap-6 p-2 px-10 md:px-28 bg-[#91cbdd]">
         <div className="flex md:flex-row flex-col md:gap-5 gap-2">
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faPhone} />
-            <p className="font-medium">(871) 432-0034</p>
+            <p className="font-medium text-sm">(871) 432-0034</p>
           </div>
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faEnvelope} />
-            <p className="font-medium">accreteconcierge@gmail.com</p>
+            <p className="font-medium text-sm">accreteconcierge@gmail.com</p>
           </div>
         </div>
         <div className="flex gap-2 justify-start items-start md:justify-end md:items-end md:ml-auto">
@@ -121,7 +121,7 @@ const NavBar = () => {
 
       {/* -------navBar----------- */}
       <div
-        className={`z-10 relative flex gap-16 md:gap-0 px-10 md:px-28 pt-6 w-full pb-6 items-center transition-colors duration-300 ${
+        className={`z-10 relative flex gap-16 md:gap-0 px-10 md:px-28 py-4 w-full items-center transition-colors duration-300 ${
           isScrolled ? "bg-blue-300 fixed top-0 left-0" : "bg-transparent"
         }`}
       >
