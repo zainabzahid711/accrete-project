@@ -5,11 +5,12 @@ import userOne from "@/public/homePage/user1.jpg";
 import userTwo from "@/public/homePage/user2.jpg";
 import userThree from "@/public/homePage/user3.jpg";
 import qoutes from "@/public/homePage/svg/quote.svg";
+import { StaticImageData } from "next/image";
 
 interface Testimonial {
   name: string;
   location: string;
-  avatar: any;
+  avatar: StaticImageData;
   text: string;
   rating: number;
 }
@@ -99,7 +100,7 @@ const Reviews: React.FC = () => {
         {/* Right side with the active testimonial */}
         <div className="flex-1 text-center md:text-left">
           <img src={qoutes.src} className="w-10" />
-          <p className="text-xl md:ml-20 mb-4 text-gray-400">
+          <p className="text-xl md:ml-20 text-gray-400">
             {testimonialsData[activeIndex].text}
           </p>
           <div className="flex justify-center md:justify-start">

@@ -1,3 +1,4 @@
+import FAQs from "../components/faqs";
 import CardValues from "../components/homePage/cardWrapValues";
 import ChooseAccrete from "../components/homePage/choiceSection";
 import Department from "../components/homePage/departments";
@@ -14,6 +15,7 @@ const Homepage = () => {
       <Services />
       <Department />
       <Reviews />
+      <FAQs />
     </>
   );
 };
