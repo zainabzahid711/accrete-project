@@ -177,6 +177,10 @@ body {
   transition: transform 0.3s ease; /* Smooth transition for the border */
 }
 
+.hover-border:hover::after {
+  transform: scaleX(1); /* Expand the border on hover */
+  transform-origin: left; /* Ensure it expands from left to right */
+}
 /* -------hero section------ */
 
 @keyframes colorChange {
@@ -193,4 +197,26 @@ body {
 
 .color-changing {
   animation: colorChange 2s infinite; /* Change duration and repeat behavior as needed */
+}
+
+.half-circle {
+  width: 100%;
+  /* max-width: 450px; */
+  border-radius: 50%;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out; /* Optional shadow transition */
+}
+
+/* Keyframes for full rotation */
+@keyframes rotate {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotate 1.5s backwards;
 }

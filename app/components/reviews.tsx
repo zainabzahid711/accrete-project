@@ -47,9 +47,11 @@ const Reviews: React.FC = () => {
   };
 
   return (
-    <section className="md:px-28 px-10 p-10 my-20">
+    <section className="md:px-28 px-10 my-20">
       <div className="text-center mb-5">
-        <h3 className="font-bold text-2xl md:text-5xl mb-5">Some Reviews</h3>
+        <h3 className="hover-border font-bold text-2xl md:text-5xl mb-5">
+          Some Reviews
+        </h3>
         <p className="text-lg md:text-xl">OF OUR CLIENTS</p>
       </div>
 

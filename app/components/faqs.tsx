@@ -47,9 +47,11 @@ const FAQs: React.FC = () => {
 
   return (
     <section className="md:px-28 px-10">
-      <div className="text-center mb-5">
-        <h3 className="font-bold text-2xl md:text-5xl mb-5">Some Reviews</h3>
-        <p className="text-lg md:text-xl">OF OUR CLIENTS</p>
+      <div className="text-center">
+        <p className="text-lg md:text-xl mb-4">What People</p>
+        <h3 className="hover-border font-bold text-2xl md:text-5xl mb-5">
+          Usually Asked
+        </h3>
       </div>
 
       <div className="px-1 md:px-24">

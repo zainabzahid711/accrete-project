@@ -1,9 +1,9 @@
-import Services from "../components/services";
+import HeroSection from "../components/homePage/heroSection";
 
 const About = () => {
   return (
     <>
-      <Services />
+      <HeroSection />
     </>
   );
 };
