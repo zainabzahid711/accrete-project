@@ -7,6 +7,7 @@ import HeroSection from "../components/homePage/heroSection";
 import Reviews from "../components/reviews";
 import Services from "../components/services";
 import iconShedule from "@/public/homePage/iconScheduleDemo.png";
+import Link from "next/link";
 
 const Homepage = () => {
   return (
@@ -27,7 +28,11 @@ const Homepage = () => {
           </div>
           <div className="flex justify-center items-center gap-3">
             <img className="w-12 h-12" src={iconShedule.src} />
-            <h5 className="cursor-pointer">Shedule a Demo</h5>
+            <Link href="/shedule-demo">
+              <h5 className="cursor-pointer hover:text-blue-700">
+                Schedule a Demo
+              </h5>
+            </Link>
           </div>
         </div>
       </section>

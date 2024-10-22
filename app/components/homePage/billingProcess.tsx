@@ -61,7 +61,7 @@ const BillingProcess = () => {
           </p>
           <p className="mt-4">
             <strong> Capturing Medical Services and Documentation:</strong>{" "}
-            After a patient's visit, we ensure all medical services provided are
+            After a patients visit, we ensure all medical services provided are
             properly documented. This includes diagnoses, treatments, and
             procedures performed during the visit, which are critical for
             accurate claim submissions and reimbursement.
