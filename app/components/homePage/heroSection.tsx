@@ -25,7 +25,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <section className="relative max-h-full">
         <div className="bg-hero-bg bg-blue-400">
           <div className="md:px-28 px-10 p-12 flex md:flex-row flex-col">
-            <div className="flex flex-col mt-36 w-full">
+            <div className="flex flex-col mt-16 md:mt-36 w-full">
               <h1 className="text-ellipsis hover-border font-bold text-3xl md:text-5xl w-[100%] md:w-[90%]">
                 <Typewriter
                   words={[mainText]}
