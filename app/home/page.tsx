@@ -8,11 +8,18 @@ import Reviews from "../components/reviews";
 import Services from "../components/services";
 import iconShedule from "@/public/homePage/iconScheduleDemo.png";
 import Link from "next/link";
+import doctorImage from "@/public/homePage/doctor.png";
+import AnimateAssete from "../components/utils/animatedAssete";
 
 const Homepage = () => {
   return (
     <>
-      <HeroSection />
+      <HeroSection
+        mainText="Medical Billing Services we Offer"
+        subText="Streamline your medical billing with precision, ensuring every calculation is accounted for."
+        mainImage={doctorImage.src}
+        animateAsset={<AnimateAssete />}
+      />
       <CardValues />
       <ChooseAccrete />
       <Services />
