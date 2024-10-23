@@ -30,6 +30,11 @@ const ScheduleDemo = () => {
           : [...prev, value] // Add if not selected
     );
   };
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    // Now you can use the selectedServices state here, for example:
+    console.log("Selected Services:", selectedServices);
+  };
 
   return (
     <>
@@ -95,7 +100,7 @@ const ScheduleDemo = () => {
         {/* Right Section (Form) */}
         <div className="bg-gray-200 rounded-2xl p-8 border-2 border-gray-300 mt-10 md:mt-16 md:w-[25%]">
           <h3 className="text-xl font-medium mb-4">Request a Demo</h3>
-          <form className="flex flex-col gap-3">
+          <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
             {[
               {
                 label: "Practice or Company Name",
