@@ -2,8 +2,8 @@ import heartIcon from "@/public/homePage/heroIcon.png";
 const HeartAssete = () => {
   return (
     <>
-      <div className="animate-bounce-slow">
-        <img className="opacity-80" src={heartIcon.src} />
+      <div className="animate-heartbeat">
+        <img className="opacity-80 w-10 md:w-14" src={heartIcon.src} />
       </div>
     </>
   );

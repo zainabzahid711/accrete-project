@@ -46,7 +46,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <div
       ref={cardRef}
-      className={`p-4 cursor-pointer border-x border-y rounded-md transform transition duration-500 ease-in-out 
+      className={`w-full p-4 cursor-pointer border-x border-y rounded-md transform transition duration-500 ease-in-out 
         ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
         hover:scale-95`}
       // Apply delay based on index for staggered effect
@@ -55,9 +55,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       }}
     >
       {/* ----image------ */}
-      <div className="rounded-full">
+      <div className="items-center flex justify-center rounded-full">
         <img
-          className="w-[100%] h-[200px] rounded-3xl opacity-80"
+          className="w-80 h-[200px] rounded-3xl opacity-80"
           src={image}
           alt={text}
         />

@@ -18,7 +18,9 @@ const Homepage = () => {
         mainText="Medical Billing Services we Offer"
         subText="Streamline your medical billing with precision, ensuring every calculation is accounted for."
         mainImage={doctorImage.src}
-        animateAsset={<AnimateAssete />}
+        animateAsset={
+          <AnimateAssete bottom={36} left={-16} translateX={2} translateY={6} />
+        }
       />
       <CardValues />
       <ChooseAccrete />

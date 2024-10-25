@@ -19,7 +19,7 @@ interface CardItemProps {
 
 // Reusable CardItem =------ card content
 const CardItem: React.FC<CardItemProps> = ({ icon, title, description }) => (
-  <div className="flex items-center justify-center md:gap-3 gap-4">
+  <div className="flex items-center justify-center md:gap-3 gap-4 w-[100%]">
     <div className="p-4 bg-blue-400 rounded-full">
       <img className="w-6 text-white" src={icon.src} alt={`${title} icon`} />
     </div>
@@ -45,7 +45,7 @@ const cardData: Card[] = [
   {
     icon: location,
     title: "Head Office",
-    description: "1234 Main St, New York, USA",
+    description: "1234 Main St, California USA",
   },
 ];
 
@@ -62,7 +62,7 @@ const VerticleCard: React.FC = () => {
       {cardData.map((card, index) => (
         <motion.div
           key={index}
-          className="cursor-pointer transform transition-all duration-300 hover:-translate-y-2"
+          className=" cursor-pointer transform transition-all duration-300 hover:-translate-y-2"
           initial={{ opacity: 0, y: 50 }} // Animation starts hidden
           animate={{
             opacity: isIntersecting ? 1 : 0,
