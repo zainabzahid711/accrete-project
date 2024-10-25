@@ -10,7 +10,7 @@ const Backseat = () => {
 
       <div className="text-black flex flex-col justify-center text-center w-[100%] md:w-[70%]">
         <h2 className="text-ellipsis hover-border font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl w-[100%] md:w-[100%]">
-          Don't Let Your Health take a backseat!
+          Do not Let Your Health take a backseat!
         </h2>
         <p className="color-changing font-medium text-xl">
           Schedule an appointment with one of our experienced medical
