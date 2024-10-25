@@ -29,8 +29,8 @@ const Contact = () => {
     <section className="space-y-16">
       {/* Hero Section */}
       <HeroSection
-        mainText="Contact us"
-        subText="Reach us to get the fastest response and your money payback."
+        mainText="Get in Touch for Quick Support and Hassle-Free Assistance!"
+        subText="We're Here to Help – Contact Us for Instant Support!"
         mainImage={contactMain.src}
         animateAsset={
           <ContactAssete bottom={36} left={-16} translateX={2} translateY={6} />

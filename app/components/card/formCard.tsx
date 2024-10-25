@@ -2,14 +2,15 @@
 
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { CircularProgress } from "@mui/material"; // Import Material UI spinner for loading
 
 const FormCard = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false); // Track submission state
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Track loading state
 
-  // State for errors
   const [errors, setErrors] = useState({
     name: false,
     email: false,
@@ -19,7 +20,6 @@ const FormCard = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validate inputs
     const newErrors = {
       name: !name,
       email: !email,
@@ -28,28 +28,28 @@ const FormCard = () => {
     setErrors(newErrors);
 
     if (!Object.values(newErrors).some((error) => error)) {
-      // Use EmailJS to send form data
+      setIsLoading(true); // Start loading
       emailjs
         .send(
-          "service_2i2m7xn", // Your EmailJS service ID
-          "template_mztj0nr", // Your EmailJS template ID
+          "service_2i2m7xn",
+          "template_mztj0nr",
           {
             from_name: name,
             from_email: email,
             message: message,
           },
-          "OGG1qJGvxy17urJOa" // Your EmailJS user ID
+          "OGG1qJGvxy17urJOa"
         )
         .then(
           () => {
-            setIsSubmitted(true); // Set submission state to true
-            setName("");
-            setEmail("");
-            setMessage("");
+            setIsSubmitted(true);
+            setIsLoading(false); // Stop loading
+            setTimeout(() => setIsSubmitted(false), 5000); // Auto close after 5 seconds
           },
           (error) => {
             console.error("Email send error: ", error);
             alert("Failed to send email.");
+            setIsLoading(false); // Stop loading
           }
         );
     }
@@ -57,9 +57,11 @@ const FormCard = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="w-[70%] md:mx-28 md:px-36 p-20 bg-white shadow-2xl rounded-lg">
-        {isSubmitted ? ( // Display thank you message if submitted
+      <div className="w-[70%] md:mx-28 md:px-36 p-5 md:p-20 bg-white shadow-2xl rounded-lg">
+        {isSubmitted ? (
           <div className="text-center p-8">
+            <div className="text-green-500 text-6xl mb-4">✓</div>{" "}
+            {/* Success checkmark */}
             <h2 className="text-2xl font-semibold text-green-600">
               Thank you!
             </h2>
@@ -69,7 +71,7 @@ const FormCard = () => {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div className="flex md:gap-10 gap-8">
+            <div className="flex flex-col md:flex-row md:gap-10 gap-8">
               <div className="flex flex-col gap-2">
                 <label className="font-semibold">Name</label>
                 <input
@@ -77,7 +79,7 @@ const FormCard = () => {
                   value={name}
                   placeholder="name"
                   onChange={(e) => setName(e.target.value)}
-                  className={`rounded-full w-72 h-14 border px-6 py-6 outline-blue-400 focus:border-blue-500 transition-all duration-300 
+                  className={`rounded-full w-full md:w-72 h-14 border px-6 py-6 outline-blue-400 focus:border-blue-500 transition-all duration-300 
                 ${
                   errors.name
                     ? "border-red-500 animate-shake"
@@ -85,7 +87,6 @@ const FormCard = () => {
                 }`}
                 />
               </div>
-
               <div className="flex flex-col gap-2">
                 <label className="font-semibold">Email</label>
                 <input
@@ -93,7 +94,7 @@ const FormCard = () => {
                   placeholder="email@test.domain"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className={`rounded-full w-72 h-14 border px-6 py-6 outline-blue-400 focus:border-blue-500 transition-all duration-300 
+                  className={`rounded-full w-full md:w-72 h-14 border px-6 py-6 outline-blue-400 focus:border-blue-500 transition-all duration-300 
                 ${
                   errors.email
                     ? "border-red-500 animate-shake"
@@ -122,11 +123,18 @@ const FormCard = () => {
               <button
                 type="submit"
                 className="px-4 py-4 w-52 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-medium rounded-full mt-4 hover:from-blue-600 hover:to-blue-800 transition-all duration-200 relative flex items-center justify-center group"
+                disabled={isLoading} // Disable button when loading
               >
-                <span className="mr-2">Submit</span>
-                <span className="transition-transform transform translate-x-0 group-hover:translate-x-2 duration-200">
-                  &#x2192;
-                </span>
+                {isLoading ? (
+                  <CircularProgress size={24} color="inherit" /> // Loading spinner
+                ) : (
+                  <>
+                    <span className="mr-2">Submit</span>
+                    <span className="transition-transform transform translate-x-0 group-hover:translate-x-2 duration-200">
+                      &#x2192;
+                    </span>
+                  </>
+                )}
               </button>
             </div>
           </form>
