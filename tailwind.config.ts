@@ -13,15 +13,22 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(-10px)" },
           "50%": { transform: "translateY(0px)" },
         },
+        moveGradient: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
       },
       animation: {
         "bounce-slow": "bounce-slow 3s ease-in-out infinite",
+        "gradient-move": "moveGradient 5s ease infinite",
       },
       zIndex: {
         "-1": "-1", // Add a negative z-index
       },
       backgroundImage: {
-        "hero-bg": "url('/homePage/heroBg.jpeg')",
+        "hero-gradient":
+          "linear-gradient(270deg, #F4E1A4, #A3C1DA, #B0E0E6, #81D4FA)",
+        "hero-bg": "url('/homePage/heroBg.jpg')",
       },
       colors: {
         background: "#C2DFF2",
