@@ -35,17 +35,12 @@ const cardData: Card[] = [
   {
     icon: phoneIcon,
     title: "Customer Support",
-    description: "800-123-4567",
-  },
-  {
-    icon: stethoScope,
-    title: "Emergency Services",
-    description: "911 or 800-654-3210",
+    description: " 470-802-4555",
   },
   {
     icon: location,
     title: "Head Office",
-    description: "1234 Main St, California USA",
+    description: "Cumming, GA",
   },
 ];
 

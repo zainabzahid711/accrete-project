@@ -7,20 +7,18 @@ import HeroSection from "../components/homePage/heroSection";
 import Reviews from "../components/reviews";
 import Services from "../components/services";
 import iconShedule from "@/public/homePage/iconScheduleDemo.png";
+import mainLogo from "@/public/homePage/accreteLogo.png";
+import Image from "next/image";
 import Link from "next/link";
-import doctorImage from "@/public/homePage/doctor.png";
-import AnimateAssete from "../components/utils/animatedAssete";
 
 const Homepage = () => {
   return (
     <>
       <HeroSection
-        mainText="Medical Billing Services we Offer"
-        subText="Streamline your medical billing with precision, ensuring every calculation is accounted for."
-        mainImage={doctorImage.src}
-        animateAsset={
-          <AnimateAssete bottom={36} left={-16} translateX={2} translateY={6} />
-        }
+        mainText="We Fight for every doller You Deserve..." // JSX elements
+        subText="Streamline your medical billing with precision."
+        mainImage={mainLogo.src}
+        backgroundImage="/homePage/heroBg.jpg"
       />
       <CardValues />
       <ChooseAccrete />
@@ -36,11 +34,15 @@ const Homepage = () => {
             <p className="">tools and resources to help your practice</p>
           </div>
           <div className="flex justify-center items-center gap-3">
-            <img className="w-12 h-12" src={iconShedule.src} />
+            <Image
+              className="w-12 h-12"
+              src={iconShedule}
+              alt="Schedule Icon"
+            />
             <Link href="/shedule-demo">
-              <h5 className="cursor-pointer hover:text-blue-700">
+              <button className="animate-bounce-slow bg-gradient-to-tr bg-blue-300 p-4 rounded-full cursor-pointer hover:text-blue-700">
                 Schedule a Demo
-              </h5>
+              </button>
             </Link>
           </div>
         </div>

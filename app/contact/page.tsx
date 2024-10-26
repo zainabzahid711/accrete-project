@@ -29,12 +29,10 @@ const Contact = () => {
     <section className="space-y-16">
       {/* Hero Section */}
       <HeroSection
-        mainText="Get in Touch for Quick Support and Hassle-Free Assistance!"
-        subText="We're Here to Help – Contact Us for Instant Support!"
+        mainText="Reach out now for fast, friendly support."
+        subText="We're Here to Help - Contact Us for Instant Support!"
         mainImage={contactMain.src}
-        animateAsset={
-          <ContactAssete bottom={36} left={-16} translateX={2} translateY={6} />
-        }
+        backgroundImage="/homePage/heroBg.jpg"
       />
 
       {/* Form Section */}

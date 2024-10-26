@@ -37,7 +37,7 @@ const AnimateAssete: React.FC<AnimateProps> = ({
         } 
                   transform ${translateX ? `translate-x-${translateX}` : ""} ${
           translateY ? `translate-y-${translateY}` : ""
-        } md:bottom-64 md:-left-52`}
+        } md:bottom-12 md:-left-52`}
       >
         <div className="relative border-white border-l-2 border-t-2 rounded-full p-4 md:w-[100%] animate-bounce-slow">
           {/* Background layer with blur */}
