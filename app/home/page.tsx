@@ -15,7 +15,7 @@ const Homepage = () => {
   return (
     <>
       <HeroSection
-        mainText="We Fight for every doller You Deserve..." // JSX elements
+        mainText="We Fight for every dollar You Deserve..." // JSX elements
         subText="Streamline your medical billing with precision."
         mainImage={mainLogo.src}
         backgroundImage="/homePage/heroBg.jpg"

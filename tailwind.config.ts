@@ -51,6 +51,9 @@ const config: Config = {
         iconBackground: "#454A52",
         footerBackground: "#374A5E",
         footerSecond: "#EA5356",
+        customBlue1: "#004080", // Darker blue
+        customBlue2: "#3366cc", // Medium blue
+        customBlue3: "#6699ff", // Light blue
       },
       fontSize: {
         "mobile-xl": ["3rem", { lineHeight: "1.2" }], // Custom size for large text on mobile

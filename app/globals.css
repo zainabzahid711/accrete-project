@@ -184,11 +184,11 @@ body {
 /* -------hero section------ */
 
 @keyframes colorChange {
-  /* 0% {
+  0% {
     color: #46abca;
-  } */
+  }
   50% {
-    color: white;
+    color: black;
   }
   100% {
     color: #2da2c5;
@@ -254,16 +254,38 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-/* -----------confidential data---------------- */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+/* Container Styling 
+.container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin-top: 20px;
 }
+
+.stepsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.step {
+  padding: 40px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+}
+
+.step1 {
+  background-color: #004080; 
+
+.step2 {
+  background-color: #3366cc; 
+
+.step3 {
+  background-color: #6699ff; 
+}*/

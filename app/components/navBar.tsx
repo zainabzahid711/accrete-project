@@ -110,9 +110,8 @@ const NavBar = () => {
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faPhone} />
             <a href="tel:+14708024555" className="font-medium text-sm">
-              470-802-4555
+              +1-470-802-4555
             </a>
-            <span className="sr-only">+1-470-802-4555</span>
           </div>
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faEnvelope} />
@@ -120,9 +119,8 @@ const NavBar = () => {
               href="mailto:accreteconcierge@gmail.com"
               className="font-medium text-sm"
             >
-              accreteconcierge@gmail.com
+              Christinal@accreteconcierge.net
             </a>
-            <span className="sr-only">Christinal@accreteconcierge.net</span>
           </div>
         </div>
         <div className="flex gap-2 justify-start items-start md:justify-end md:items-end md:ml-auto">

@@ -90,12 +90,12 @@ const Department = () => {
             {/* Duplicate content for infinite scroll illusion */}
             {[...Array(2)].map((_, idx) => (
               <div className="flex gap-10" key={idx}>
-                <IconCard icon={depOne} text="emergency experties" />
-                <IconCard icon={depTwo} text="pediatric experties" />
-                <IconCard icon={depThree} text="gynecology experties" />
-                <IconCard icon={depFour} text="cardiology experties" />
-                <IconCard icon={depFive} text="neurology experties" />
-                <IconCard icon={depSix} text="psychiatry experties" />
+                <IconCard icon={depOne} text="emergency" />
+                <IconCard icon={depTwo} text="pediatric" />
+                <IconCard icon={depThree} text="gynecology" />
+                <IconCard icon={depFour} text="cardiology" />
+                <IconCard icon={depFive} text="neurology" />
+                <IconCard icon={depSix} text="psychiatry" />
               </div>
             ))}
           </div>

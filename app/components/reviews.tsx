@@ -1,15 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import userOne from "@/public/homePage/user1.jpg";
-import userTwo from "@/public/homePage/user2.jpg";
+import user from "@/public/homePage/user.png";
 import qoutes from "@/public/homePage/svg/quote.svg";
 import { StaticImageData } from "next/image";
 import useAnimateOnScroll from "../hooks/useAnimateOnScroll";
 
 interface Testimonial {
   name: string;
-  location: string;
   avatar: StaticImageData;
   text: string;
   rating: number;
@@ -17,17 +15,15 @@ interface Testimonial {
 
 const testimonialsData: Testimonial[] = [
   {
-    name: "PAULO HUBERT",
-    location: "New York, USA",
-    avatar: userOne,
-    text: "I recently had to bring my child to ProHealth for a minor injury, and I was so impressed with the care he received. The pediatrician was great with him and made him feel at ease, and the entire staff was kind and attentive.",
+    name: "K. Rogers",
+    avatar: user,
+    text: "We absolutely love you guys. We don't know what we would have done without you.",
     rating: 90,
   },
   {
-    name: "LAURENCE VENDETTA",
-    location: "California, USA",
-    avatar: userTwo,
-    text: "Their service is amazing! Every time I visit, I leave satisfied with the care I receive. Definitely the best health care provider in the area.",
+    name: "Dr Acre",
+    avatar: user,
+    text: "Their attention to detail and professionalism has allowd us to focus on providing exceptional healthcare services with no concern or stress.",
     rating: 80,
   },
 ];
@@ -85,9 +81,6 @@ const Reviews: React.FC = () => {
                     <h4 className="text-[12px] md:text-lg md:font-medium">
                       {testimonial.name}
                     </h4>
-                    <p className="text-sm text-gray-500 md:block hidden">
-                      {testimonial.location}
-                    </p>
                   </div>
                 </div>
               </li>

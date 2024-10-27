@@ -28,7 +28,9 @@ const CardItem: React.FC<CardItemProps> = ({
 }) => (
   <div
     className={`flex items-center justify-center md:gap-3 gap-2 w-[100%] ${
-      isSpecial ? "bg-blue-500 text-white p-4 rounded-full relative" : ""
+      isSpecial
+        ? "bg-blue-500 text-white w-[100%] p-3 rounded-full relative"
+        : ""
     }`}
   >
     <div
@@ -48,7 +50,7 @@ const CardItem: React.FC<CardItemProps> = ({
       </h5>
       <p
         className={`md:text-lg text-sm ${
-          isSpecial ? "text-white" : "text-gray-400"
+          isSpecial ? "text-white " : "text-gray-400"
         }`}
       >
         {description}
@@ -72,8 +74,8 @@ const cardData: Card[] = [
   {
     icon: stethoScope,
     title: "24/7 Services",
-    description: "Around the Clock, Around Your Needs – Care that Never Rests.",
-    isSpecial: true, // This card gets unique styling
+    description: "Avalaible",
+    isSpecial: true,
   },
 ];
 
@@ -85,12 +87,12 @@ const VerticleCard: React.FC = () => {
   return (
     <section
       ref={ref} // Attach the ref to the section to monitor visibility
-      className="absoulte transform transition-all duration-300 md:-translate-y-[41%] -translate-y-[16%] z-40 shadow-2xl w-[80%] mx-auto gap-6 md:gap-4 flex flex-col md:flex-row justify-center items-center md:p-10 p-8 rounded-3xl bg-blue-100"
+      className="absoulte transform transition-all duration-300 md:-translate-y-[41%] -translate-y-[16%] z-40 shadow-2xl w-[80%] mx-auto gap-6 md:gap-4 flex flex-col md:flex-row justify-around items-center md:p-10 p-8 rounded-3xl bg-blue-100"
     >
       {cardData.map((card, index) => (
         <motion.div
           key={index}
-          className=" cursor-pointer transform transition-all duration-300 hover:-translate-y-2"
+          className="cursor-pointer transform transition-all duration-300 hover:-translate-y-2"
           initial={{ opacity: 0, y: 50 }} // Animation starts hidden
           animate={{
             opacity: isIntersecting ? 1 : 0,

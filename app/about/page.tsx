@@ -3,7 +3,6 @@ import aboutUs from "@/public/aboutPageAssets/aboutUs.png";
 import HeartAssete from "../components/utils/heartAssete";
 import AboutAccrete from "../components/aboutus/aboutAccrete";
 import HowWorks from "../components/aboutus/howWorks";
-import Backseat from "../components/aboutus/backseat";
 import WhoWeAre from "../components/aboutus/whoWeAre";
 
 const About = () => {
@@ -19,7 +18,6 @@ const About = () => {
       <AboutAccrete />
       <HowWorks />
       <WhoWeAre />
-      <Backseat />
     </>
   );
 };

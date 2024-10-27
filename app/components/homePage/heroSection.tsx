@@ -51,9 +51,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <span style={{ color: "black" }}>
                   {mainText.split(" ")[5]}{" "}
                 </span>
-                <span style={{ color: "orange" }}>
-                  {mainText.split(" ")[6]}{" "}
-                </span>
+                <span style={{ color: "blue" }}>{mainText.split(" ")[6]} </span>
               </h1>
               <p className="color-changing font-medium mt-8 w-[100%] md:w-[70%] xl:w-[100%] xl:text-lg">
                 {subText}

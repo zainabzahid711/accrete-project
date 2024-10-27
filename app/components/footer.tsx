@@ -64,7 +64,7 @@ const Footer = () => {
                     alt="phones"
                   />
                 </div>
-                <p className="font-medium">123 - 456 - 7890</p>
+                <p className="font-medium">470-802-4555</p>
               </div>
               <div className="flex gap-1 ">
                 <div className="p-2 bg-blue-400 rounded-full">
@@ -74,7 +74,7 @@ const Footer = () => {
                     alt={"phones"}
                   />
                 </div>
-                <p className="font-medium">123 anywhere USA</p>
+                <p className="font-medium">Cumming, GA</p>
               </div>
               <div className="flex gap-1 ">
                 <div className="p-2 bg-blue-400 rounded-full">
@@ -84,7 +84,7 @@ const Footer = () => {
                     alt={"phones"}
                   />
                 </div>
-                <p className="font-medium">accreteConcierge@gmail.com</p>
+                <p className="font-medium">Christinal@accreteconcierge.net</p>
               </div>
             </div>
           </div>
@@ -100,7 +100,6 @@ const Footer = () => {
                 <li>Testimonials</li>
               </ul>
               <ul className="cursor-pointer flex flex-col gap-7">
-                <li>Blog</li>
                 <li>Contact Us</li>
                 <li>FAQs</li>
                 <li>Terms&Conditions</li>
