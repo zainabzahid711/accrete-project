@@ -105,7 +105,7 @@ const NavBar = () => {
         <div className="flex md:flex-row flex-col md:gap-5 gap-2">
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faPhone} />
-            <p className="font-medium text-sm">(871) 432-0034</p>
+            <p className="font-medium text-sm"> 470-802-4555 </p>
           </div>
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faEnvelope} />

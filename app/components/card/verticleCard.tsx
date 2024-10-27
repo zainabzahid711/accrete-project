@@ -9,23 +9,55 @@ interface Card {
   icon: { src: string };
   title: string;
   description: string;
+  isSpecial?: boolean; // Flag for special styling
 }
 
 interface CardItemProps {
   icon: { src: string };
   title: string;
   description: string;
+  isSpecial?: boolean; // Prop to identify special cards
 }
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
+
 // Reusable CardItem =------ card content
-const CardItem: React.FC<CardItemProps> = ({ icon, title, description }) => (
-  <div className="flex items-center justify-center md:gap-3 gap-4 w-[100%]">
-    <div className="p-4 bg-blue-400 rounded-full">
-      <img className="w-6 text-white" src={icon.src} alt={`${title} icon`} />
+const CardItem: React.FC<CardItemProps> = ({
+  icon,
+  title,
+  description,
+  isSpecial,
+}) => (
+  <div
+    className={`flex items-center justify-center md:gap-3 gap-2 w-[100%] ${
+      isSpecial ? "bg-blue-500 text-white p-4 rounded-full relative" : ""
+    }`}
+  >
+    <div
+      className={`${
+        isSpecial ? "bg-transparent" : "p-4 bg-blue-400 rounded-full"
+      }`}
+    >
+      <img className="w-6" src={icon.src} alt={`${title} icon`} />
     </div>
     <div>
-      <h5 className="font-medium text-lg md:text-xl text-textColor">{title}</h5>
-      <p className="text-gray-400 md:text-lg text-sm">{description}</p>
+      <h5
+        className={`font-medium text-lg md:text-xl ${
+          isSpecial ? "text-white" : "text-textColor"
+        }`}
+      >
+        {title}
+      </h5>
+      <p
+        className={`md:text-lg text-sm ${
+          isSpecial ? "text-white" : "text-gray-400"
+        }`}
+      >
+        {description}
+      </p>
     </div>
   </div>
 );
@@ -35,12 +67,18 @@ const cardData: Card[] = [
   {
     icon: phoneIcon,
     title: "Customer Support",
-    description: " 470-802-4555",
+    description: "470-802-4555",
   },
   {
     icon: location,
     title: "Head Office",
     description: "Cumming, GA",
+  },
+  {
+    icon: stethoScope,
+    title: "24/7 Services",
+    description: "Around the Clock, Around Your Needs – Care that Never Rests.",
+    isSpecial: true, // This card gets unique styling
   },
 ];
 
@@ -52,7 +90,7 @@ const VerticleCard: React.FC = () => {
   return (
     <section
       ref={ref} // Attach the ref to the section to monitor visibility
-      className="absoulte transform transition-all duration-300 md:-translate-y-[41%] -translate-y-[16%] z-40 shadow-3xl w-[85%] mx-auto gap-6 md:gap-0 flex flex-col md:flex-row justify-around items-center md:p-16 p-8 rounded-3xl bg-gray-100"
+      className="absoulte transform transition-all duration-300 md:-translate-y-[41%] -translate-y-[16%] z-40 shadow-2xl w-[80%] mx-auto gap-6 md:gap-4 flex flex-col md:flex-row justify-center items-center md:p-10 p-8 rounded-3xl bg-blue-100"
     >
       {cardData.map((card, index) => (
         <motion.div
@@ -69,6 +107,7 @@ const VerticleCard: React.FC = () => {
             icon={card.icon}
             title={card.title}
             description={card.description}
+            isSpecial={card.isSpecial}
           />
         </motion.div>
       ))}

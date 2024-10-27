@@ -5,6 +5,7 @@ import HealthAssete from "../components/utils/healthAssete";
 import AboutAccrete from "../components/aboutus/aboutAccrete";
 import HowWorks from "../components/aboutus/howWorks";
 import Backseat from "../components/aboutus/backseat";
+import WhoWeAre from "../components/aboutus/whoWeAre";
 
 const About = () => {
   return (
@@ -18,6 +19,7 @@ const About = () => {
       />
       <AboutAccrete />
       <HowWorks />
+      <WhoWeAre />
       <Backseat />
     </>
   );

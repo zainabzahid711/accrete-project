@@ -21,13 +21,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   return (
     <>
-      <section
-        className=" relative bg-cover opacity-100 bg-no-repeat"
-        style={{
-          backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
-        }}
-      >
-        <div className="h-[600px]">
+      <section className=" relative max-h-full bg-cover opacity-90 bg-no-repeat">
+        <div
+          className="h-[600px] "
+          style={{
+            backgroundImage: backgroundImage
+              ? `url(${backgroundImage})`
+              : "none",
+          }}
+        >
           <div className="md:px-28 px-10 p-12 flex md:flex-row flex-col">
             <div className="flex flex-col mt-5 md:mt-14 w-full">
               <h1 className="text-ellipsis hover-border font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl w-[100%] md:w-[100%]">
