@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
+import useAnimateOnScroll from "../hooks/useAnimateOnScroll";
 
 interface FAQ {
   question: string;
@@ -45,18 +46,28 @@ const FAQs: React.FC = () => {
     },
   ];
 
+  const sectionRef = useAnimateOnScroll("animate-slide-up-fade");
+  const headingRef = useAnimateOnScroll("animate-slide-up-fade");
+
   return (
-    <section className="md:px-28 px-10">
+    <section className="md:px-28 px-10" ref={sectionRef}>
       <div className="text-center">
         <p className="text-lg md:text-xl mb-4">What People</p>
-        <h3 className="hover-border font-bold text-2xl md:text-5xl mb-5">
+        <h3
+          ref={headingRef}
+          className="animate-slide-up-fade hover-border font-bold text-2xl md:text-5xl mb-5"
+        >
           Usually Asked
         </h3>
       </div>
 
       <div className="px-1 md:px-24">
         {faqs.map((faq, index: number) => (
-          <div key={index} className="mb-5 border-gray-300 rounded-3xl">
+          <div
+            key={index}
+            ref={headingRef}
+            className="mb-5 border-gray-300 rounded-3xl"
+          >
             <div
               onClick={() => toggleQuestion(index)}
               className="cursor-pointer flex justify-between items-center p-4 rounded-3xl hover:bg-gray-100 border-b border-gray-300"

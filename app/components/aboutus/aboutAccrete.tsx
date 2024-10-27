@@ -1,15 +1,19 @@
+"use client";
 import billingAbout from "@/public/aboutPageAssets/billingAbout.jpg";
 import ServiceTwntyBySeven from "../utils/serviceAssete";
+import useAnimateOnScroll from "@/app/hooks/useAnimateOnScroll";
 
 const AboutAccrete = () => {
+  const sectionRef = useAnimateOnScroll("animate-slide-up-fade");
+  const headingRef = useAnimateOnScroll("animate-slide-up-fade");
   return (
     <>
-      <section className="md:px-28 px-10 p-10">
+      <section className="md:px-28 px-10 p-10" ref={sectionRef}>
         <div className="relative rounded-xl flex flex-col md:flex-row bg-gradient-to-br from-blue-500 via-blue-300 to-blue-100">
           {/* Text Section with a gradient background */}
           <div className="relative md:p-12 p-5  text-white rounded-xl md:w-[60%]">
             <p className="text-lg font-semibold mb-4">About Us</p>
-            <h1 className="text-4xl font-bold mb-6">
+            <h1 className="text-4xl font-bold mb-6" ref={headingRef}>
               Leading Experts in Medical Billing Solutions
             </h1>
             <p className="text-md mb-4">
@@ -37,6 +41,7 @@ const AboutAccrete = () => {
             className="w-full md:w-96 mt-10 md:mt-0 md:ml-20 rounded-xl object-cover"
             src={billingAbout.src}
             alt="Medical Billing"
+            ref={sectionRef}
           />
         </div>
       </section>

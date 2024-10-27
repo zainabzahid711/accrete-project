@@ -57,7 +57,7 @@ const FormCard = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="w-[70%] md:mx-28 md:px-36 p-5 md:p-20 bg-white shadow-2xl rounded-lg">
+      <div className="w-[70%] md:mx-28 md:px-36 p-5 md:p-20 bg-gray-100 shadow-2xl rounded-lg">
         {isSubmitted ? (
           <div className="text-center p-8">
             <div className="text-green-500 text-6xl mb-4">✓</div>{" "}

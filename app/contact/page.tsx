@@ -15,7 +15,7 @@ const ContactItem = ({
   title: string;
   text: string;
 }) => (
-  <div className="cursor-pointer bg-blue-300 w-64 p-4 rounded-2xl flex gap-4 items-center hover:bg-blue-400 transition-all duration-200">
+  <div className="cursor-pointer bg-blue-300 w-72 p-4 rounded-2xl flex gap-4 items-center hover:bg-blue-400 transition-all duration-200">
     <img className="w-7" src={icon} alt={`${title} icon`} />
     <div className="flex flex-col text-white">
       <h5 className="font-medium text-xl">{title}</h5>
@@ -44,12 +44,16 @@ const Contact = () => {
           Find Us Here
         </h3>
         <div className="flex flex-col md:flex-row gap-8 justify-center md:justify-start">
-          <ContactItem icon={mobile.src} title="Phone" text="123 456 789" />
-          <ContactItem icon={location.src} title="Location" text="New Delhi" />
+          <ContactItem icon={mobile.src} title="Phone" text="470-802-4555" />
+          <ContactItem
+            icon={location.src}
+            title="Location"
+            text=" Cumming, GA"
+          />
           <ContactItem
             icon={email.src}
             title="Email"
-            text="accrete@gmail.com"
+            text="accreteconcierge@gmail.com"
           />
         </div>
       </div>

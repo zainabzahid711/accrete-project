@@ -32,7 +32,7 @@ const BillingProcess = () => {
   return (
     <section className="px-8 md:px-28 py-4 md:py-10">
       <div className="text-center">
-        <h3 className="hover-border mt-6 font-bold text-2xl md:text-5xl mb-8">
+        <h3 className="animate-slide-up-fade hover-border mt-6 font-bold text-2xl md:text-5xl mb-8">
           Our Medical Billing Process
         </h3>
       </div>
@@ -44,7 +44,7 @@ const BillingProcess = () => {
             ref={imageRef}
             className={`md:max-w-[500px] half-circle ${
               isRotated ? "rotate-animation" : ""
-            }`} // Apply rotation class based on state
+            }`}
             src={billingProcess.src}
             alt="Billing Process"
           />

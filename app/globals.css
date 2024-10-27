@@ -206,11 +206,10 @@ body {
   overflow: hidden;
   transition: box-shadow 0.3s ease-in-out; /* Optional shadow transition */
 }
-
 /* Keyframes for full rotation */
 @keyframes rotate {
   from {
-    transform: rotate(90deg);
+    transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
@@ -218,7 +217,11 @@ body {
 }
 
 .rotate-animation {
-  animation: rotate 1.5s backwards;
+  animation: rotate 6s linear infinite; /* Continuous rotation */
+}
+
+.rotate-animation:hover {
+  animation-play-state: paused; /* Pause rotation on hover */
 }
 
 @keyframes heart {

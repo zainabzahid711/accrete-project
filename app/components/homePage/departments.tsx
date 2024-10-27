@@ -62,7 +62,7 @@ const Department = () => {
   return (
     <>
       <section
-        className="group rounded-3xl md:px-28 px-10 p-16 bg-cover bg-center md:mx-28 mx-8 my-20 md:mt-28 mb-52  relative"
+        className="animate-slide-up-fade group rounded-3xl md:px-28 px-10 p-16 bg-cover bg-center md:mx-28 mx-8 my-20 md:mt-28 mb-52  relative"
         style={{ backgroundImage: `url(${departmentBG.src})`, height: "250px" }}
       >
         <div className="text-center">

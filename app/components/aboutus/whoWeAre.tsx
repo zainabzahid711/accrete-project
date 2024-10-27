@@ -1,6 +1,10 @@
+"use client";
 import mission from "@/public/aboutPageAssets/mission.png";
+import useAnimateOnScroll from "@/app/hooks/useAnimateOnScroll";
 
 const WhoWeAre = () => {
+  const sectionRef = useAnimateOnScroll("animate-slide-up-fade");
+  const headingRef = useAnimateOnScroll("animate-slide-up-fade");
   return (
     <>
       <section
@@ -8,9 +12,13 @@ const WhoWeAre = () => {
         style={{
           backgroundImage: `url(/aboutPageAssets/missionMain.jpg)`,
         }}
+        ref={sectionRef}
       >
         <div className="text-center">
-          <h1 className="text-ellipsis hover-border font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl ">
+          <h1
+            className="text-ellipsis hover-border font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl "
+            ref={headingRef}
+          >
             Who We Are?
           </h1>
         </div>

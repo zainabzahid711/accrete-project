@@ -1,8 +1,11 @@
+"use client";
 import WorksOne from "@/public/aboutPageAssets/wordingProcessIcon.svg";
 import WorksTwo from "@/public/aboutPageAssets/wordingIcon.svg";
 import WorkThree from "@/public/aboutPageAssets/meetClients.svg";
 import WorkFour from "@/public/aboutPageAssets/followUp.svg";
 import WorkFive from "@/public/aboutPageAssets/lastStep.svg";
+import useAnimateOnScroll from "@/app/hooks/useAnimateOnScroll";
+
 const HowWorks = () => {
   const steps = [
     {
@@ -42,12 +45,18 @@ const HowWorks = () => {
     },
   ];
 
+  const sectionRef = useAnimateOnScroll("animate-slide-up-fade");
+  const headingRef = useAnimateOnScroll("animate-slide-up-fade");
+
   return (
     <>
-      <section className="md:px-28 px-10 p-10">
+      <section className="md:px-28 px-10 p-10" ref={sectionRef}>
         <div>
           <div className="text-center">
-            <h4 className="hover-border mt-6 font-bold text-2xl md:text-5xl mb-8">
+            <h4
+              className="hover-border mt-6 font-bold text-2xl md:text-5xl mb-8"
+              ref={headingRef}
+            >
               How it Works
             </h4>
           </div>
@@ -64,6 +73,7 @@ const HowWorks = () => {
                     className={`flex flex-col md:flex-row items-center gap-2 md:gap-60 relative group ${
                       index % 2 === 1 ? "md:flex-row-reverse" : ""
                     } `}
+                    ref={headingRef}
                   >
                     {/* Icon Section */}
                     <div className="flex-shrink-0">

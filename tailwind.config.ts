@@ -17,10 +17,20 @@ const config: Config = {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
         },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUpFade: {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
       },
       animation: {
         "bounce-slow": "bounce-slow 3s ease-in-out infinite",
         "gradient-move": "moveGradient 5s ease infinite",
+        "fade-in": "fadeIn 1.5s ease-out forwards",
+        "slide-up-fade": "slideUpFade 1.5s ease-out forwards",
       },
       zIndex: {
         "-1": "-1", // Add a negative z-index

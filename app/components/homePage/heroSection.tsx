@@ -32,7 +32,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         >
           <div className="md:px-28 px-10 p-12 flex md:flex-row flex-col">
             <div className="flex flex-col mt-5 md:mt-14 w-full">
-              <h1 className="text-ellipsis hover-border font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl w-[100%] md:w-[100%]">
+              <h1 className="animate-slide-up-fade text-ellipsis hover-border font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl w-[100%] md:w-[100%]">
                 <span style={{ color: "black" }}>
                   {mainText.split(" ")[0]}{" "}
                 </span>

@@ -6,6 +6,7 @@ import userTwo from "@/public/homePage/user2.jpg";
 import userThree from "@/public/homePage/user3.jpg";
 import qoutes from "@/public/homePage/svg/quote.svg";
 import { StaticImageData } from "next/image";
+import useAnimateOnScroll from "../hooks/useAnimateOnScroll";
 
 interface Testimonial {
   name: string;
@@ -30,13 +31,6 @@ const testimonialsData: Testimonial[] = [
     text: "Their service is amazing! Every time I visit, I leave satisfied with the care I receive. Definitely the best health care provider in the area.",
     rating: 80,
   },
-  {
-    name: "CASSANDRA RAUL",
-    location: "Florida",
-    avatar: userThree,
-    text: "Wonderful experience! The doctors were professional, and the support staff were very accommodating. Highly recommend.",
-    rating: 90,
-  },
 ];
 
 const Reviews: React.FC = () => {
@@ -46,10 +40,16 @@ const Reviews: React.FC = () => {
     setActiveIndex(index);
   };
 
+  const sectionRef = useAnimateOnScroll("animate-slide-up-fade");
+  const headingRef = useAnimateOnScroll("animate-slide-up-fade");
+
   return (
-    <section className="md:px-28 px-10 my-20">
+    <section className="md:px-28 px-10 my-20" ref={sectionRef}>
       <div className="text-center mb-5">
-        <h3 className="hover-border font-bold text-2xl md:text-5xl mb-5">
+        <h3
+          ref={headingRef}
+          className="animate-slide-up-fade hover-border font-bold text-2xl md:text-5xl mb-5"
+        >
           Some Reviews
         </h3>
         <p className="text-lg md:text-xl">OF OUR CLIENTS</p>

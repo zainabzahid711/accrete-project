@@ -3,14 +3,21 @@ import healthWealth from "@/public/logoSlider/healthWealth.png";
 import priority from "@/public/logoSlider/priority.png";
 import medicleCore from "@/public/logoSlider/medicleCore.png";
 import medicleCenter from "@/public/logoSlider/medicleCenter.png";
+import useAnimateOnScroll from "@/app/hooks/useAnimateOnScroll";
 
 const MedicalPractice = () => {
+  const sectionRef = useAnimateOnScroll("animate-slide-up-fade");
+  const headingRef = useAnimateOnScroll("animate-slide-up-fade");
+
   return (
-    <section className="md:pl-40 md:pr-40 pt-8 p-10">
+    <section className="md:pl-40 md:pr-40 pt-8 p-10" ref={sectionRef}>
       <div className="flex justify-center mt-4 mb-6">
         <div className="border-t-2 w-52 border-orange-500"></div>
       </div>
-      <h1 className="text-2xl md:text-5xl font-bold text-center">
+      <h1
+        ref={headingRef}
+        className="text-2xl md:text-5xl font-bold text-center"
+      >
         We help medical practices focus on their patients while improving their
         Revenue Cycle Management
       </h1>

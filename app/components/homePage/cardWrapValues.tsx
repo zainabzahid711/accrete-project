@@ -9,7 +9,7 @@ const CardValues = () => {
   return (
     <section className="md:pt-0 pt-16 md:px-28 px-10">
       <div className="text-center">
-        <h4 className="hover-border mb-8 text-black font-bold text-center md:text-5xl text-xl">
+        <h4 className="animate-slide-up-fade hover-border mb-8 text-black font-bold text-center md:text-5xl text-xl">
           Our Values
         </h4>
       </div>
