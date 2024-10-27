@@ -1,7 +1,4 @@
 "use client";
-import WorksOne from "@/public/aboutPageAssets/wordingProcessIcon.svg";
-import WorksTwo from "@/public/aboutPageAssets/wordingIcon.svg";
-import WorkThree from "@/public/aboutPageAssets/meetClients.svg";
 import useAnimateOnScroll from "@/app/hooks/useAnimateOnScroll";
 
 const HowWorks = () => {
