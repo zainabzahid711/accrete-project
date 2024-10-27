@@ -19,11 +19,6 @@ interface CardItemProps {
   isSpecial?: boolean; // Prop to identify special cards
 }
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-};
-
 // Reusable CardItem =------ card content
 const CardItem: React.FC<CardItemProps> = ({
   icon,

@@ -28,7 +28,6 @@ type SocialMediaIconType = {
 const socialMediaIcons: SocialMediaIconType[] = [
   { icon: faFacebookF, id: "facebook" },
   { icon: faTwitter, id: "twitter" },
-  { icon: faLinkedinIn, id: "linkedin" },
   { icon: faGlobe, id: "globe" },
   { icon: faInstagram, id: "instagram" },
 ];
@@ -72,6 +71,11 @@ const NavBar = () => {
   ];
 
   useEffect(() => {
+    setIsMenuOpen(false);
+    setIsServicesOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768 && isMenuOpen) {
         setIsMenuOpen(false);
@@ -89,7 +93,7 @@ const NavBar = () => {
   };
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -105,17 +109,39 @@ const NavBar = () => {
         <div className="flex md:flex-row flex-col md:gap-5 gap-2">
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faPhone} />
-            <p className="font-medium text-sm"> 470-802-4555 </p>
+            <a href="tel:+14708024555" className="font-medium text-sm">
+              470-802-4555
+            </a>
+            <span className="sr-only">+1-470-802-4555</span>
           </div>
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faEnvelope} />
-            <p className="font-medium text-sm">accreteconcierge@gmail.com</p>
+            <a
+              href="mailto:accreteconcierge@gmail.com"
+              className="font-medium text-sm"
+            >
+              accreteconcierge@gmail.com
+            </a>
+            <span className="sr-only">Christinal@accreteconcierge.net</span>
           </div>
         </div>
         <div className="flex gap-2 justify-start items-start md:justify-end md:items-end md:ml-auto">
           {socialMediaIcons.map(({ icon, id }) => (
             <SocialMediaIcon key={id} icon={icon} />
           ))}
+          <div className="bg-gray-500 rounded-full flex items-center justify-center h-6 w-6 cursor-pointer">
+            <a
+              className=" flex justify-center items-center"
+              href="https://www.linkedin.com/company/accrete-concierge/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                icon={faLinkedinIn}
+                className="text-white text-center w-3"
+              />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -166,7 +192,11 @@ const NavBar = () => {
                 name === "SERVICES" && setIsServicesOpen(false)
               } // Close dropdown on leave
             >
-              <Link href={route} className="flex items-center">
+              <Link
+                href={route}
+                className="flex items-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {name}
                 {/* Add a dropdown indicator icon */}
                 {name === "SERVICES" && (
@@ -186,7 +216,11 @@ const NavBar = () => {
                 >
                   {serviceItems.map((service, index) => (
                     <li
-                      onClick={handleServicesToggle} // Handle click on mobile
+                      onClick={() => {
+                        handleServicesToggle();
+                        setIsServicesOpen(false);
+                        setIsMenuOpen(false);
+                      }} // Handle click on mobile
                       onMouseEnter={() =>
                         name === "SERVICES" && setIsServicesOpen(true)
                       }

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import userOne from "@/public/homePage/user1.jpg";
 import userTwo from "@/public/homePage/user2.jpg";
-import userThree from "@/public/homePage/user3.jpg";
 import qoutes from "@/public/homePage/svg/quote.svg";
 import { StaticImageData } from "next/image";
 import useAnimateOnScroll from "../hooks/useAnimateOnScroll";

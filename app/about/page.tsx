@@ -1,7 +1,6 @@
 import HeroSection from "../components/homePage/heroSection";
 import aboutUs from "@/public/aboutPageAssets/aboutUs.png";
 import HeartAssete from "../components/utils/heartAssete";
-import HealthAssete from "../components/utils/healthAssete";
 import AboutAccrete from "../components/aboutus/aboutAccrete";
 import HowWorks from "../components/aboutus/howWorks";
 import Backseat from "../components/aboutus/backseat";

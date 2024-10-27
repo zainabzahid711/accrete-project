@@ -1,6 +1,5 @@
 import contactMain from "@/public/contactAssets/contactMain.png";
 import HeroSection from "../components/homePage/heroSection";
-import ContactAssete from "../components/utils/contactAssete";
 import FormCard from "../components/card/formCard";
 import mobile from "@/public/homePage/svg/mobile.svg";
 import location from "@/public/homePage/svg/pin.svg";
