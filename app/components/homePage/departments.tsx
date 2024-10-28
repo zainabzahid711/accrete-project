@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import IconCard from "../card/iconCard";
 
 import departmentBG from "@/public/homePage/heroBg.jpeg";
@@ -14,11 +14,39 @@ import depSix from "@/public/homePage/svg/departmentIcon6.svg";
 
 const Department = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [cardWidth, setCardWidth] = useState(0);
+
+  const departments = [
+    { icon: depOne, text: "emergency" },
+    { icon: depTwo, text: "pediatric" },
+    { icon: depThree, text: "gynecology" },
+    { icon: depFour, text: "cardiology" },
+    { icon: depFive, text: "neurology" },
+    { icon: depSix, text: "psychiatry" },
+  ];
+
+  useEffect(() => {
+    const updateCardWidth = () => {
+      const firstCard = scrollRef.current?.querySelector(
+        "flex-shrink-0"
+      ) as HTMLDivElement;
+      if (firstCard) {
+        setCardWidth(firstCard.offsetWidth);
+      }
+    };
+
+    updateCardWidth();
+    window.addEventListener("resize", updateCardWidth);
+
+    return () => {
+      window.removeEventListener("resize", updateCardWidth);
+    };
+  }, []);
 
   const scrollLeft = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: -200, // Adjust this value for scroll distance
+        left: -cardWidth,
         behavior: "smooth",
       });
     }
@@ -27,23 +55,24 @@ const Department = () => {
   const scrollRight = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: 200, // Adjust this value for scroll distance
+        left: cardWidth,
         behavior: "smooth",
       });
     }
   };
 
+  // Handling infinite scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (scrollRef.current) {
-        const scrollWidth = scrollRef.current.scrollWidth;
-        const scrollLeft = scrollRef.current.scrollLeft;
-        const clientWidth = scrollRef.current.clientWidth;
+      if (!scrollRef.current) return;
 
-        // If scrolled to the end, reset to the beginning
-        if (scrollLeft + clientWidth >= scrollWidth) {
-          scrollRef.current.scrollLeft = 0;
-        }
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+
+      // Reset to the start if scrolled beyond the last set of cards
+      if (scrollLeft < cardWidth) {
+        scrollRef.current.scrollLeft = scrollWidth / 2; // Jump to the middle set of cards
+      } else if (scrollLeft + clientWidth >= scrollWidth - cardWidth) {
+        scrollRef.current.scrollLeft = scrollWidth / 2; // Jump to the middle set of cards
       }
     };
 
@@ -57,58 +86,55 @@ const Department = () => {
         ref.removeEventListener("scroll", handleScroll);
       }
     };
-  }, []);
+  }, [scrollRef, cardWidth]);
 
   return (
-    <>
-      <section
-        id="departments"
-        className="animate-slide-up-fade group rounded-3xl md:px-28 px-10 p-16 bg-cover bg-center md:mx-28 mx-8 my-20 md:mt-28 mb-52  relative"
-        style={{ backgroundImage: `url(${departmentBG.src})`, height: "250px" }}
+    <section
+      id="departments"
+      className="animate-slide-up-fade group rounded-3xl md:px-28 px-10 p-16 bg-cover bg-center md:mx-28 mx-8 my-20 md:mt-28 mb-52 relative"
+      style={{ backgroundImage: `url(${departmentBG.src})`, height: "250px" }}
+    >
+      <div className="text-center">
+        <h3 className="hover-border cursor-pointer font-bold text-center text-2xl md:text-3xl mb-8">
+          Departments
+        </h3>
+      </div>
+
+      <button
+        onClick={scrollLeft}
+        className="z-50 group-hover:flex items-center justify-center text-center text-5xl p-2 mr-4 bg-white text-blue-400 rounded-full shadow hover:bg-blue-300 absolute -bottom-12 md:-bottom-10 md:left-12 -left-6"
       >
-        <div className="text-center">
-          <h3 className="hover-border cursor-pointer font-bold text-center text-2xl md:text-3xl mb-8">
-            Experties
-          </h3>
-        </div>
+        &#8592;
+      </button>
 
-        <button
-          onClick={scrollLeft}
-          className="z-10  group-hover:flex items-center justify-center text-center text-5xl p-2 mr-4 bg-white text-blue-400 rounded-full shadow hover:bg-blue-300 absolute -bottom-12 md:-bottom-10 md:left-12 -left-6"
+      <div className="flex items-center justify-center w-full relative">
+        <div
+          ref={scrollRef}
+          className="flex gap-10 overflow-x-auto scrollbar-hide scroll-smooth"
+          style={{
+            scrollSnapType: "x mandatory",
+          }}
         >
-          &#8592;
-        </button>
-
-        <div className="flex items-center justify-center w-[100%] relative">
-          <div
-            ref={scrollRef}
-            className="flex md:gap-10 gap-7 overflow-x-auto scrollbar-hide scroll-smooth"
-            style={{
-              scrollSnapType: "x mandatory",
-              scrollSnapAlign: "start",
-            }}
-          >
-            {/* Duplicate content for infinite scroll illusion */}
-            {[...Array(2)].map((_, idx) => (
-              <div className="flex gap-10" key={idx}>
-                <IconCard icon={depOne} text="emergency" />
-                <IconCard icon={depTwo} text="pediatric" />
-                <IconCard icon={depThree} text="gynecology" />
-                <IconCard icon={depFour} text="cardiology" />
-                <IconCard icon={depFive} text="neurology" />
-                <IconCard icon={depSix} text="psychiatry" />
-              </div>
-            ))}
-          </div>
+          {/* Duplicate content for infinite scroll illusion */}
+          {[...departments, ...departments].map((dep, index) => (
+            <div
+              className="flex-shrink-0"
+              key={index}
+              style={{ scrollSnapAlign: "center" }}
+            >
+              <IconCard icon={dep.icon} text={dep.text} />
+            </div>
+          ))}
         </div>
-        <button
-          onClick={scrollRight}
-          className="z-10 group-hover:flex text-5xl p-2 ml-4 bg-white text-blue-400 rounded-full shadow hover:bg-blue-300 absolute top-60 md:top-52 md:right-12 -right-2"
-        >
-          &#8594;
-        </button>
-      </section>
-    </>
+      </div>
+
+      <button
+        onClick={scrollRight}
+        className="z-50 group-hover:flex text-5xl p-2 ml-4 bg-white text-blue-400 rounded-full shadow hover:bg-blue-300 absolute top-60 md:top-52 md:right-12 -right-2"
+      >
+        &#8594;
+      </button>
+    </section>
   );
 };
 

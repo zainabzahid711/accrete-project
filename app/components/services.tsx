@@ -53,7 +53,7 @@ const services = [
   },
 ];
 
-const Services = () => {
+const ServicesSection = () => {
   return (
     <section id="services" className="md:px-28 px-10">
       <div className="text-center">
@@ -87,4 +87,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServicesSection;

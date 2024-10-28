@@ -8,7 +8,7 @@ const About = () => {
   return (
     <>
       <HeroSection
-        mainText="Streamline your Payments for a Healthier Practice..."
+        mainText="Streamline your Payments for Healthier Practice..."
         mainImage={aboutUs.src}
         backgroundImage="/homePage/heroBg.jpg"
         extraAnimateAsset={<HeartAssete />} // This will only be shown on the About page

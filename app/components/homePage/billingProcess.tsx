@@ -42,7 +42,7 @@ const BillingProcess = () => {
         <div className="flex justify-center w-full mb-6 md:mb-0">
           <img
             ref={imageRef}
-            className={`md:w-[60%] half-circle ${
+            className={`md:w-[50%] half-circle ${
               hasRotated ? "rotate-animation" : "no-rotate"
             }`}
             src={billingProcess.src}

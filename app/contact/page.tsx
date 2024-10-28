@@ -17,8 +17,8 @@ const ContactItem = ({
   href?: string;
 }) => {
   const Content = (
-    <div className="cursor-pointer bg-blue-300 w-72 p-4 rounded-2xl flex gap-4 items-center hover:bg-blue-400 transition-all duration-200">
-      <img className="w-7" src={icon} alt={`${title} icon`} />
+    <div className="cursor-pointer bg-blue-300 w-80 p-4 rounded-2xl flex gap-4 items-center hover:bg-blue-400 transition-all duration-200">
+      <img className="w-6" src={icon} alt={`${title} icon`} />
       <div className="flex flex-col text-white font-serif">
         <h5 className="font-medium text-xl">{title}</h5>
         <p>{text}</p>
@@ -40,7 +40,7 @@ const Contact = () => {
     <section className="space-y-16">
       {/* Hero Section */}
       <HeroSection
-        mainText="Reach out today for immediate support assistance."
+        mainText="Connect with us for reliable support..."
         subText="Contact us anytime for quick and friendly support!"
         mainImage={contactMain.src}
         backgroundImage="/homePage/heroBg.jpg"
