@@ -28,7 +28,7 @@ const Department = () => {
   useEffect(() => {
     const updateCardWidth = () => {
       const firstCard = scrollRef.current?.querySelector(
-        "flex-shrink-0"
+        ".flex-shrink-0"
       ) as HTMLDivElement;
       if (firstCard) {
         setCardWidth(firstCard.offsetWidth);
@@ -54,10 +54,9 @@ const Department = () => {
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: cardWidth,
-        behavior: "smooth",
-      });
+      // left: cardWidth,
+      // behavior: "smooth",
+      scrollRef.current.scrollLeft += cardWidth;
     }
   };
 
@@ -67,12 +66,13 @@ const Department = () => {
       if (!scrollRef.current) return;
 
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      const maxScrollLeft = scrollWidth - clientWidth;
 
       // Reset to the start if scrolled beyond the last set of cards
-      if (scrollLeft < cardWidth) {
-        scrollRef.current.scrollLeft = scrollWidth / 2; // Jump to the middle set of cards
-      } else if (scrollLeft + clientWidth >= scrollWidth - cardWidth) {
-        scrollRef.current.scrollLeft = scrollWidth / 2; // Jump to the middle set of cards
+      if (scrollLeft < 0) {
+        scrollRef.current.scrollLeft = scrollWidth / 2 - clientWidth; // Jump to the middle set of cards
+      } else if (scrollLeft > maxScrollLeft - cardWidth) {
+        scrollRef.current.scrollLeft = scrollWidth / 2 - clientWidth; // Jump to the middle set of cards
       }
     };
 
@@ -86,7 +86,7 @@ const Department = () => {
         ref.removeEventListener("scroll", handleScroll);
       }
     };
-  }, [scrollRef, cardWidth]);
+  }, [cardWidth]);
 
   return (
     <section
@@ -96,7 +96,7 @@ const Department = () => {
     >
       <div className="text-center">
         <h3 className="hover-border cursor-pointer font-bold text-center text-2xl md:text-3xl mb-8">
-          Departments
+          Experties
         </h3>
       </div>
 

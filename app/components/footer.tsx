@@ -108,7 +108,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link href="/home#departments" className="flex items-center">
-                    Departments
+                    Experties
                   </Link>
                 </li>
                 <li>
