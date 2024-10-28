@@ -61,8 +61,8 @@ const BillingProcess = () => {
               medical billing process is smooth.
             </p>
             <p className="w-full">
-              <strong>Capturing Medical Services:</strong> After a patient's
-              visit, we ensure all medical services provided are properly
+              <strong>Capturing Medical Services:</strong> After the visit of
+              the patient, we ensure all medical services provided are properly
               documented. This includes diagnoses, treatments, and procedures
               performed during the visit, which are critical for accurate claim
               submissions and reimbursement.

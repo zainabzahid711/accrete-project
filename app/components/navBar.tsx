@@ -9,7 +9,7 @@ import {
 import {
   faPhone,
   faEnvelope,
-  faChevronDown, // indicator for dropdown
+  // indicator for dropdown
 } from "@fortawesome/free-solid-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
@@ -55,20 +55,20 @@ const NavBar = () => {
     { name: "CONTACT", route: "/contact" },
   ];
 
-  const serviceItems = [
-    { name: "Billing and Coding", route: "/services/billing-and-coding" },
-    {
-      name: "Credentials and Contracting",
-      route: "/services/credentials-and-contracting",
-    },
-    { name: "Accounts Management", route: "/services/accounts-management" },
-    { name: "Network Negotiation", route: "/services/network-negotiation" },
-    {
-      name: "Eligibility and Benefits",
-      route: "/services/eligibility-and-benefits",
-    },
-    { name: "Complete RCM", route: "/services/complete-rcm" },
-  ];
+  // const serviceItems = [
+  //   { name: "Billing and Coding", route: "/services/billing-and-coding" },
+  //   {
+  //     name: "Credentials and Contracting",
+  //     route: "/services/credentials-and-contracting",
+  //   },
+  //   { name: "Accounts Management", route: "/services/accounts-management" },
+  //   { name: "Network Negotiation", route: "/services/network-negotiation" },
+  //   {
+  //     name: "Eligibility and Benefits",
+  //     route: "/services/eligibility-and-benefits",
+  //   },
+  //   { name: "Complete RCM", route: "/services/complete-rcm" },
+  // ];
 
   useEffect(() => {
     setIsMenuOpen(false);

@@ -54,6 +54,7 @@ const HowWorks = () => {
               },
             ].map((benefit) => (
               <div
+                ref={headingRef}
                 key={benefit.number}
                 className="flex items-center py-3 px-2 md:px-6 rounded-full border border-customBlue2 text-customBlue1"
               >
