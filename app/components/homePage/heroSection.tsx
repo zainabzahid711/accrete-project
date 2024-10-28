@@ -4,7 +4,7 @@ import VerticleCard from "../card/verticleCard";
 
 interface HeroSectionProps {
   mainText: string;
-  subText: string;
+  subText?: string;
   mainImage: string;
   animateAsset?: JSX.Element;
   extraAnimateAsset?: JSX.Element;
@@ -36,7 +36,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <span style={{ color: "black" }}>
                   {mainText.split(" ")[0]}{" "}
                 </span>
-                <span style={{ color: "orange" }}>
+                <span style={{ color: "#F3AD20" }}>
                   {mainText.split(" ")[1]}{" "}
                 </span>
                 <span style={{ color: "black" }}>
@@ -45,13 +45,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <span style={{ color: "black" }}>
                   {mainText.split(" ")[3]}{" "}
                 </span>
-                <span style={{ color: "black" }}>
+                <span style={{ color: "green" }}>
                   {mainText.split(" ")[4]}{" "}
                 </span>
                 <span style={{ color: "black" }}>
                   {mainText.split(" ")[5]}{" "}
                 </span>
-                <span style={{ color: "blue" }}>{mainText.split(" ")[6]} </span>
+                <span style={{ color: "black" }}>
+                  {mainText.split(" ")[6]}{" "}
+                </span>
               </h1>
               <p className="color-changing font-medium mt-8 w-[100%] md:w-[70%] xl:w-[100%] xl:text-lg">
                 {subText}

@@ -36,8 +36,7 @@ const config: Config = {
         "-1": "-1", // Add a negative z-index
       },
       backgroundImage: {
-        "hero-gradient":
-          "linear-gradient(270deg, #F4E1A4, #A3C1DA, #B0E0E6, #81D4FA)",
+        "hero-gradient": "linear-gradient(270deg, #B9E5E8,#7AB2D3, #93C5FD)",
         "hero-bg": "url('/homePage/heroBg.jpg')",
       },
       colors: {

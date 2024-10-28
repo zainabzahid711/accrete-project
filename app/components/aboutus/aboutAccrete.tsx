@@ -8,10 +8,10 @@ const AboutAccrete = () => {
   const headingRef = useAnimateOnScroll("animate-slide-up-fade");
   return (
     <>
-      <section className="md:px-28 px-10 p-10" ref={sectionRef}>
+      <section className="md:mx-28" ref={sectionRef}>
         <div className="relative rounded-xl flex flex-col md:flex-row bg-gradient-to-br from-blue-500 via-blue-300 to-blue-100">
           {/* Text Section with a gradient background */}
-          <div className="relative md:p-12 p-5  text-white rounded-xl md:w-[60%]">
+          <div className="relative md:p-12 p-5 flex flex-col items-center justify-center text-white rounded-xl md:w-[60%]">
             <p className="text-lg font-semibold mb-4">About Us</p>
             <h1 className="text-4xl font-bold mb-6" ref={headingRef}>
               Leading Experts in Medical Billing Solutions
@@ -32,13 +32,13 @@ const AboutAccrete = () => {
               cycles, and improve overall practice efficiency.
             </p>
           </div>
-          <div className="absolute top-[48rem] md:top-[29rem] left-0 md:left-auto md:right-80">
+          <div className="absolute top-[48rem] md:top-[32rem] left-0 md:left-auto md:right-[30rem]">
             {<ServiceTwntyBySeven />}
           </div>
 
           {/* Image Section */}
           <img
-            className="w-full md:w-96 mt-10 md:mt-0 md:ml-20 rounded-xl object-cover"
+            className="w-full md:w-[40%] h-full md:h-[40rem] mt-10 md:mt-0 md:ml-auto rounded-xl object-cover"
             src={billingAbout.src}
             alt="Medical Billing"
             ref={sectionRef}

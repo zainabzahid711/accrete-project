@@ -1,10 +1,9 @@
 // values card
-
 "use client";
 import { useEffect, useState, useRef } from "react";
 
 interface CardProps {
-  icon: { src: string };
+  icon: { src: string }; // Change this to accept ReactNode
   text: string;
   description: string;
 }
@@ -40,7 +39,7 @@ const Card: React.FC<CardProps> = ({ icon, text, description }) => {
   return (
     <div
       ref={cardRef}
-      className={` bg-blue-100 md:w-[40%] w-[100%] transition-all duration-300 rounded-3xl shadow-2xl p-10 transform border-x-2 hover:-translate-y-2 border-y-2 ${
+      className={`bg-blue-100 md:w-[40%] w-[100%] transition-all duration-300 rounded-3xl shadow-2xl p-10 transform border-x-2 hover:-translate-y-2 border-y-2 ${
         isVisible
           ? "animate-slide-up-fade opacity-100 translate-y-0"
           : "opacity-0 translate-y-10"

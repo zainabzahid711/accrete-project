@@ -62,6 +62,7 @@ const Department = () => {
   return (
     <>
       <section
+        id="departments"
         className="animate-slide-up-fade group rounded-3xl md:px-28 px-10 p-16 bg-cover bg-center md:mx-28 mx-8 my-20 md:mt-28 mb-52  relative"
         style={{ backgroundImage: `url(${departmentBG.src})`, height: "250px" }}
       >
@@ -71,14 +72,14 @@ const Department = () => {
           </h3>
         </div>
 
-        <div className="flex items-center justify-center w-[100%] relative">
-          <button
-            onClick={scrollLeft}
-            className="z-10 hidden group-hover:flex items-center justify-center text-center text-5xl p-2 mr-4 bg-white text-blue-400 rounded-full shadow hover:bg-blue-300 absolute md:left-0 -left-16"
-          >
-            &#8592;
-          </button>
+        <button
+          onClick={scrollLeft}
+          className="z-10  group-hover:flex items-center justify-center text-center text-5xl p-2 mr-4 bg-white text-blue-400 rounded-full shadow hover:bg-blue-300 absolute -bottom-12 md:-bottom-10 md:left-12 -left-6"
+        >
+          &#8592;
+        </button>
 
+        <div className="flex items-center justify-center w-[100%] relative">
           <div
             ref={scrollRef}
             className="flex md:gap-10 gap-7 overflow-x-auto scrollbar-hide scroll-smooth"
@@ -99,14 +100,13 @@ const Department = () => {
               </div>
             ))}
           </div>
-
-          <button
-            onClick={scrollRight}
-            className="z-10 hidden group-hover:flex text-5xl p-2 ml-4 bg-white text-blue-400 rounded-full shadow hover:bg-blue-300 absolute md:right-0 -right-16"
-          >
-            &#8594;
-          </button>
         </div>
+        <button
+          onClick={scrollRight}
+          className="z-10 group-hover:flex text-5xl p-2 ml-4 bg-white text-blue-400 rounded-full shadow hover:bg-blue-300 absolute top-60 md:top-52 md:right-12 -right-2"
+        >
+          &#8594;
+        </button>
       </section>
     </>
   );

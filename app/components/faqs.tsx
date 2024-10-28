@@ -20,29 +20,29 @@ const FAQs: React.FC = () => {
 
   const faqs: FAQ[] = [
     {
-      question: "What services does Accrete Concierge provide?",
+      question: "What is medical billing and why is it important?",
       answer:
-        "We provide a variety of services including personal concierge, travel arrangements, lifestyle management, and much more. Our aim is to make your life easier.",
+        "Medical billing is the process of submitting and following up on claims with health insurance companies to receive payment for services provided. Accurate billing ensures that healthcare providers are properly compensated and that patients' insurance claims are processed smoothly.",
     },
     {
-      question: "How do I schedule my appointment with Accrete Concierge?",
+      question: "How do I know if my insurance covers a particular service?",
       answer:
-        "You can schedule your appointment through our website or by calling our customer service. We are here to assist you 24/7.",
+        "To confirm if your insurance covers a specific service, please contact our billing department or your insurance provider directly. We can assist with verifying coverage details before your appointment to ensure a smooth billing process.",
     },
     {
-      question: "Do you accept insurance?",
+      question: "What documents should I bring for the billing process?",
       answer:
-        "Yes, we accept a range of insurance providers. Please contact us for more details regarding coverage.",
+        "Please bring your insurance card, a form of identification, and any referral paperwork if required. Having these documents will help expedite the billing and registration process.",
     },
     {
-      question: "What should I bring to my appointment?",
+      question: "How can I pay my medical bills?",
       answer:
-        "For your appointment, please bring any relevant documents such as identification, insurance information, and any necessary medical records.",
+        "We offer multiple payment options, including online payments through our patient portal, credit or debit card payments, and checks. You can also contact our billing office to arrange a payment plan if needed.",
     },
     {
-      question: "How do I request a prescription?",
+      question: "Who should I contact if I have questions about my bill?",
       answer:
-        "You can request a prescription through our online portal or by contacting our support team directly.",
+        "For questions about your bill, please reach out to our billing department. Our team is here to help clarify charges, insurance payments, and any remaining balances.",
     },
   ];
 
@@ -50,7 +50,7 @@ const FAQs: React.FC = () => {
   const headingRef = useAnimateOnScroll("animate-slide-up-fade");
 
   return (
-    <section className="md:px-28 px-10" ref={sectionRef}>
+    <section id="faq" className="md:px-28 px-10" ref={sectionRef}>
       <div className="text-center">
         <p className="text-lg md:text-xl mb-4">What People</p>
         <h3

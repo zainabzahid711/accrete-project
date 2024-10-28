@@ -45,13 +45,13 @@ const SocialMediaIcon = ({ icon }: SocialMediaIconProps) => (
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  // const [isServicesOpen, setIsServicesOpen] = useState(false);
   const pathname = usePathname();
 
   const navItems = [
     { name: "HOME", route: "/home" },
     { name: "ABOUT", route: "/about" },
-    { name: "SERVICES", route: "/services" },
+    { name: "SERVICES", route: "/home#services" },
     { name: "CONTACT", route: "/contact" },
   ];
 
@@ -72,7 +72,7 @@ const NavBar = () => {
 
   useEffect(() => {
     setIsMenuOpen(false);
-    setIsServicesOpen(false);
+    // setIsServicesOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -86,11 +86,11 @@ const NavBar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [isMenuOpen]);
 
-  const handleServicesToggle = () => {
-    if (window.innerWidth < 768) {
-      setIsServicesOpen(!isServicesOpen);
-    }
-  };
+  // const handleServicesToggle = () => {
+  //   if (window.innerWidth < 768) {
+  //     setIsServicesOpen(!isServicesOpen);
+  //   }
+  // };
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -116,7 +116,7 @@ const NavBar = () => {
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faEnvelope} />
             <a
-              href="mailto:accreteconcierge@gmail.com"
+              href="mailto:Christinal@accreteconcierge.net"
               className="font-medium text-sm"
             >
               Christinal@accreteconcierge.net
@@ -183,12 +183,12 @@ const NavBar = () => {
                   ? "text-[#6BD4F4] border-[#6BD4F4]"
                   : "text-gray-600"
               } hover:text-[#6BD4F4] hover:border-[#6BD4F4]`}
-              onMouseEnter={() =>
-                name === "SERVICES" && setIsServicesOpen(true)
-              } // Open dropdown on hover
-              onMouseLeave={() =>
-                name === "SERVICES" && setIsServicesOpen(false)
-              } // Close dropdown on leave
+              // onMouseEnter={() =>
+              //   name === "SERVICES" && setIsServicesOpen(true)
+              // } // Open dropdown on hover
+              // onMouseLeave={() =>
+              //   name === "SERVICES" && setIsServicesOpen(false)
+              // } // Close dropdown on leave
             >
               <Link
                 href={route}
@@ -196,16 +196,16 @@ const NavBar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {name}
-                {/* Add a dropdown indicator icon */}
+                {/* Add a dropdown indicator icon
                 {name === "SERVICES" && (
                   <FontAwesomeIcon
                     icon={faChevronDown}
                     className="text-sm ml-1 w-3"
                   />
-                )}
+                )} */}
               </Link>
 
-              {/* Dropdown for Services */}
+              {/* Dropdown for Services
               {name === "SERVICES" && isServicesOpen && (
                 <ul
                   className="absolute top-8 left-0 bg-blue-50 shadow-lg rounded-md mt-1 py-2 w-64"
@@ -237,9 +237,9 @@ const NavBar = () => {
                         {service.name}
                       </Link>
                     </li>
-                  ))}
+                  ))} 
                 </ul>
-              )}
+              )}*/}
             </li>
           ))}
         </ul>

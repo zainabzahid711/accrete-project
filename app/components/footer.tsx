@@ -13,6 +13,7 @@ import FooterBg from "@/public/homePage/svg/footerBg.svg";
 import phoneIcon from "@/public/homePage/svg/mobile.svg";
 import location from "@/public/homePage/svg/pin.svg";
 import mail from "@/public/homePage/svg/mail.svg";
+import Link from "next/link";
 
 type SocialMediaIconType = {
   icon: FontAwesomeIconProps["icon"];
@@ -22,7 +23,6 @@ type SocialMediaIconType = {
 const socialMediaIcons: SocialMediaIconType[] = [
   { icon: faFacebookF, id: "facebook" },
   { icon: faTwitter, id: "twitter" },
-  { icon: faLinkedinIn, id: "linkedin" },
   { icon: faGlobe, id: "globe" },
   { icon: faInstagram, id: "instagram" },
 ];
@@ -43,14 +43,12 @@ const Footer = () => {
       <section className="text-white pb-8 md:pb-0 flex flex-col relative">
         <img
           src={AccreteLogo.src}
-          className="md:w-52 w-20 mx-auto z-10"
+          className="md:w-32 w-20 mx-auto z-10"
           alt="healthlogo"
         />
         <div className="text-textColor md:px-28 md:py-12 px-10 flex md:flex-row flex-col z-10">
           <div>
-            <h2 className="font-bold text-2xl mt-12">
-              ACCERETE CONCIERGE SERVICES
-            </h2>
+            <h2 className="font-bold text-2xl mt-12">ACCERETE CONCIERGE</h2>
             <p className="font-medium mt-5">
               Empowering your practices financial health with precision and
               care.
@@ -64,7 +62,11 @@ const Footer = () => {
                     alt="phones"
                   />
                 </div>
-                <p className="font-medium">470-802-4555</p>
+                <p className="font-medium">
+                  <a href="tel:+14708024555" className="font-medium">
+                    +1-470-802-4555
+                  </a>
+                </p>
               </div>
               <div className="flex gap-1 ">
                 <div className="p-2 bg-blue-400 rounded-full">
@@ -84,7 +86,14 @@ const Footer = () => {
                     alt={"phones"}
                   />
                 </div>
-                <p className="font-medium">Christinal@accreteconcierge.net</p>
+                <p className="font-medium">
+                  <a
+                    href="mailto:Christinal@accreteconcierge.net"
+                    className="font-medium"
+                  >
+                    Christinal@accreteconcierge.net
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -92,17 +101,38 @@ const Footer = () => {
             <h2 className="font-bold mb-5 mt-12">Useful Links</h2>
             <div className="flex gap-20 md:gap-32">
               <ul className="cursor-pointer flex flex-col gap-7">
-                <li>About Us</li>
-                <li>Departments</li>
-                <li>Doctors</li>
-                <li>TimeTable</li>
-                <li>Appointemnt</li>
-                <li>Testimonials</li>
+                <li>
+                  <Link href="/about" className="flex items-center">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/home#departments" className="flex items-center">
+                    Departments
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/shedule-demo" className="flex items-center">
+                    Appointment
+                  </Link>
+                </li>
               </ul>
               <ul className="cursor-pointer flex flex-col gap-7">
-                <li>Contact Us</li>
-                <li>FAQs</li>
-                <li>Terms&Conditions</li>
+                <li>
+                  <Link href="/contact" className="flex items-center">
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/home#faq" className="flex items-center">
+                    FAQs
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/home#review" className="flex items-center">
+                    Client Testimonials
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -111,7 +141,7 @@ const Footer = () => {
           <img
             src={FooterBg.src}
             alt="FooterBackground"
-            className="w-full h-full object-cover"
+            className="w-[100%] h-[100%] object-cover"
           />
         </div>
       </section>
@@ -123,6 +153,19 @@ const Footer = () => {
             {socialMediaIcons.map(({ icon, id }) => (
               <SocialMediaIcon key={id} icon={icon} />
             ))}
+          </div>
+          <div className="bg-gray-500 rounded-full flex items-center justify-center h-8 w-8 cursor-pointer">
+            <a
+              className=" flex justify-center items-center"
+              href="https://www.linkedin.com/company/accrete-concierge/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                icon={faLinkedinIn}
+                className="text-white text-center w-3"
+              />
+            </a>
           </div>
         </div>
         <div className="md:ml-auto mt-8 md:mt-0">

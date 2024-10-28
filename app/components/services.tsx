@@ -55,7 +55,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="md:px-28 px-10">
+    <section id="services" className="md:px-28 px-10">
       <div className="text-center">
         <h1 className="hover-border cursor-pointer flex text-center mb-12 md:text-5xl text-3xl font-bold">
           Medical Billing Services we Offer

@@ -20,13 +20,13 @@ const ChooseAccrete: React.FC = () => {
   return (
     <section
       ref={ref}
-      className="animate-slide-up-fade rounded-full mx-10 my-8 p-8 md:mx-28 md:my-28 md:p-28 flex flex-col gap-5 md:gap-20"
+      className="animate-slide-up-fade rounded-3xl mx-10 my-8 p-8 md:mx-28 md:my-28 md:p-10 flex flex-col gap-5 md:gap-20"
       style={{
         backgroundImage: `url(/homePage/heroBg.jpeg)`,
       }}
     >
       {/* Container for the text section */}
-      <div className="flex justify-between items-center flex-col md:flex-row">
+      <div className="flex justify-around items-center flex-col md:flex-row">
         <div className="md:w-1/2 flex flex-col justify-center items-center">
           <h3
             ref={headingRef}
@@ -57,10 +57,10 @@ const ChooseAccrete: React.FC = () => {
 
       {/* Container for the numbers ----------*/}
       <div
-        className="animate-slide-up-fade rounded-3xl w-[100%] md:w-[60rem] opacity-80 p-3 md:p-10 items-center flex flex-col md:flex-row gap-10 md:gap-16"
-        style={{
-          backgroundImage: `url(/homePage/heroBg.jpg)`,
-        }}
+        className="bg-blue-300 animate-slide-up-fade rounded-3xl w-[100%] md:w-[100%] opacity-80 p-3 md:p-10 items-center justify-center flex flex-col md:flex-row gap-10 md:gap-16"
+        // style={{
+        //     // backgroundImage: `url(/homePage/heroBg.jpg)`,
+        //   }}
       >
         {isIntersecting && ( // Trigger animation only when in view
           <>

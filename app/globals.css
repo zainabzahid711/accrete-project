@@ -217,11 +217,10 @@ body {
 }
 
 .rotate-animation {
-  animation: rotate 6s linear infinite; /* Continuous rotation */
+  animation: rotate 2s linear forwards; /* Continuous rotation */
 }
-
-.rotate-animation:hover {
-  animation-play-state: paused; /* Pause rotation on hover */
+.no-rotate {
+  animation: none;
 }
 
 @keyframes heart {

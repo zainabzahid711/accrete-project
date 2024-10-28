@@ -50,7 +50,7 @@ const CardItem: React.FC<CardItemProps> = ({
       </h5>
       <p
         className={`md:text-lg text-sm ${
-          isSpecial ? "text-white " : "text-gray-400"
+          isSpecial ? "text-white " : "text-black font-serif"
         }`}
       >
         {description}

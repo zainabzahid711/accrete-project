@@ -15,7 +15,7 @@ const Homepage = () => {
   return (
     <>
       <HeroSection
-        mainText="We Fight for every dollar You Deserve..." // JSX elements
+        mainText="We Fight for every Dollar You deserve..."
         subText="Streamline your medical billing with precision."
         mainImage={mainLogo.src}
         backgroundImage="/homePage/heroBg.jpg"
@@ -29,10 +29,6 @@ const Homepage = () => {
       <FAQs />
       <section className="md:px-28 px-10 p-10 md:p-20">
         <div className="md:px-72 px-1 items-center justify-center flex flex-col md:flex-row gap-10">
-          <div className="md:w-[50%]">
-            <h4 className="font-medium mb-4 text-3xl">start now</h4>
-            <p className="">tools and resources to help your practice</p>
-          </div>
           <div className="flex justify-center items-center gap-3">
             <Image
               className="w-12 h-12"
@@ -40,7 +36,14 @@ const Homepage = () => {
               alt="Schedule Icon"
             />
             <Link href="/shedule-demo">
-              <button className="animate-bounce-slow bg-gradient-to-tr bg-blue-300 p-4 rounded-full cursor-pointer hover:text-blue-700">
+              <button
+                className="
+                  bg-gradient-to-tr from-blue-200 to-blue-400
+                text-blue-900 font-semibold p-4 px-6 rounded-full 
+                  cursor-pointer shadow-md transition-all duration-300 ease-in-out 
+                hover:from-blue-300 hover:to-blue-500 hover:scale-105 hover:text-blue-800 
+                  active:scale-95 focus:ring-4 focus:ring-blue-200"
+              >
                 Schedule a Demo
               </button>
             </Link>

@@ -23,7 +23,7 @@ const testimonialsData: Testimonial[] = [
   {
     name: "Dr Acre",
     avatar: user,
-    text: "Their attention to detail and professionalism has allowd us to focus on providing exceptional healthcare services with no concern or stress.",
+    text: "Their attention to detail and professionalism has allowed us to focus on providing exceptional healthcare services with no concern or stress.",
     rating: 80,
   },
 ];
@@ -39,7 +39,7 @@ const Reviews: React.FC = () => {
   const headingRef = useAnimateOnScroll("animate-slide-up-fade");
 
   return (
-    <section className="md:px-28 px-10 my-20" ref={sectionRef}>
+    <section id="review" className="md:px-28 px-10 my-20" ref={sectionRef}>
       <div className="text-center mb-5">
         <h3
           ref={headingRef}
