@@ -8,6 +8,7 @@ import hoursClaim from "@/public/homePage/clock.png";
 import accounts from "@/public/homePage/accounting.png";
 import why from "@/public/homePage/why.jpg";
 import useAnimateOnScroll from "@/app/hooks/useAnimateOnScroll";
+import Image from "next/image";
 
 const ChooseAccrete: React.FC = () => {
   const { ref, isIntersecting } = useIntersectionObserver({
@@ -34,12 +35,12 @@ const ChooseAccrete: React.FC = () => {
           >
             Why Choose Accrete Concierge?
           </h3>
-          <p className="mt-2 md:mt-12">
+          {/* <p className="mt-2 md:mt-12">
             Accrete Concierge stands out from competitors through our unwavering
             commitment to technology-driven efficiency and personlized services.
             We are success-driven, focusing on building strong relationships
             with our clients to ensure their continued growth and prosperity.
-          </p>
+          </p> */}
         </div>
         <div className="relative w-96 h-96 flex items-center justify-center">
           <div
@@ -47,11 +48,15 @@ const ChooseAccrete: React.FC = () => {
                shadow-lg transition-transform duration-300 transform hover:scale-105 hover:rotate-1 hover:shadow-blue-700/50"
           ></div>
 
-          <img
-            ref={sectionRef}
-            className="relative h-[15rem] w-[15rem] md:w-[31rem] md:h-[21rem] rounded-full shadow-xl transition-transform duration-300 transform hover:scale-105"
-            src={why.src}
-          />
+          <div className="relative w-[15rem] h-[15rem] md:w-[31rem] md:h-[21rem] rounded-full shadow-xl overflow-hidden transition-transform duration-300 transform hover:scale-105">
+            <Image
+              src={why.src}
+              alt="Why"
+              layout="fill" // This fills the container dynamically
+              objectFit="cover" // Ensures the image covers the container dimensions
+              ref={sectionRef}
+            />
+          </div>
         </div>
       </div>
 
@@ -65,11 +70,21 @@ const ChooseAccrete: React.FC = () => {
         {isIntersecting && ( // Trigger animation only when in view
           <>
             <div className="flex justify-center items-center gap-5">
-              <img className="w-8 md:w-12 opacity-70" src={rate.src} />
+              {/* <Image className="w-8 md:w-12 opacity-70" src={rate.src} /> */}
+              <div className="relative w-8 md:w-12">
+                <Image
+                  src={rate.src}
+                  alt="choice"
+                  layout="responsive"
+                  width={32} // Base width for w-8
+                  height={32} // Base height for a square aspect ratio
+                  className="opacity-70"
+                />
+              </div>
               <div className="flex flex-col md:gap-4 justify-center items-center">
                 <p className="font-bold md:text-6xl text-2xl">
                   <IncrementingNumber
-                    targetValue={99.9}
+                    targetValue={100}
                     duration={2000}
                     showPercentage={true}
                   />
@@ -79,7 +94,17 @@ const ChooseAccrete: React.FC = () => {
             </div>
 
             <div className="flex justify-center items-center gap-5">
-              <img className="w-8 md:w-12 opacity-70" src={revenue.src} />
+              {/* <Image className="w-8 md:w-12 opacity-70" src={revenue.src} /> */}
+              <div className="relative w-8 md:w-12">
+                <Image
+                  src={revenue.src}
+                  alt="choice"
+                  layout="responsive"
+                  width={32} // Base width for w-8
+                  height={32} // Base height for a square aspect ratio
+                  className="opacity-70"
+                />
+              </div>
               <div className="flex flex-col md:gap-4 justify-center items-center">
                 <p className="font-bold md:text-6xl text-2xl">
                   <IncrementingNumber
@@ -93,7 +118,17 @@ const ChooseAccrete: React.FC = () => {
             </div>
 
             <div className="flex justify-center items-center gap-5">
-              <img className="w-8 md:w-12 opacity-70" src={hoursClaim.src} />
+              {/* <img className="w-8 md:w-12 opacity-70" src={hoursClaim.src} /> */}
+              <div className="relative w-8 md:w-12">
+                <Image
+                  src={hoursClaim.src}
+                  alt="choice"
+                  layout="responsive"
+                  width={32} // Base width for w-8
+                  height={32} // Base height for a square aspect ratio
+                  className="opacity-70"
+                />
+              </div>
               <div className="flex flex-col md:gap-4 justify-center items-center">
                 <p className="font-bold md:text-6xl text-2xl">
                   <IncrementingNumber targetValue={24} duration={2000} />
@@ -103,7 +138,16 @@ const ChooseAccrete: React.FC = () => {
             </div>
 
             <div className="flex justify-center items-center gap-5">
-              <img className="w-8 md:w-12 opacity-70" src={accounts.src} />
+              <div className="relative w-8 md:w-12">
+                <Image
+                  src={accounts.src}
+                  alt="choice"
+                  layout="responsive"
+                  width={32} // Base width for w-8
+                  height={32} // Base height for a square aspect ratio
+                  className="opacity-70"
+                />
+              </div>
               <div className="flex flex-col md:gap-4 justify-center items-center">
                 <p className="font-bold md:text-6xl text-2xl">
                   <IncrementingNumber

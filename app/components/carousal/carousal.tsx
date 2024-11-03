@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import heroImage from "@/public/homePage/heroImage.png";
+import Image from "next/image";
 
 // Define the data type for carousel items
 interface CarouselItem {
@@ -85,7 +86,7 @@ const Carousel: React.FC = () => {
           </p>
         </div>
         <div className="flex justify-end items-end ml-auto">
-          <img className="-z-10" src={heroImage.src} alt="heroimage" />
+          <Image className="-z-10" src={heroImage.src} alt="heroimage" />
         </div>
       </div>
 

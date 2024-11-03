@@ -3,6 +3,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 
 interface ServiceCardProps {
   image: string;
@@ -56,10 +57,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     >
       {/* ----image------ */}
       <div className="items-center flex justify-center rounded-full">
-        <img
-          className="w-80 h-[200px] rounded-3xl opacity-80"
+        <Image
           src={image}
           alt={text}
+          width={320} // Equivalent to Tailwind's w-80
+          height={200} // Matches h-[200px]
+          className="rounded-3xl opacity-80 object-cover"
         />
       </div>
       {/* --------text---------- */}

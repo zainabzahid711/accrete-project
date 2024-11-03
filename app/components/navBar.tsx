@@ -119,7 +119,7 @@ const NavBar = () => {
               href="mailto:Christinal@accreteconcierge.net"
               className="font-medium text-sm"
             >
-              Christinal@accreteconcierge.net
+              Christina@accreteconcierge.com
             </a>
           </div>
         </div>

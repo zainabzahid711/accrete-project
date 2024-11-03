@@ -5,6 +5,7 @@ import {
   faLinkedinIn,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
 
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIconProps
@@ -56,10 +57,12 @@ const Footer = () => {
             <div className="mt-4 flex flex-col gap-3">
               <div className="flex gap-1 ">
                 <div className="p-2 bg-blue-400 rounded-full">
-                  <img
-                    className="w-3 text-white"
+                  <Image
+                    className="text-white" // This class won't affect the image but can be useful for other styles
                     src={phoneIcon.src}
                     alt="phones"
+                    width={12} // Width for the icon
+                    height={12} // Height for the icon to keep it square
                   />
                 </div>
                 <p className="font-medium">
@@ -70,20 +73,24 @@ const Footer = () => {
               </div>
               <div className="flex gap-1 ">
                 <div className="p-2 bg-blue-400 rounded-full">
-                  <img
-                    className="w-3 text-white"
+                  <Image
+                    className="text-white" // This class won't affect the image but can be useful for other styles
                     src={location.src}
-                    alt={"phones"}
+                    alt="phones"
+                    width={12} // Width for the icon
+                    height={12} // Height for the icon to keep it square
                   />
                 </div>
                 <p className="font-medium">Cumming, GA</p>
               </div>
               <div className="flex gap-1 ">
                 <div className="p-2 bg-blue-400 rounded-full">
-                  <img
-                    className="w-3 text-white"
+                  <Image
+                    className="text-white" // This class won't affect the image but can be useful for other styles
                     src={mail.src}
-                    alt={"phones"}
+                    alt="phones"
+                    width={12} // Width for the icon
+                    height={12} // Height for the icon to keep it square
                   />
                 </div>
                 <p className="font-medium">
@@ -91,7 +98,7 @@ const Footer = () => {
                     href="mailto:Christinal@accreteconcierge.net"
                     className="font-medium"
                   >
-                    Christinal@accreteconcierge.net
+                    Christina@accreteconcierge.com
                   </a>
                 </p>
               </div>
@@ -108,7 +115,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link href="/home#departments" className="flex items-center">
-                    Experties
+                    Specialities
                   </Link>
                 </li>
                 <li>
@@ -138,10 +145,12 @@ const Footer = () => {
           </div>
         </div>
         <div className="absolute inset-0">
-          <img
+          <Image
             src={FooterBg.src}
-            alt="FooterBackground"
-            className="w-[100%] h-[100%] object-cover"
+            alt="Footer Background"
+            layout="fill" // Fills the entire container
+            objectFit="cover" // Ensures the image covers the area without distortion
+            className="rounded-md" // Add any other classes you need for styling
           />
         </div>
       </section>

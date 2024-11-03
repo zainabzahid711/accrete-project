@@ -2,6 +2,7 @@
 import shedule from "@/public/homePage/shedule.png";
 import { FaCheckCircle } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const ScheduleDemo = () => {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
@@ -99,11 +100,18 @@ const ScheduleDemo = () => {
             <span className="text-3xl font-bold">Concierge Care</span> — Where
             Convenience Meets Customized Support
           </h2>
-          <img
-            className="w-[50%] my-12 rounded-2xl shadow-2xl"
-            src={shedule.src}
-            alt="Schedule Demo"
-          />
+
+          <div className="relative w-full my-12">
+            {/* Ensure the container takes full width */}
+            <Image
+              src={shedule.src}
+              alt="Schedule Demo"
+              layout="responsive" // Makes the image responsive
+              width={800} // Set an arbitrary width; adjust as needed
+              height={450} // Set height to maintain aspect ratio (example: 16:9)
+              className="rounded-2xl shadow-2xl" // Apply Tailwind classes for styling
+            />
+          </div>
 
           <div className="font-thin text-lg">
             <h1 className="font-medium mb-4">

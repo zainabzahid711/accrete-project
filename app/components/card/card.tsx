@@ -1,6 +1,7 @@
 // values card
 "use client";
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 
 interface CardProps {
   icon: { src: string }; // Change this to accept ReactNode
@@ -47,7 +48,14 @@ const Card: React.FC<CardProps> = ({ icon, text, description }) => {
     >
       <div className="flex gap-3 items-center cursor-pointer w-full rounded-3xl p-4 transition-all duration-300 hover:bg-blue-400">
         <div className="rounded-full p-2 transition-all duration-300 bg-blue-500">
-          <img src={icon.src} className="w-8" aria-label={text} />
+          <Image
+            src={icon.src}
+            // className="w-8"
+            width={32}
+            height={32}
+            aria-label={text}
+            alt="iconCard"
+          />
         </div>
         <h5 className="font-medium md:text-lg text-sm">{text}</h5>
       </div>

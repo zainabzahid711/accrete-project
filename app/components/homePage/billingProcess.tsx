@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import billingProcess from "@/public/homePage/billingProcess.png";
+import Image from "next/image";
 
 const BillingProcess = () => {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -33,21 +34,26 @@ const BillingProcess = () => {
     <section className="px-8 md:px-28 rounded-3xl py-4 md:py-10 bg-hero-gradient">
       <div className="text-center">
         <h3 className="animate-slide-up-fade hover-border mt-6 font-bold text-2xl md:text-5xl mb-8">
-          Our Medical Billing Process
+          Our Medical Billing Process and Services
         </h3>
       </div>
 
       <div className="flex flex-col md:gap-12 gap-8 items-center justify-between">
         {/* ------image area */}
         <div className="flex justify-center w-full mb-6 md:mb-0">
-          <img
-            ref={imageRef}
-            className={`md:w-[48%] lg:w-[50%]  half-circle ${
-              hasRotated ? "rotate-animation" : "no-rotate"
-            }`}
-            src={billingProcess.src}
-            alt="Billing Process"
-          />
+          <div className="relative md:w-[48%] lg:w-[50%]">
+            <Image
+              ref={imageRef}
+              src={billingProcess.src}
+              alt="Billing Process"
+              layout="responsive" // Makes the image responsive within the container
+              width={100} // Set arbitrary dimensions for layout="responsive"
+              height={100} // Keeps aspect ratio, actual size is controlled by the container
+              className={`half-circle ${
+                hasRotated ? "rotate-animation" : "no-rotate"
+              }`}
+            />
+          </div>
         </div>
 
         {/* ---text area */}

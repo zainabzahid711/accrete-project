@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion"; // Import framer-motion for animations
 import { useIntersectionObserver } from "@/app/hooks/useIntersectionObserver"; // Import the hook
 import phoneIcon from "@/public/homePage/svg/mobile.svg";
-import stethoScope from "@/public/homePage/svg/ambulance.svg";
 import location from "@/public/homePage/svg/pin.svg";
+import Image from "next/image";
 
 interface Card {
   icon: { src: string };
@@ -38,7 +38,13 @@ const CardItem: React.FC<CardItemProps> = ({
         isSpecial ? "bg-transparent" : "p-4 bg-blue-400 rounded-full"
       }`}
     >
-      <img className="w-6" src={icon.src} alt={`${title} icon`} />
+      <Image
+        className="w-6"
+        width={24}
+        height={24}
+        src={icon.src}
+        alt={`${title} icon`}
+      />
     </div>
     <div>
       <h5
@@ -71,12 +77,6 @@ const cardData: Card[] = [
     title: "Head Office",
     description: "Cumming, GA",
   },
-  {
-    icon: stethoScope,
-    title: "24/7 Services",
-    description: "Avalaible",
-    isSpecial: true,
-  },
 ];
 
 const VerticleCard: React.FC = () => {
@@ -87,7 +87,7 @@ const VerticleCard: React.FC = () => {
   return (
     <section
       ref={ref} // Attach the ref to the section to monitor visibility
-      className="absoulte transform transition-all duration-300 md:-translate-y-[41%] -translate-y-[16%] z-40 shadow-2xl w-[80%] mx-auto gap-6 md:gap-4 flex flex-col md:flex-row justify-around items-center md:p-10 p-8 rounded-3xl bg-blue-100"
+      className="absoulte transform transition-all duration-300 md:-translate-y-[41%] -translate-y-[16%] z-40 shadow-2xl w-[70%] mx-auto gap-6 md:gap-4 flex flex-col md:flex-row justify-around items-center md:p-14 p-8 rounded-3xl bg-blue-100"
     >
       {cardData.map((card, index) => (
         <motion.div

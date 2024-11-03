@@ -2,6 +2,7 @@
 import billingAbout from "@/public/aboutPageAssets/billingAbout.jpg";
 import ServiceTwntyBySeven from "../utils/serviceAssete";
 import useAnimateOnScroll from "@/app/hooks/useAnimateOnScroll";
+import Image from "next/image";
 
 const AboutAccrete = () => {
   const sectionRef = useAnimateOnScroll("animate-slide-up-fade");
@@ -36,13 +37,16 @@ const AboutAccrete = () => {
             {<ServiceTwntyBySeven />}
           </div>
 
-          {/* Image Section */}
-          <img
-            className="w-full md:w-[40%] h-full md:h-[40rem] mt-10 md:mt-0 md:ml-auto rounded-xl object-cover"
-            src={billingAbout.src}
-            alt="Medical Billing"
-            ref={sectionRef}
-          />
+          <div className="relative w-full md:w-[40%] h-[20rem] md:h-[40rem] mt-10 md:mt-0 md:ml-auto rounded-xl overflow-hidden">
+            <Image
+              src={billingAbout.src}
+              alt="Medical Billing"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-xl"
+              ref={sectionRef}
+            />
+          </div>
         </div>
       </section>
     </>

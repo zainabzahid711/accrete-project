@@ -1,6 +1,7 @@
 "use client";
 
 import VerticleCard from "../card/verticleCard";
+import Image from "next/image";
 
 interface HeroSectionProps {
   mainText: string;
@@ -23,7 +24,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     <>
       <section className=" relative max-h-full bg-cover opacity-90 bg-no-repeat">
         <div
-          className="h-[600px] "
+          className="h-[560px] "
           style={{
             backgroundImage: backgroundImage
               ? `url(${backgroundImage})`
@@ -55,16 +56,26 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   {mainText.split(" ")[6]}{" "}
                 </span>
               </h1>
-              <p className="color-changing font-medium mt-8 w-[100%] md:w-[70%] xl:w-[100%] xl:text-lg">
+              <p className="color-changing font-normal mt-8 w-[100%] md:w-[70%] xl:w-[100%] xl:text-2xl">
                 {subText}
               </p>
             </div>
             <div className="animate-bounce-slow relative mt-2 md:mt-0 z-auto ml-1 md:ml-auto">
-              <img
+              {/* <img
                 className="w-[100%] md:w-[40rem] lg:w-[50rem]"
                 src={mainImage}
                 alt="Main"
-              />
+              /> */}
+
+              <div className="relative w-full md:w-[30rem]">
+                <Image
+                  src={mainImage}
+                  alt="Main"
+                  layout="responsive" // Makes the image responsive
+                  width={800}
+                  height={600}
+                />
+              </div>
 
               {extraAnimateAsset && (
                 <>

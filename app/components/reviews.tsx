@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import user from "@/public/homePage/user.png";
-import qoutes from "@/public/homePage/svg/quote.svg";
+import qouteLeft from "@/public/homePage/quoteLeft.png";
+import qouteRight from "@/public/homePage/quoteRight.png";
 import { StaticImageData } from "next/image";
 import useAnimateOnScroll from "../hooks/useAnimateOnScroll";
 
@@ -43,11 +44,13 @@ const Reviews: React.FC = () => {
       <div className="text-center mb-5">
         <h3
           ref={headingRef}
-          className="animate-slide-up-fade hover-border font-bold text-2xl md:text-5xl mb-5"
+          className="animate-slide-up-fade hover-border font-bold text-2xl md:text-5xl"
         >
           Some Reviews
         </h3>
-        <p className="text-lg md:text-xl">OF OUR CLIENTS</p>
+        <p className="animate-slide-up-fade font-bold text-2xl md:text-4xl mb-3">
+          OF OUR CLIENTS
+        </p>
       </div>
 
       <div className="flex flex-col md:flex-row justify-center items-center">
@@ -93,10 +96,23 @@ const Reviews: React.FC = () => {
 
         {/* Right side with the active testimonial */}
         <div className="flex-1 text-center md:text-left">
-          <img src={qoutes.src} className="w-10" />
-          <p className="text-xl md:ml-20 text-gray-400">
+          <Image
+            src={qouteRight.src}
+            alt="Quotes"
+            width={40} // Width for w-10 (2.5rem or 40px)
+            height={40} // Adjust height to maintain aspect ratio if needed
+            className="w-10"
+          />
+          <p className="text-xl md:ml-14 text-gray-400">
             {testimonialsData[activeIndex].text}
           </p>
+          <Image
+            src={qouteLeft.src}
+            alt="Quotes"
+            width={40} // Width for w-10 (2.5rem or 40px)
+            height={40} // Adjust height to maintain aspect ratio if needed
+            className="w-10 ml-auto"
+          />
           <div className="flex justify-center md:justify-start">
             {[...Array(5)].map((_, i) => (
               <i

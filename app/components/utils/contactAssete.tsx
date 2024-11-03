@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import happyIcon from "@/public/contactAssets/laugh.png";
 import { Typewriter } from "react-simple-typewriter";
+import Image from "next/image";
 
 interface AnimateProps {
   top?: number;
@@ -36,7 +37,13 @@ const ContactAssete: React.FC<AnimateProps> = ({
         } md:bottom-64 md:-left-52`}
       >
         <div className="absolute rounded-full bg-white p-4 flex items-center animate-bounce-slow gap-2 w-56">
-          <img className="w-10 h-10" src={happyIcon.src} />
+          <Image
+            className="w-10 h-10" // Tailwind classes can still be used for additional styling
+            src={happyIcon.src}
+            alt="Happy Icon"
+            width={40} // Width in pixels
+            height={40} // Height in pixels
+          />
           <div>
             <h6 className="text-xl font-bold">
               <Typewriter
