@@ -3,10 +3,13 @@ import shedule from "@/public/homePage/shedule.png";
 import { FaCheckCircle } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import useAnimateOnScroll from "../hooks/useAnimateOnScroll";
 
 const ScheduleDemo = () => {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [countries, setCountries] = useState<string[]>([]);
+
+  const headingRef = useAnimateOnScroll("animate-slide-up-fade");
 
   const services = [
     "Revenue Cycle Management / Medical Billing",
@@ -95,20 +98,27 @@ const ScheduleDemo = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row md:px-20 px-2">
-        <div className="w-full md:w-[75%] flex flex-col items-center justify-center p-10">
-          <h2 className="text-3xl font-medium text-[#44abca] mb-6">
+        <div className="w-full md:w-[75%] flex flex-col items-center p-10">
+          <h3
+            ref={headingRef}
+            className="mb-10 text-[#44abca] animate-slide-up-fade hover-border font-bold text-2xl md:text-5xl"
+          >
+            Schedule a Demo
+          </h3>
+
+          <h2 className="text-3xl font-medium text-[#44abca]">
             <span className="text-3xl font-bold">Concierge Care</span> — Where
             Convenience Meets Customized Support
           </h2>
 
-          <div className="relative w-full my-12">
+          <div className="relative my-10">
             {/* Ensure the container takes full width */}
             <Image
               src={shedule.src}
               alt="Schedule Demo"
               layout="responsive" // Makes the image responsive
-              width={800} // Set an arbitrary width; adjust as needed
-              height={450} // Set height to maintain aspect ratio (example: 16:9)
+              width={400} // Set an arbitrary width; adjust as needed
+              height={400} // Set height to maintain aspect ratio (example: 16:9)
               className="rounded-2xl shadow-2xl" // Apply Tailwind classes for styling
             />
           </div>
@@ -226,7 +236,7 @@ const ScheduleDemo = () => {
 
             {/* Country Dropdown */}
             <div>
-              <label className="text-gray-400">Country*</label>
+              <label className="text-gray-400">State*</label>
               <select
                 required
                 className="border p-2 rounded-lg border-gray-300 w-full"

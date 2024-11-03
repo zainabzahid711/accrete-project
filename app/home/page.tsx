@@ -1,6 +1,5 @@
 import FAQs from "../components/faqs";
 import BillingProcess from "../components/homePage/billingProcess";
-import CardValues from "../components/homePage/cardWrapValues";
 import ChooseAccrete from "../components/homePage/choiceSection";
 import Department from "../components/homePage/departments";
 import HeroSection from "../components/homePage/heroSection";
@@ -20,7 +19,6 @@ const Homepage = () => {
         mainImage={mainLogo.src}
         backgroundImage="/homePage/heroBg.jpg"
       />
-      <CardValues />
       <ChooseAccrete />
       <Services />
       <Department />
