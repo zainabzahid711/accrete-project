@@ -7,6 +7,7 @@ import Reviews from "../components/reviews";
 import Services from "../components/services";
 import iconShedule from "@/public/homePage/iconScheduleDemo.png";
 import mainLogo from "@/public/homePage/accreteLogo.png";
+import CardValues from "../components/homePage/cardWrapValues";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,6 +20,7 @@ const Homepage = () => {
         mainImage={mainLogo.src}
         backgroundImage="/homePage/heroBg.jpg"
       />
+      <CardValues />
       <ChooseAccrete />
       <Services />
       <Department />

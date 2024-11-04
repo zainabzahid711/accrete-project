@@ -4,6 +4,8 @@ import { FaCheckCircle } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import useAnimateOnScroll from "../hooks/useAnimateOnScroll";
+// import { NextResponse } from "next/server";
+import { sendData } from "../lib/api";
 
 const ScheduleDemo = () => {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
@@ -90,11 +92,37 @@ const ScheduleDemo = () => {
     );
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    console.log("Email User:", process.env.EMAIL_USER); // This will be undefined
+    console.log("Email Pass:", process.env.EMAIL_PASS); // This will be undefined
     console.log("Selected Services:", selectedServices);
+
+    event.preventDefault();
+    const form = event.currentTarget;
+
+    const formData = {
+      jobTitle: form.jobTitle.value,
+      purpose: "Requesting a demo", // customize this value
+      state: form.state.value,
+      practiceName: form.practiceName.value,
+      firstName: form.firstName.value,
+      lastName: form.lastName.value,
+      email: form.email.value,
+      phoneNumber: form.phoneNumber.value,
+      selectedServices: selectedServices,
+    };
+
+    try {
+      const response = await sendData(formData);
+      console.log("Data sent successfully:", response);
+      // Optionally handle success response here
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Optionally handle error feedback here
+    }
   };
 
+  // --------------------------fecth dataa-----------------------------------------
   return (
     <>
       <div className="flex flex-col md:flex-row md:px-20 px-2">
@@ -176,15 +204,32 @@ const ScheduleDemo = () => {
                 label: "Practice or Company Name",
                 type: "text",
                 required: true,
+                name: "practiceName",
               },
-              { label: "First Name", type: "text", required: true },
-              { label: "Last Name", type: "text", required: true },
-              { label: "Email", type: "email", required: true },
-              { label: "Phone Number", type: "tel", required: true },
+              {
+                label: "First Name",
+                type: "text",
+                required: true,
+                name: "firstName",
+              },
+              {
+                label: "Last Name",
+                type: "text",
+                required: true,
+                name: "lastName",
+              },
+              { label: "Email", type: "email", required: true, name: "email" },
+              {
+                label: "Phone Number",
+                type: "tel",
+                required: true,
+                name: "phoneNumber",
+              },
             ].map((input, index) => (
               <div key={index}>
                 <label className="text-gray-400">{input.label}*</label>
                 <input
+                  name={input.name}
                   type={input.type}
                   className="border p-2 rounded-lg border-gray-300 w-full"
                   required={input.required}
@@ -196,6 +241,7 @@ const ScheduleDemo = () => {
             <div>
               <label className="text-gray-400">Job Title*</label>
               <select
+                name="jobTitle"
                 required
                 className="border p-2 rounded-lg border-gray-300 w-full"
               >
@@ -238,6 +284,7 @@ const ScheduleDemo = () => {
             <div>
               <label className="text-gray-400">State*</label>
               <select
+                name="state"
                 required
                 className="border p-2 rounded-lg border-gray-300 w-full"
               >
