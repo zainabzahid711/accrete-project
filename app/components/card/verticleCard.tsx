@@ -48,7 +48,7 @@ const CardItem: React.FC<CardItemProps> = ({
     </div>
     <div>
       <h5
-        className={`font-medium text-lg md:text-xl ${
+        className={`font-medium text-sm md:text-xl ${
           isSpecial ? "text-white" : "text-textColor"
         }`}
       >
@@ -87,12 +87,12 @@ const VerticleCard: React.FC = () => {
   return (
     <section
       ref={ref} // Attach the ref to the section to monitor visibility
-      className="absoulte transform transition-all duration-300 md:-translate-y-[41%] -translate-y-[16%] z-40 shadow-2xl w-[70%] mx-auto gap-6 md:gap-4 flex flex-col md:flex-row justify-around items-center md:p-14 p-8 rounded-3xl bg-blue-100"
+      className="absoulte transform transition-all duration-300 md:-translate-y-[41%] -translate-y-[16%] z-40 shadow-2xl w-[70%] mx-auto gap-6 md:gap-4 flex flex-col md:flex-row justify-center md:justify-around items-center md:p-14 p-8 rounded-3xl bg-blue-100"
     >
       {cardData.map((card, index) => (
         <motion.div
           key={index}
-          className="cursor-pointer transform transition-all duration-300 hover:-translate-y-2"
+          className="cursor-pointer transform  transition-all duration-300 hover:-translate-y-2"
           initial={{ opacity: 0, y: 50 }} // Animation starts hidden
           animate={{
             opacity: isIntersecting ? 1 : 0,

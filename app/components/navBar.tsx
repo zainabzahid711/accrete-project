@@ -156,7 +156,7 @@ const NavBar = () => {
           height={224}
           className="w-40 md:w-56"
         />
-        <div className="md:hidden z-50">
+        <div className="md:hidden z-50 ml-auto">
           {isMenuOpen ? (
             <HiX
               className="w-8 h-8 cursor-pointer"
@@ -171,7 +171,7 @@ const NavBar = () => {
         </div>
 
         <ul
-          className={`flex md:flex-row flex-col md:gap-16 gap-3 justify-start items-start md:justify-end md:items-end md:ml-auto pl-8 absolute md:static top-[80px] left-0 h-screen md:h-auto w-full md:w-auto bg-blue-300 md:bg-transparent py-4 md:py-0 md:z-auto transition-all duration-500 ease-in-out ${
+          className={`flex md:flex-row flex-col md:gap-16 gap-3 justify-start items-start md:justify-end md:items-end md:ml-auto pl-8 absolute md:static top-[60px] left-0 h-screen md:h-auto w-full md:w-auto bg-blue-200 md:bg-transparent py-4 md:py-0 md:z-auto transition-all duration-500 ease-in-out ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } md:translate-x-0`}
         >

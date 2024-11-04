@@ -10,7 +10,7 @@ interface IconCardProps {
 
 const IconCard: React.FC<IconCardProps> = ({ icon, text, description }) => {
   return (
-    <div className="cursor-pointer w-[100%] md:w-60 md:h-64 p-8 md:p-0 rounded-2xl flex flex-col items-center justify-center transform hover:-translate-y-2 bg-gray-100 hover:bg-blue-400 hover:text-black">
+    <div className="cursor-pointer w-56 md:w-60 md:h-64 p-5 md:p-0 rounded-2xl flex flex-col items-center justify-center transform hover:-translate-y-2 bg-gray-100 hover:bg-blue-400 hover:text-black">
       <Image
         width={60}
         height={60}

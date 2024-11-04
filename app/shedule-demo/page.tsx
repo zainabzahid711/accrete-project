@@ -17,15 +17,19 @@ const ScheduleDemo = () => {
   const headingRef = useAnimateOnScroll("animate-slide-up-fade");
 
   const services = [
-    "Revenue Cycle Management / Medical Billing",
-    "Electronic Health Records / Practice Management",
-    "Patient Engagement Software",
-    "Chronic Care Management",
-    "Credentialing / Provider Enrollment",
-    "Medical Coding",
-    "Workforce Augmentation",
-    "Healthcare Analytics",
-    "Other Software or Services",
+    "RCM Solutions: Comprehensive Patient Intake,",
+    "Medical Billing and Coding, Denial Management, ",
+    "Claim Follow-Up, and Back Office Operations",
+    "Credentialing and Compliance Management",
+    "Prior Authorizations",
+    "Patient Scheduling",
+    "Insightful Performance Analytics and Reporting",
+    "Personalized Technology Solutions",
+    "Flexible Outsourced Services",
+    "Dedicated Account Management",
+    "Scalable Services",
+    "Enhanced Data Security",
+    "Free Financial Health Check of Practice",
   ];
 
   // Country list array

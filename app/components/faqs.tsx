@@ -53,7 +53,9 @@ const FAQs: React.FC = () => {
   return (
     <section id="faq" className="md:px-28 px-10" ref={sectionRef}>
       <div className="text-center">
-        <p className="text-lg md:text-xl mb-1 md:mb-4">What People</p>
+        <p className="animate-slide-up-fade text-center  font-bold text-2xl md:text-5xl mb-1 md:mb-5">
+          What People
+        </p>
         <h3
           ref={headingRef}
           className="animate-slide-up-fade text-center hover-border font-bold text-2xl md:text-5xl mb-4 md:mb-5"

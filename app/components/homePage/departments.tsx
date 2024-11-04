@@ -140,7 +140,7 @@ const Department = () => {
     >
       <div className="text-center">
         <h3 className="hover-border cursor-pointer font-bold text-center text-2xl md:text-3xl mb-8">
-          Experties
+          Specialities
         </h3>
       </div>
 

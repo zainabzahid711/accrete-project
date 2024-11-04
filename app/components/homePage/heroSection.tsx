@@ -56,7 +56,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   {mainText.split(" ")[6]}{" "}
                 </span>
               </h1>
-              <p className="color-changing font-normal mt-8 w-[100%] md:w-[70%] xl:w-[100%] xl:text-2xl">
+              <p className="color-changing font-bold mt-8 w-[100%] md:w-[70%] xl:w-[100%] xl:text-2xl">
                 {subText}
               </p>
             </div>

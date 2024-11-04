@@ -49,7 +49,7 @@ const Footer = () => {
         />
         <div className="text-textColor md:px-28 md:py-12 px-10 flex md:flex-row flex-col z-10">
           <div>
-            <h2 className="font-bold text-2xl mt-12">ACCERETE CONCIERGE</h2>
+            <h2 className="font-bold text-2xl mt-12">ACCRETE CONCIERGE</h2>
             <p className="font-medium mt-5">
               Empowering your practices financial health with precision and
               care.
@@ -120,7 +120,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link href="/shedule-demo" className="flex items-center">
-                    Appointment
+                    Request a Demo
                   </Link>
                 </li>
               </ul>
@@ -155,29 +155,30 @@ const Footer = () => {
         </div>
       </section>
 
-      <div className="bg-[#307BC4] px-10 md:px-28 flex p-3 flex-col md:flex-row items-center">
+      <div className="bg-[#307BC4] px-4 md:px-28 flex py-2 flex-col md:flex-row items-center">
         <div className="flex flex-col md:flex-row gap-4 mt-2 items-center">
           <h3 className="text-white">Follow us</h3>
           <div className="flex gap-4">
             {socialMediaIcons.map(({ icon, id }) => (
               <SocialMediaIcon key={id} icon={icon} />
             ))}
-          </div>
-          <div className="bg-gray-500 rounded-full flex items-center justify-center h-8 w-8 cursor-pointer">
-            <a
-              className=" flex justify-center items-center"
-              href="https://www.linkedin.com/company/accrete-concierge/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                icon={faLinkedinIn}
-                className="text-white text-center w-3"
-              />
-            </a>
+            {/* </div> */}
+            <div className="bg-gray-500 rounded-full flex items-center justify-center h-8 w-8 cursor-pointer">
+              <a
+                className=" flex justify-center items-center"
+                href="https://www.linkedin.com/company/accrete-concierge/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faLinkedinIn}
+                  className="text-white text-center w-3"
+                />
+              </a>
+            </div>
           </div>
         </div>
-        <div className="md:ml-auto mt-8 md:mt-0">
+        <div className="md:ml-auto mt-4 md:mt-0">
           <h5 className="font-thin text-sm text-white">
             ©2023 Accrete Concierge. All Rights Reserved.
           </h5>

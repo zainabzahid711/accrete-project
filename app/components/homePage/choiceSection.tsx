@@ -89,7 +89,7 @@ const ChooseAccrete: React.FC = () => {
                     showPercentage={true}
                   />
                 </p>
-                <p className="text-black font-medium">First Pass rate</p>
+                <p className="text-black font-medium">Client success metrics</p>
               </div>
             </div>
 

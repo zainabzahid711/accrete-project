@@ -41,14 +41,11 @@ const BillingProcess = () => {
       <div className="flex flex-col md:gap-12 gap-8 items-center justify-between">
         {/* ------image area */}
         <div className="flex justify-center w-full mb-6 md:mb-0">
-          <div className="relative md:w-[48%] lg:w-[50%]">
-            <Image
+          <div className="relative md:w-[48%] lg:w-[50%] z-50">
+            <img
               ref={imageRef}
               src={billingProcess.src}
               alt="Billing Process"
-              layout="responsive" // Makes the image responsive within the container
-              width={100} // Set arbitrary dimensions for layout="responsive"
-              height={100} // Keeps aspect ratio, actual size is controlled by the container
               className={`half-circle ${
                 hasRotated ? "rotate-animation" : "no-rotate"
               }`}
