@@ -1,26 +1,14 @@
-//   // Define email options
-//   const mailOptions = {
-//     from: process.env.NEXT_PUBLIC_EMAIL_USER,
-//     to: "zynabzahid877@gmail.com", // company mail
-//     subject: `Request from ${firstName} ${lastName}`,
-//     text: `
-//       Job Title: ${jobTitle}
-//       Purpose: ${purpose}
-//       State: ${state}
-//       Practice Name: ${practiceName}
-//       First Name: ${firstName}
-//       Last Name: ${lastName}
-//       Email: ${email}
-//       Phone Number: ${phoneNumber}
-//       Selected Services: ${selectedServices.join(", ")}
-//     `,
-//   };
+// serverside
 
-import { NextApiRequest, NextApiResponse } from "next";
+// app/api/route/route.ts
+
+import { NextResponse } from "next/server";
 import { mailOptions, transporter } from "../../config/nodemailer";
 
-export async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === "POST") {
+export async function POST(req: Request) {
+  console.log("Request received:", req.method);
+  try {
+    const body = await req.json();
     const {
       jobTitle,
       purpose,
@@ -31,7 +19,7 @@ export async function handler(req: NextApiRequest, res: NextApiResponse) {
       email,
       selectedServices,
       phoneNumber,
-    } = req.body;
+    } = body;
 
     if (
       !jobTitle ||
@@ -44,27 +32,29 @@ export async function handler(req: NextApiRequest, res: NextApiResponse) {
       !selectedServices ||
       !phoneNumber
     ) {
-      return res.status(400).json({ message: "Bad Request" });
+      return NextResponse.json({ message: "Bad Request" }, { status: 400 });
     }
 
-    try {
-      await transporter.sendMail({
-        ...mailOptions,
-        subject: `Request from ${firstName} ${lastName}`,
-        text: `Job Title: ${jobTitle}, etc`,
-        html: `<h1> Details </h1> <p>${purpose}</p>`,
-      });
-      return res.status(200).json({ success: true });
-    } catch (error) {
-      console.log(error);
-      return res.status(400).json({ message: (error as Error).message });
-    }
+    await transporter.sendMail({
+      ...mailOptions,
+      subject: `Request from ${firstName} ${lastName}`,
+      text: `Job Title: ${jobTitle}, etc`,
+      html: `<h1>Details</h1><p>${purpose}</p>`,
+    });
+
+    return NextResponse.json({ success: true }, { status: 200 });
+  } catch (error) {
+    console.error("Error sending mail:", error);
+    return NextResponse.json(
+      { message: "Error sending email" },
+      { status: 500 }
+    );
   }
-
-  console.log(`recieved unsupported: ${req.method}`);
-
-  res.setHeader("allow", ["POST"]);
-  return res.status(405).json({ message: "Method not allowed" });
 }
 
-// export default handler;
+// // export async function GET() {
+// //   return NextResponse.json(
+// //     { message: "GET method not allowed" },
+// //     { status: 405 }
+// //   );
+// // }
