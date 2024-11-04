@@ -4,7 +4,7 @@ import FormCard from "../components/card/formCard";
 import mobile from "@/public/homePage/svg/mobile.svg";
 import location from "@/public/homePage/svg/pin.svg";
 import email from "@/public/homePage/svg/mail.svg";
-
+import Image from "next/image";
 const ContactItem = ({
   icon,
   title,
@@ -18,7 +18,13 @@ const ContactItem = ({
 }) => {
   const Content = (
     <div className="cursor-pointer bg-blue-300 w-80 p-4 rounded-2xl flex gap-4 items-center hover:bg-blue-400 transition-all duration-200">
-      <img className="w-6" src={icon} alt={`${title} icon`} />
+      <Image
+        className="w-6"
+        width={24}
+        height={24}
+        src={icon}
+        alt={`${title} icon`}
+      />
       <div className="flex flex-col text-white font-serif">
         <h5 className="font-medium text-xl">{title}</h5>
         <p>{text}</p>

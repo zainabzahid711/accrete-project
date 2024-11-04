@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
+import { sendFormCardData } from "../../lib/contact";
 import { CircularProgress } from "@mui/material"; // Import Material UI spinner for loading
 
 const FormCard = () => {
@@ -17,7 +18,7 @@ const FormCard = () => {
     message: false,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const newErrors = {
@@ -29,29 +30,28 @@ const FormCard = () => {
 
     if (!Object.values(newErrors).some((error) => error)) {
       setIsLoading(true); // Start loading
-      emailjs
-        .send(
-          "service_2i2m7xn",
-          "template_mztj0nr",
-          {
-            from_name: name,
-            from_email: email,
-            message: message,
-          },
-          "OGG1qJGvxy17urJOa"
-        )
-        .then(
-          () => {
-            setIsSubmitted(true);
-            setIsLoading(false); // Stop loading
-            setTimeout(() => setIsSubmitted(false), 5000); // Auto close after 5 seconds
-          },
-          (error) => {
-            console.error("Email send error: ", error);
-            alert("Failed to send email.");
-            setIsLoading(false); // Stop loading
-          }
-        );
+
+      // Prepare data to send
+      const formCardData = {
+        name,
+        email,
+        message,
+      };
+      try {
+        const response = await sendFormCardData(formCardData);
+
+        if (response.success) {
+          setIsSubmitted(true);
+          setTimeout(() => setIsSubmitted(false), 5000); // Auto close after 5 seconds
+        } else {
+          alert("Failed to send email.");
+        }
+      } catch (error) {
+        console.error("Email send error: ", error);
+        alert("Failed to send email.");
+      } finally {
+        setIsLoading(false); // Stop loading
+      }
     }
   };
 
