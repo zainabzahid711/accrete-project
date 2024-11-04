@@ -60,37 +60,43 @@ const BillingProcess = () => {
         <div className="w-full text-justify leading-relaxed flex flex-col md:flex-row justify-center items-center gap-5">
           <div className="flex flex-col justify-center items-center gap-5">
             <p className="w-full">
-              <strong>Comprehensive Patient Intake:</strong> We begin by
-              collecting and verifying all necessary patient information,
-              including demographic data, insurance coverage details, and
-              contact information. Accurate registration ensures that the
-              medical billing process is smooth.
+              <strong>
+                Comprehensive Patient Intake and Front Office Operations:
+              </strong>
+              Utilizes advanced software to manage patient registration,
+              insurance verification, scheduling, and front office tasks,
+              ensuring accurate information and smooth processes through
+              automation.
             </p>
             <p className="w-full">
-              <strong>Capturing Medical Services:</strong> After the visit of
-              the patient, we ensure all medical services provided are properly
-              documented. This includes diagnoses, treatments, and procedures
-              performed during the visit, which are critical for accurate claim
-              submissions and reimbursement.
+              <strong> Precise Medical Billing and Coding:</strong> Employs
+              cutting-edge technology to handle coding, submit claims, and
+              follow up on unpaid claims, improving accuracy and speeding up
+              reimbursements.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center gap-5">
             <p className="w-full">
-              <strong>Precise Medical Coding for Services Rendered:</strong> Our
-              team of certified medical coders accurately converts medical
-              diagnoses, procedures, and services. This step is essential for
-              compliance and ensures that healthcare providers receive the
-              correct payments from insurers.
+              <strong>Credentialing and Compliance:</strong>Uses specialized
+              software to manage the credentialing process, ensuring providers
+              meet all qualifications and compliance standards efficiently.
             </p>
             <p className="w-full">
-              <strong>Accurate Claim Generation:</strong> Once the medical
-              coding is complete, we create a detailed and accurate medical
-              claim. This claim includes all necessary patient information,
-              insurance details, and coded medical services. Our process
-              minimizes errors and speeds up the approval process.
+              <strong>Efficient Back Office Operations: </strong>Implements
+              robust technology solutions to manage administrative tasks and
+              maintain medical records, streamlining operations and reducing
+              manual workload.
             </p>
           </div>
         </div>
+        <p className="flex flex-col justify-center items-center w-full md:w-2/3">
+          <strong>Patient Intake and Front Office Operations: </strong>
+          Utilizes advanced software to manage patient registration, insurance
+          verification, scheduling, and front office tasks, ensuring accurate
+          information and smooth processes through automatilements robust
+          technology solutions to manage administrative tasks and maintain
+          medical records, streamlining operations and reducing manual work
+        </p>
       </div>
     </section>
   );

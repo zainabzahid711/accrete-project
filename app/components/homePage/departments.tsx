@@ -5,24 +5,68 @@ import IconCard from "../card/iconCard";
 
 import departmentBG from "@/public/homePage/heroBg.jpeg";
 
-import depOne from "@/public/homePage/svg/departmentIcon1.svg";
-import depTwo from "@/public/homePage/svg/departmentIcon2.svg";
-import depThree from "@/public/homePage/svg/departmentIcon3.svg";
-import depFour from "@/public/homePage/svg/departmentIcon4.svg";
-import depFive from "@/public/homePage/svg/departmentIcon5.svg";
-import depSix from "@/public/homePage/svg/departmentIcon6.svg";
+import painMng from "@/public/homePage/svg/painMang.png";
+import orthopadics from "@/public/homePage/svg/orthopedics.png";
+import pain from "@/public/homePage/svg/pain.png";
+import behavoiur from "@/public/homePage/svg/behavioral.png";
+import primaryCare from "@/public/homePage/svg/primaryCare.png";
+import dermis from "@/public/homePage/svg/dermis.png";
+import gyne from "@/public/homePage/svg/gyne.png";
+import internalMed from "@/public/homePage/svg/medicine.png";
 
 const Department = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [cardWidth, setCardWidth] = useState(0);
 
   const departments = [
-    { icon: depOne, text: "emergency" },
-    { icon: depTwo, text: "pediatric" },
-    { icon: depThree, text: "gynecology" },
-    { icon: depFour, text: "cardiology" },
-    { icon: depFive, text: "neurology" },
-    { icon: depSix, text: "psychiatry" },
+    {
+      icon: painMng,
+      text: "Pain Management",
+      description:
+        "Expertise in handling complex billing for various pain management treatments and procedures.",
+    },
+    {
+      icon: orthopadics,
+      text: "Orthopedics",
+      description:
+        "Specialized in managing billing for orthopedic surgeries and treatments, ensuring accurate coding and timely reimbursements.",
+    },
+    {
+      icon: pain,
+      text: "Interventional Pain",
+      description:
+        "Proficient in billing for interventional pain procedures like nerve blocks and spinal injections.",
+    },
+    {
+      icon: behavoiur,
+      text: "Behavioral Health",
+      description:
+        "Skilled in navigating the intricate billing codes and regulations specific to behavioral health services.",
+    },
+    {
+      icon: primaryCare,
+      text: "Primary Care",
+      description:
+        "Efficient in managing high patient volumes and streamlining the revenue cycle for primary care practices.",
+    },
+    {
+      icon: dermis,
+      text: "Dermatology",
+      description:
+        "Experienced in handling billing for dermatological services, including treatments and cosmetic procedures.",
+    },
+    {
+      icon: gyne,
+      text: "OB/GYN",
+      description:
+        "Knowledgeable in the specific codes and frequent updates required for obstetrics and gynecology billing.",
+    },
+    {
+      icon: internalMed,
+      text: "Internal Medicine",
+      description:
+        "Capable of managing the broad range of services and procedures in internal medicine with expert billing support.",
+    },
   ];
 
   useEffect(() => {
@@ -91,7 +135,7 @@ const Department = () => {
   return (
     <section
       id="departments"
-      className="animate-slide-up-fade group rounded-3xl md:px-28 px-10 p-16 bg-cover bg-center md:mx-28 mx-8 my-20 md:mt-28 mb-52 relative"
+      className="animate-slide-up-fade group rounded-3xl md:px-28 px-10 p-16 bg-cover bg-center md:mx-28 mx-8 my-20 md:mt-28 mb-64 relative"
       style={{ backgroundImage: `url(${departmentBG.src})`, height: "250px" }}
     >
       <div className="text-center">
@@ -122,7 +166,11 @@ const Department = () => {
               key={index}
               style={{ scrollSnapAlign: "center" }}
             >
-              <IconCard icon={dep.icon} text={dep.text} />
+              <IconCard
+                icon={dep.icon}
+                text={dep.text}
+                description={dep.description}
+              />
             </div>
           ))}
         </div>

@@ -69,7 +69,7 @@ const Contact = () => {
           <ContactItem
             icon={email.src}
             title="Email"
-            text="Christinal@accreteconcierge.net"
+            text="Christina@accreteconcierge.com"
             href="mailto:Christinal@accreteconcierge.net"
           />
         </div>

@@ -12,44 +12,44 @@ const services = [
   {
     id: 1,
     image: billingCoding.src,
-    text: "Billing and Coding",
+    text: "Medical Billing and Coding Specialist",
     description:
-      "The single most important element to guarantee reimbursements is proper medical billing and coding. Billing is essential for healthcare providers; however, they can get in the way of providing patients with quality care. Medical billing and coding are a full-time job.",
+      "Manages accurate claims submission, assigns correct codes, and ensures timely billing to maximize reimbursement.",
   },
   {
     id: 2,
     image: accounts.src,
-    text: "Accounts Management",
+    text: "Accounts Receivable (AR) Specialist",
     description:
-      "Accounts Receivables process ensures that companies receive their payments within a particular time frame, enhances their collection rates, and processes invoices more quickly, contributing to income. It also includes an examination of insurance contracts to ensure healthcare providers are adequately reimbursed.",
+      "Handles unpaid claims, follows up with payers, and resolves payment issues to optimize cash flow and revenue.",
   },
   {
     id: 3,
     image: contracting.src,
-    text: "Credentialing and Contracting",
+    text: "Patient Support/Customer Service Representative",
     description:
-      "Credentialing and Contracting are the basis of starting a clinic or healthcare facility. They also lay the root for your relationships with insurance companies and patients. Accrete Concierge credentialing services help you be part of insurance networks with beneficial contracts.",
+      "Assists patients with billing inquiries, payment plans, and insurance questions, promoting clear communication and satisfaction.",
   },
   {
     id: 4,
     image: negotiation.src,
-    text: "Our Network Negotiation",
+    text: "Verification of Benefits and Prior Authorization Specialist",
     description:
-      "Negotiating Out of Network claims is crucial for hospitals. Our Negotiation Settlement team at Accrete Concierge has decades of expertise in medical billing, coding, and Revenue Cycle Management, particularly for Hospitals and Free Standing Emergency Rooms.",
+      "Verifies patients' insurance coverage, obtains prior authorizations, and ensures that procedures are covered to prevent claim denials.",
   },
   {
     id: 5,
     image: verification.src,
-    text: "Eligibility and Benefits Verification",
+    text: "Revenue Cycle Analyst",
     description:
-      "Eligibility and insurance benefits verification are critical to receiving accurate information about insurance coverage and reimbursement. Healthcare facilities need to verify patient eligibility and benefits to ensure they receive payment for services rendered.",
+      "Analyzes financial data, identifies trends, and provides actionable insights to improve revenue cycle efficiency and profitability.",
   },
   {
     id: 6,
     image: rcm.src,
-    text: "Complete RCM Services",
+    text: "Credentialing Specialist",
     description:
-      "Accrete Concierge offers complete revenue cycle management, from the moment your patient walks in the door until payment for services is received. We manage and educate your staff on compliance, streamline workflows, and maximize productivity, acting as an extension of your team.",
+      "Manages provider enrollment and credentialing with insurance companies, ensuring compliance and minimizing claim denials.",
   },
 ];
 

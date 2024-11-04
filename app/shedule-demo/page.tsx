@@ -11,6 +11,9 @@ const ScheduleDemo = () => {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [countries, setCountries] = useState<string[]>([]);
 
+  const [loading, setLoading] = useState(false); // Loading state
+  const [message, setMessage] = useState<string | null>(null); // Success/Error message
+
   const headingRef = useAnimateOnScroll("animate-slide-up-fade");
 
   const services = [
@@ -98,6 +101,9 @@ const ScheduleDemo = () => {
     console.log("Selected Services:", selectedServices);
 
     event.preventDefault();
+    setLoading(true);
+    setMessage(null);
+
     const form = event.currentTarget;
 
     const formData = {
@@ -115,10 +121,17 @@ const ScheduleDemo = () => {
     try {
       const response = await sendData(formData);
       console.log("Data sent successfully:", response);
-      // Optionally handle success response here
+      setMessage("Demo request sent successfully!");
+      form.reset(); // Reset form fields
+      setSelectedServices([]); // Reset checkboxes
     } catch (error) {
       console.error("Error submitting form:", error);
+      setMessage(
+        "There was an error submitting your request. Please try again."
+      );
       // Optionally handle error feedback here
+    } finally {
+      setLoading(false); // End loading state after submission
     }
   };
 
@@ -326,8 +339,19 @@ const ScheduleDemo = () => {
               type="submit"
               className="bg-blue-500 text-white p-3 rounded-lg mt-4 hover:bg-blue-600 transition-colors"
             >
-              Submit
+              {loading ? "Sending..." : "Submit"}
             </button>
+            {message && (
+              <div
+                className={`mt-4 p-3 text-center ${
+                  message.includes("successfully")
+                    ? "bg-green-200 text-green-800"
+                    : "bg-red-200 text-red-800"
+                } rounded-lg`}
+              >
+                {message}
+              </div>
+            )}
           </form>
         </div>
       </div>

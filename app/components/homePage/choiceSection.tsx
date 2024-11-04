@@ -35,12 +35,12 @@ const ChooseAccrete: React.FC = () => {
           >
             Why Choose Accrete Concierge?
           </h3>
-          {/* <p className="mt-2 md:mt-12">
-            Accrete Concierge stands out from competitors through our unwavering
-            commitment to technology-driven efficiency and personlized services.
-            We are success-driven, focusing on building strong relationships
-            with our clients to ensure their continued growth and prosperity.
-          </p> */}
+          <p className="mt-2 md:mt-10">
+            We combine cutting-edge technology with a commitment to integrity,
+            accountability, and personalized support. With Accrete Concierge,
+            expect seamless billing, maximum revenue, and a partner who puts
+            your success first.
+          </p>
         </div>
         <div className="relative w-96 h-96 flex items-center justify-center">
           <div

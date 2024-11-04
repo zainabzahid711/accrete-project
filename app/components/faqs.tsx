@@ -20,29 +20,30 @@ const FAQs: React.FC = () => {
 
   const faqs: FAQ[] = [
     {
-      question: "What is medical billing and why is it important?",
+      question: "How can outsourcing RCM improve my practice's revenue cycle?",
       answer:
-        "Medical billing is the process of submitting and following up on claims with health insurance companies to receive payment for services provided. Accurate billing ensures that healthcare providers are properly compensated and that patients' insurance claims are processed smoothly.",
+        "Outsourcing RCM can improve your practice's revenue cycle by leveraging advanced technology and expertise to ensure accurate coding, timely claim submissions, and effective follow-up on unpaid claims, leading to faster reimbursements and reduced denials.",
     },
     {
-      question: "How do I know if my insurance covers a particular service?",
+      question: "What services do you offer as part of your RCM solutions?",
       answer:
-        "To confirm if your insurance covers a specific service, please contact our billing department or your insurance provider directly. We can assist with verifying coverage details before your appointment to ensure a smooth billing process.",
+        "Our RCM solutions include comprehensive patient intake, precise medical billing and coding, credentialing and compliance management, and efficient front and back office operations, all supported by cutting-edge technology.",
     },
     {
-      question: "What documents should I bring for the billing process?",
+      question: "How do you ensure compliance with healthcare regulations?",
       answer:
-        "Please bring your insurance card, a form of identification, and any referral paperwork if required. Having these documents will help expedite the billing and registration process.",
+        "We use specialized software and stay updated with the latest healthcare regulations to ensure that all processes, from credentialing to billing, comply with industry standards and reduce the risk of compliance issues.",
     },
     {
-      question: "How can I pay my medical bills?",
+      question: "What kind of reporting capabilities do you offer?",
       answer:
-        "We offer multiple payment options, including online payments through our patient portal, credit or debit card payments, and checks. You can also contact our billing office to arrange a payment plan if needed.",
+        "We provide detailed reporting through Power BI dashboards, offering real-time insights into your practice's financial performance, claim status, and key metrics, enabling data-driven decision-making and transparency.",
     },
     {
-      question: "Who should I contact if I have questions about my bill?",
+      question:
+        "How do you handle denied claims and improve claim acceptance rates?",
       answer:
-        "For questions about your bill, please reach out to our billing department. Our team is here to help clarify charges, insurance payments, and any remaining balances.",
+        "Our team uses sophisticated denial management tools to analyze and address the reasons for claim denials, resubmit corrected claims promptly, and implement strategies to improve future claim acceptance rates. We also provide ongoing training and updates to ensure our coding practices align with the latest industry standards, further reducing the likelihood of denials.",
     },
   ];
 
