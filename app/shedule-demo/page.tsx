@@ -144,7 +144,7 @@ const ScheduleDemo = () => {
             ref={headingRef}
             className="mb-10 text-[#44abca] animate-slide-up-fade hover-border font-bold text-2xl md:text-5xl"
           >
-            Schedule a Demo
+            Request a Demo
           </h3>
 
           <h2 className="text-3xl font-medium text-[#44abca]">
