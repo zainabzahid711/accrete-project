@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import billingProcess from "@/public/homePage/billingProcess.png";
-import Image from "next/image";
 
 const BillingProcess = () => {
   const imageRef = useRef<HTMLImageElement | null>(null);
