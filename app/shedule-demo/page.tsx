@@ -84,7 +84,7 @@ const ScheduleDemo = () => {
 
   useEffect(() => {
     setCountries(stateList);
-  }, []);
+  });
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
