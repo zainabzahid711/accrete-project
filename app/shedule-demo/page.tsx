@@ -88,7 +88,7 @@ const ScheduleDemo = () => {
 
   useEffect(() => {
     setCountries(stateList);
-  });
+  }, []);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -161,7 +161,6 @@ const ScheduleDemo = () => {
             <Image
               src={shedule.src}
               alt="Schedule Demo"
-              layout="responsive" // Makes the image responsive
               width={400} // Set an arbitrary width; adjust as needed
               height={400} // Set height to maintain aspect ratio (example: 16:9)
               className="rounded-2xl shadow-2xl" // Apply Tailwind classes for styling
