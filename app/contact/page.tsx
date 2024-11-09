@@ -79,8 +79,8 @@ const Contact = () => {
             <ContactItem
               icon={email.src}
               title="Email"
-              text="Christina@accreteconcierge.com"
-              href="mailto:Christinal@accreteconcierge.net"
+              text="ChristinaL@accreteconcierge.net"
+              href="mailto:ChristinaL@accreteconcierge.net"
             />
           </div>
         </div>

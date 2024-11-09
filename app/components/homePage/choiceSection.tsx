@@ -84,7 +84,7 @@ const ChooseAccrete: React.FC = () => {
               <div className="flex flex-col md:gap-4 justify-center items-center">
                 <p className="font-bold md:text-6xl text-2xl">
                   <IncrementingNumber
-                    targetValue={100}
+                    targetValue={90}
                     duration={2000}
                     showPercentage={true}
                   />

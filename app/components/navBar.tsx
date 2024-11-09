@@ -116,10 +116,10 @@ const NavBar = () => {
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faEnvelope} />
             <a
-              href="mailto:Christinal@accreteconcierge.net"
+              href="mailto:ChristinaL@accreteconcierge.net"
               className="font-medium text-sm"
             >
-              Christina@accreteconcierge.com
+              ChristinaL@accreteconcierge.net
             </a>
           </div>
         </div>

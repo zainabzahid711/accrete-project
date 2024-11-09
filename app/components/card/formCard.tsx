@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-// import emailjs from "emailjs-com";
 import { sendFormCardData } from "../../lib/contact";
 import { CircularProgress } from "@mui/material"; // Import Material UI spinner for loading
 
@@ -9,6 +8,7 @@ const FormCard = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [number, setNumber] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // Track loading state
 
@@ -16,6 +16,7 @@ const FormCard = () => {
     name: false,
     email: false,
     message: false,
+    number: false,
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -25,6 +26,7 @@ const FormCard = () => {
       name: !name,
       email: !email,
       message: !message,
+      number: !number,
     };
     setErrors(newErrors);
 
@@ -36,6 +38,7 @@ const FormCard = () => {
         name,
         email,
         message,
+        number,
       };
       try {
         const response = await sendFormCardData(formCardData);
@@ -102,6 +105,22 @@ const FormCard = () => {
                 }`}
                 />
               </div>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label className="font-semibold">Phone Number</label>
+              <input
+                type="tel"
+                value={number}
+                placeholder="phoneNumber"
+                onChange={(e) => setNumber(e.target.value)}
+                className={`rounded-full w-full md:w-72 h-14 border px-6 py-6 outline-blue-400 focus:border-blue-500 transition-all duration-300 
+                ${
+                  errors.name
+                    ? "border-red-500 animate-shake"
+                    : "border-gray-300"
+                }`}
+              />
             </div>
 
             <div className="flex flex-col gap-2">

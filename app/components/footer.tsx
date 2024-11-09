@@ -95,10 +95,10 @@ const Footer = () => {
                 </div>
                 <p className="font-medium">
                   <a
-                    href="mailto:Christinal@accreteconcierge.net"
+                    href="mailto:ChristinaL@accreteconcierge.net"
                     className="font-medium"
                   >
-                    Christina@accreteconcierge.com
+                    ChristinaL@accreteconcierge.net
                   </a>
                 </p>
               </div>

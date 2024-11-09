@@ -53,31 +53,31 @@ const BillingProcess = () => {
         </div>
 
         {/* ---text area */}
-        <div className="w-full text-justify leading-relaxed flex flex-col md:flex-row justify-center items-center gap-5">
-          <div className="flex flex-col justify-center items-center gap-5">
-            <p className="w-full">
+        <div className="w-full text-justify leading-relaxed flex flex-col md:flex-row justify-center items-center">
+          <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-4 gap-2">
+            <p>
               <strong>
-                Comprehensive Patient Intake and Front Office Operations:
+                Comprehensive Patient Intake and Front Office Operation:
               </strong>
               Utilizes advanced software to manage patient registration,
               insurance verification, scheduling, and front office tasks,
               ensuring accurate information and smooth processes through
               automation.
             </p>
-            <p className="w-full">
-              <strong> Precise Medical Billing and Coding:</strong> Employs
+            <p>
+              <strong> Precise Medical Billing and Coding: </strong> Employs
               cutting-edge technology to handle coding, submit claims, and
               follow up on unpaid claims, improving accuracy and speeding up
               reimbursements.
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center gap-5">
-            <p className="w-full">
-              <strong>Credentialing and Compliance:</strong>Uses specialized
+          <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-4 gap-8">
+            <p>
+              <strong>Credentialing and Compliance: </strong>Uses specialized
               software to manage the credentialing process, ensuring providers
               meet all qualifications and compliance standards efficiently.
             </p>
-            <p className="w-full">
+            <p>
               <strong>Efficient Back Office Operations: </strong>Implements
               robust technology solutions to manage administrative tasks and
               maintain medical records, streamlining operations and reducing
@@ -85,7 +85,7 @@ const BillingProcess = () => {
             </p>
           </div>
         </div>
-        <p className="flex flex-col justify-center items-center w-full md:w-2/3">
+        <p className="flex flex-col justify-start md:justify-center md:items-center w-full md:w-2/3 p-4">
           <strong>Patient Intake and Front Office Operations: </strong>
           Utilizes advanced software to manage patient registration, insurance
           verification, scheduling, and front office tasks, ensuring accurate
