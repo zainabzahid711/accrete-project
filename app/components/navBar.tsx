@@ -52,6 +52,7 @@ const NavBar = () => {
     { name: "HOME", route: "/home" },
     { name: "ABOUT", route: "/about" },
     { name: "SERVICES", route: "/services" },
+    { name: "BLOGS", route: "/blog" },
     { name: "CONTACT", route: "/contact" },
   ];
 
