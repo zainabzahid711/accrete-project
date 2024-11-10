@@ -1,3 +1,4 @@
+// herosection card
 import React from "react";
 import { motion } from "framer-motion"; // Import framer-motion for animations
 import { useIntersectionObserver } from "@/app/hooks/useIntersectionObserver"; // Import the hook

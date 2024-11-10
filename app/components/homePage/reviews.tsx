@@ -5,7 +5,7 @@ import user from "@/public/homePage/user.png";
 import qouteLeft from "@/public/homePage/quoteLeft.png";
 import qouteRight from "@/public/homePage/quoteRight.png";
 import { StaticImageData } from "next/image";
-import useAnimateOnScroll from "../hooks/useAnimateOnScroll";
+import useAnimateOnScroll from "../../hooks/useAnimateOnScroll";
 
 interface Testimonial {
   name: string;

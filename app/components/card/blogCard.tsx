@@ -1,4 +1,4 @@
-// services card
+// blog card
 
 "use client";
 

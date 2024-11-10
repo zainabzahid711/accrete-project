@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import useAnimateOnScroll from "../hooks/useAnimateOnScroll";
+import useAnimateOnScroll from "../../hooks/useAnimateOnScroll";
 
 interface FAQ {
   question: string;
