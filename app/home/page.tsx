@@ -18,7 +18,7 @@ const Homepage = () => {
         mainText="We Fight for every Dollar You deserve..."
         subText="Streamline your medical billing with precision."
         mainImage={mainLogo.src}
-        backgroundImage="/homePage/heroBg.jpg"
+        backgroundImage="/heroBg.jpg"
       />
       <CardValues />
       <ChooseAccrete />

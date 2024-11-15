@@ -47,44 +47,44 @@ const ContactItem = ({
 const Contact = () => {
   return (
     <>
-      <section className="space-y-16">
-        {/* Hero Section */}
-        <HeroSection
-          mainText="Connect with us for reliable support..."
-          subText="Contact us anytime for quick and friendly support!"
-          mainImage={contactMain.src}
-          backgroundImage="/homePage/heroBg.jpg"
-        />
+      {/* <section className="space-y-16"> */}
+      {/* Hero Section */}
+      <HeroSection
+        mainText="Connect with us for reliable support..."
+        subText="Contact us anytime for quick and friendly support!"
+        mainImage={contactMain.src}
+        backgroundImage="/heroBg.jpg"
+      />
 
-        {/* Form Section */}
-        <FormCard />
+      {/* Form Section */}
+      <FormCard />
 
-        {/* Find Us Section */}
-        <div className="md:mx-28 p-10 flex flex-col items-center">
-          <h3 className="text-4xl font-bold mb-8 text-center md:text-left">
-            Find Us Here
-          </h3>
-          <div className="flex flex-col md:flex-row gap-8 justify-center md:justify-start">
-            <ContactItem
-              icon={mobile.src}
-              title="Phone"
-              text="470-802-4555"
-              href="tel:470-802-4555"
-            />
-            <ContactItem
-              icon={location.src}
-              title="Location"
-              text=" Cumming, GA"
-            />
-            <ContactItem
-              icon={email.src}
-              title="Email"
-              text="ChristinaL@accreteconcierge.net"
-              href="mailto:ChristinaL@accreteconcierge.net"
-            />
-          </div>
+      {/* Find Us Section */}
+      <div className="md:mx-28 p-10 flex flex-col items-center">
+        <h3 className="text-4xl font-bold mb-8 text-center md:text-left">
+          Find Us Here
+        </h3>
+        <div className="flex flex-col md:flex-row gap-8 justify-center md:justify-start">
+          <ContactItem
+            icon={mobile.src}
+            title="Phone"
+            text="470-802-4555"
+            href="tel:470-802-4555"
+          />
+          <ContactItem
+            icon={location.src}
+            title="Location"
+            text=" Cumming, GA"
+          />
+          <ContactItem
+            icon={email.src}
+            title="Email"
+            text="ChristinaL@accreteconcierge.net"
+            href="mailto:ChristinaL@accreteconcierge.net"
+          />
         </div>
-      </section>
+      </div>
+      {/* </section> */}
 
       <section className="md:px-28 px-10 p-10 md:p-20">
         <div className="md:px-72 px-1 items-center justify-center flex flex-col md:flex-row gap-10">

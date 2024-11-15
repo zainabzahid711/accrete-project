@@ -15,7 +15,7 @@ const About = () => {
         mainText="Streamline Your Practice, Optimize Operations..."
         subText="Elevate your medical practice by streamlining operations and optimizing performance with our expert administrative solutions."
         mainImage={aboutUs.src}
-        backgroundImage="/homePage/heroBg.jpg"
+        backgroundImage="/heroBg.jpg"
         extraAnimateAsset={<HeartAssete />} // This will only be shown on the About page
       />
       <AboutAccrete />

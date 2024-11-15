@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import VerticleCard from "../card/verticleCard";
 import Image from "next/image";
 
@@ -20,15 +21,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   extraAnimateAsset,
   backgroundImage,
 }) => {
+  const [bgImage, setBgImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    setBgImage(backgroundImage); // Set the background image after component mounts
+  }, [backgroundImage]);
   return (
     <>
-      <section className=" relative max-h-full bg-cover opacity-90 bg-no-repeat">
+      <section className=" relative max-h-full bg-cover bg-center opacity-90 bg-no-repeat">
         <div
-          className="h-[560px] "
+          // className="h-[560px] "
           style={{
-            backgroundImage: backgroundImage
-              ? `url(${backgroundImage})`
-              : "none",
+            backgroundImage: bgImage ? `url(${bgImage})` : "none",
           }}
         >
           <div className="md:px-28 px-10 p-12 flex md:flex-row flex-col">
