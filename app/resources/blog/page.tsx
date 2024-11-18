@@ -1,7 +1,7 @@
 "use client";
 
-import BlogWrapper from "../components/blogCardWrapper";
-import useAnimateOnScroll from "../hooks/useAnimateOnScroll";
+import BlogWrapper from "../../components/blogCardWrapper";
+import useAnimateOnScroll from "../../hooks/useAnimateOnScroll";
 import bgImage from "@/public/homePage/heroBg.jpeg";
 
 const BlogPage = () => {
@@ -18,7 +18,7 @@ const BlogPage = () => {
             ref={headingRef}
             className="animate-slide-up-fade hover-border font-bold text-2xl md:text-5xl"
           >
-            ACS BLOGS
+            Accrete Concierge BLOGS
           </h3>
         </div>
         <BlogWrapper />

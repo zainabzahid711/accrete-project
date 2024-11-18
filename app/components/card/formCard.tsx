@@ -2,17 +2,77 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { sendFormCardData } from "../../lib/contact";
 import { CircularProgress } from "@mui/material"; // Import Material UI spinner for loading
 
 const FormCard = () => {
+  const stateList = [
+    "Alabama",
+    "Alaska",
+    "Arizona",
+    "Arkansas",
+    "California",
+    "Colorado",
+    "Connecticut",
+    "Delaware",
+    "Florida",
+    "Georgia",
+    "Hawaii",
+    "Idaho",
+    "Illinois",
+    "Indiana",
+    "Iowa",
+    "Kansas",
+    "Kentucky",
+    "Louisiana",
+    "Maine",
+    "Maryland",
+    "Massachusetts",
+    "Michigan",
+    "Minnesota",
+    "Mississippi",
+    "Missouri",
+    "Montana",
+    "Nebraska",
+    "Nevada",
+    "New Hampshire",
+    "New Jersey",
+    "New Mexico",
+    "New York",
+    "North Carolina",
+    "North Dakota",
+    "Ohio",
+    "Oklahoma",
+    "Oregon",
+    "Pennsylvania",
+    "Rhode Island",
+    "South Carolina",
+    "South Dakota",
+    "Tennessee",
+    "Texas",
+    "Utah",
+    "Vermont",
+    "Virginia",
+    "Washington",
+    "West Virginia",
+    "Wisconsin",
+    "Wyoming",
+  ];
+
+  useEffect(() => {
+    setCountries(stateList);
+  }, []);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [state, setState] = useState("");
   const [number, setNumber] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // Track loading state
+
+  const [countries, setCountries] = useState<string[]>([]);
 
   const [errors, setErrors] = useState({
     name: false,
@@ -41,6 +101,7 @@ const FormCard = () => {
         email,
         message,
         number,
+        state,
       };
       try {
         const response = await sendFormCardData(formCardData);
@@ -108,21 +169,42 @@ const FormCard = () => {
                 />
               </div>
             </div>
-
-            <div className="flex flex-col gap-2">
-              <label className="font-semibold">Phone Number</label>
-              <input
-                type="tel"
-                value={number}
-                placeholder="phoneNumber"
-                onChange={(e) => setNumber(e.target.value)}
-                className={`rounded-full w-full md:w-72 h-14 border px-6 py-6 outline-blue-400 focus:border-blue-500 transition-all duration-300 
+            <div className="flex flex-col md:flex-row md:gap-10 gap-8">
+              <div className="flex flex-col gap-2">
+                <label className="font-semibold">Phone Number</label>
+                <input
+                  type="tel"
+                  value={number}
+                  placeholder="phoneNumber"
+                  onChange={(e) => setNumber(e.target.value)}
+                  className={`rounded-full w-full md:w-72 h-14 border px-6 py-6 outline-blue-400 focus:border-blue-500 transition-all duration-300 
                 ${
                   errors.name
                     ? "border-red-500 animate-shake"
                     : "border-gray-300"
                 }`}
-              />
+                />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label className="font-semibold">State</label>
+                <select
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                  name="state"
+                  required
+                  className="rounded-full w-full md:w-72 h-14 border px-6 outline-blue-400 focus:border-blue-500 transition-all duration-300"
+                >
+                  <option value="" disabled className="text-gray-300">
+                    Select State
+                  </option>
+                  {countries.map((country, index) => (
+                    <option key={index} value={country} className="text-black">
+                      {country}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
 
             <div className="flex flex-col gap-2">

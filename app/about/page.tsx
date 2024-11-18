@@ -22,7 +22,7 @@ const About = () => {
       <HowWorks />
       <OfferingsComponent />
 
-      <section className="md:px-28 px-10 p-10 md:p-20">
+      <section className="md:px-28 px-10 p-8 md:pb-10">
         <div className="md:px-72 px-1 items-center justify-center flex flex-col md:flex-row gap-10">
           <div className="flex justify-center items-center gap-3">
             <Image

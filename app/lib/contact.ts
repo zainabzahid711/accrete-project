@@ -3,6 +3,7 @@ interface formCardData {
   email: string;
   message: string;
   number: string;
+  state: string;
 }
 
 export const sendFormCardData = async (Formdata: formCardData) => {

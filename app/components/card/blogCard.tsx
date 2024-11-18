@@ -47,7 +47,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
   return (
     <div
       ref={cardRef}
-      className={`w-full p-4 cursor-pointer border rounded-md transform transition duration-500 ease-in-out shadow-md 
+      className={`w-full p-2 cursor-pointer border rounded-md transform transition duration-500 ease-in-out shadow-md 
         ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
         hover:shadow-lg hover:-translate-y-2`}
       // Apply delay based on index for staggered effect
@@ -57,8 +57,8 @@ const BlogCard: React.FC<BlogCardProps> = ({
     >
       {/* ----image------ */}
       <div
-        className="absolute inset-0 rounded-md overflow-hidden transition-all duration-500 ease-in-out z-30
-          opacity-50 hover:opacity-60"
+        className="inset-0 rounded-md overflow-hidden transition-all duration-500 ease-in-out z-30
+           hover:opacity-90"
       >
         <Image
           src={image}
@@ -70,8 +70,8 @@ const BlogCard: React.FC<BlogCardProps> = ({
       </div>
       {/* --------text---------- */}
       <div
-        className="relative z-40 p-6 bg-opacity-90 rounded-md transition-all duration-500 
-          hover:bg-opacity-100 hover:bg-slate-300 hover:text-black"
+        className="relative z-40 p-3 mt-3 bg-opacity-90 rounded-md transition-all duration-500 
+          hover:bg-opacity-100 hover:bg-slate-200 hover:text-black"
       >
         <h3 className="font-bold my-6 text-2xl md:text-3xl hover:text-blue-600">
           {text}

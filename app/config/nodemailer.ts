@@ -23,3 +23,7 @@
 //   // to: "ChristinaL@accreteconcierge.net",
 //   to: "zynabzahid877@gmail.com",
 // };
+
+// confidential things should be in .env.local file in root direcotry
+// EMAIL_USER=xainaabzahidd@gmail.com
+//EMAIL_PASS=zyaawpqecvnfjpgz

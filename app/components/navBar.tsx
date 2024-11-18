@@ -1,23 +1,26 @@
 "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CircularProgress } from "@mui/material";
 import {
   faFacebookF,
   faTwitter,
   faLinkedinIn,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+
 import {
   faPhone,
   faEnvelope,
   // indicator for dropdown
+  faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Logo from "@/public/logoFinal.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 
 type SocialMediaIconType = {
@@ -45,35 +48,39 @@ const SocialMediaIcon = ({ icon }: SocialMediaIconProps) => (
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  // const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isPending, startTransition] = useTransition();
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+
+  const router = useRouter();
+
   const pathname = usePathname();
 
   const navItems = [
     { name: "HOME", route: "/home" },
     { name: "ABOUT", route: "/about" },
     { name: "SERVICES", route: "/services" },
-    { name: "BLOGS", route: "/blog" },
+    { name: "RESOURCES", route: "" },
     { name: "CONTACT", route: "/contact" },
   ];
 
-  // const serviceItems = [
-  //   { name: "Billing and Coding", route: "/services/billing-and-coding" },
-  //   {
-  //     name: "Credentials and Contracting",
-  //     route: "/services/credentials-and-contracting",
-  //   },
-  //   { name: "Accounts Management", route: "/services/accounts-management" },
-  //   { name: "Network Negotiation", route: "/services/network-negotiation" },
-  //   {
-  //     name: "Eligibility and Benefits",
-  //     route: "/services/eligibility-and-benefits",
-  //   },
-  //   { name: "Complete RCM", route: "/services/complete-rcm" },
-  // ];
+  const serviceItems = [
+    { name: "BLOGS", route: "/resources/blog" },
+    {
+      name: "Medical Billing and Case Studies",
+      route: "/resources/caseStudy",
+    },
+    // { name: "Accounts Management", route: "/services/accounts-management" },
+    // { name: "Network Negotiation", route: "/services/network-negotiation" },
+    // {
+    //   name: "Eligibility and Benefits",
+    //   route: "/services/eligibility-and-benefits",
+    // },
+    // { name: "Complete RCM", route: "/services/complete-rcm" },
+  ];
 
   useEffect(() => {
     setIsMenuOpen(false);
-    // setIsServicesOpen(false);
+    setIsServicesOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -87,11 +94,11 @@ const NavBar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [isMenuOpen]);
 
-  // const handleServicesToggle = () => {
-  //   if (window.innerWidth < 768) {
-  //     setIsServicesOpen(!isServicesOpen);
-  //   }
-  // };
+  const handleServicesToggle = () => {
+    if (window.innerWidth < 768) {
+      setIsServicesOpen(!isServicesOpen);
+    }
+  };
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -183,33 +190,45 @@ const NavBar = () => {
                 pathname === route
                   ? "text-[#6BD4F4] border-[#6BD4F4]"
                   : "text-gray-600"
-              } hover:text-[#6BD4F4] hover:border-[#6BD4F4]`}
-              // onMouseEnter={() =>
-              //   name === "SERVICES" && setIsServicesOpen(true)
-              // } // Open dropdown on hover
-              // onMouseLeave={() =>
-              //   name === "SERVICES" && setIsServicesOpen(false)
-              // } // Close dropdown on leave
+              } hover:text-[#6BD4F4] hover:border-[#6BD4F4] `}
+              onMouseEnter={() =>
+                name === "RESOURCES" && setIsServicesOpen(true)
+              } // Open dropdown on hover
+              onMouseLeave={() =>
+                name === "RESOURCES" && setIsServicesOpen(false)
+              } // Close dropdown on leave
             >
+              {/* <div
+                className="relative"
+                onMouseEnter={() => {
+                  if (name === "RESOURCES") setIsServicesOpen(true);
+                }}
+                onMouseLeave={() => {
+                  if (name === "RESOURCES") setIsServicesOpen(false);
+                }}
+              > */}
               <Link
                 href={route}
                 className="flex items-center"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  startTransition(() => {
+                    router.push(route);
+                  });
+                }}
               >
                 {name}
-                {/* Add a dropdown indicator icon
-                {name === "SERVICES" && (
+                {name === "RESOURCES" && (
                   <FontAwesomeIcon
                     icon={faChevronDown}
                     className="text-sm ml-1 w-3"
                   />
-                )} */}
+                )}
               </Link>
-
-              {/* Dropdown for Services
-              {name === "SERVICES" && isServicesOpen && (
+              {/* Dropdown for Services */}
+              {name === "RESOURCES" && isServicesOpen && (
                 <ul
-                  className="absolute top-8 left-0 bg-blue-50 shadow-lg rounded-md mt-1 py-2 w-64"
+                  className="absolute top-8 left-0 bg-blue-50 shadow-lg rounded-md mt-1 py-2 w-72"
                   onMouseEnter={() => setIsServicesOpen(true)}
                   onMouseLeave={() => setIsServicesOpen(false)}
                 >
@@ -221,10 +240,10 @@ const NavBar = () => {
                         setIsMenuOpen(false);
                       }} // Handle click on mobile
                       onMouseEnter={() =>
-                        name === "SERVICES" && setIsServicesOpen(true)
+                        name === "RESOURCES" && setIsServicesOpen(true)
                       }
                       onMouseLeave={() =>
-                        name === "SERVICES" && setIsServicesOpen(false)
+                        name === "RESOURCES" && setIsServicesOpen(false)
                       }
                       key={index}
                       className="p-5 text-gray-800 py-1 rounded-md hover:bg-[#91cbdd]"
@@ -238,12 +257,20 @@ const NavBar = () => {
                         {service.name}
                       </Link>
                     </li>
-                  ))} 
+                  ))}
                 </ul>
-              )}*/}
+              )}
+              {/* </div> */}
             </li>
           ))}
         </ul>
+        <div>
+          {isPending && (
+            <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+              <CircularProgress size={32} color="primary" />
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

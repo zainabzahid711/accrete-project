@@ -55,10 +55,10 @@ export async function POST(req: Request) {
 
   try {
     const body = await req.json();
-    const { name, email, message, number } = body;
+    const { name, email, message, number, state } = body;
 
     // Validate required fields
-    if (!name || !email || !message || !number) {
+    if (!name || !email || !message || !number || !state) {
       return NextResponse.json({ message: "Bad Request" }, { status: 400 });
     }
 
