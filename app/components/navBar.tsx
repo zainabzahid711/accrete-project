@@ -21,7 +21,7 @@ import Logo from "@/public/logoFinal.png";
 import { useState, useEffect, useTransition } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { usePathname, useRouter } from "next/navigation";
-import Link from "next/link";
+// import Link from "next/link";
 
 type SocialMediaIconType = {
   icon: FontAwesomeIconProps["icon"];
@@ -49,7 +49,7 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isPending, startTransition] = useTransition();
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
 
   const router = useRouter();
 
@@ -59,28 +59,21 @@ const NavBar = () => {
     { name: "HOME", route: "/home" },
     { name: "ABOUT", route: "/about" },
     { name: "SERVICES", route: "/services" },
-    { name: "RESOURCES", route: "" },
+    { name: "RESOURCES", route: "", isDropdown: true },
     { name: "CONTACT", route: "/contact" },
   ];
 
-  const serviceItems = [
+  const resourcesItems = [
     { name: "BLOGS", route: "/resources/blog" },
     {
       name: "Medical Billing and Case Studies",
       route: "/resources/caseStudy",
     },
-    // { name: "Accounts Management", route: "/services/accounts-management" },
-    // { name: "Network Negotiation", route: "/services/network-negotiation" },
-    // {
-    //   name: "Eligibility and Benefits",
-    //   route: "/services/eligibility-and-benefits",
-    // },
-    // { name: "Complete RCM", route: "/services/complete-rcm" },
   ];
 
   useEffect(() => {
     setIsMenuOpen(false);
-    setIsServicesOpen(false);
+    setIsResourcesOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -94,11 +87,6 @@ const NavBar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [isMenuOpen]);
 
-  const handleServicesToggle = () => {
-    if (window.innerWidth < 768) {
-      setIsServicesOpen(!isServicesOpen);
-    }
-  };
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -109,6 +97,10 @@ const NavBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleDropdownClick = () => {
+    setIsResourcesOpen((prev) => !prev);
+  };
 
   return (
     <>
@@ -183,84 +175,69 @@ const NavBar = () => {
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } md:translate-x-0`}
         >
-          {navItems.map(({ name, route }, index) => (
+          {navItems.map(({ name, route, isDropdown }, index) => (
             <li
               key={index}
               className={`cursor-pointer font-medium px-2 py-1 border-b-2 border-transparent relative ${
                 pathname === route
                   ? "text-[#6BD4F4] border-[#6BD4F4]"
                   : "text-gray-600"
-              } hover:text-[#6BD4F4] hover:border-[#6BD4F4] `}
-              onMouseEnter={() =>
-                name === "RESOURCES" && setIsServicesOpen(true)
-              } // Open dropdown on hover
-              onMouseLeave={() =>
-                name === "RESOURCES" && setIsServicesOpen(false)
-              } // Close dropdown on leave
+              } hover:text-[#6BD4F4] hover:border-[#6BD4F4] 
+              `}
             >
-              {/* <div
-                className="relative"
-                onMouseEnter={() => {
-                  if (name === "RESOURCES") setIsServicesOpen(true);
-                }}
-                onMouseLeave={() => {
-                  if (name === "RESOURCES") setIsServicesOpen(false);
-                }}
-              > */}
-              <Link
-                href={route}
+              <div
                 className="flex items-center"
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  startTransition(() => {
-                    router.push(route);
-                  });
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (isDropdown && window.innerWidth < 768) {
+                    handleDropdownClick(); // Toggle dropdown for mobile
+                  } else if (route) {
+                    setIsMenuOpen(false);
+                    startTransition(() => {
+                      router.push(route); // Navigate on click
+                    });
+                  }
                 }}
+                onMouseEnter={() => {
+                  if (isDropdown && window.innerWidth >= 768) {
+                    setIsResourcesOpen(true); // Open dropdown for desktop
+                  }
+                }}
+                // onMouseLeave={() => {
+                //   if (isDropdown && window.innerWidth >= 768) {
+                //     setIsResourcesOpen(false); // Close dropdown for desktop
+                //   }
+                // }}
               >
                 {name}
-                {name === "RESOURCES" && (
+                {isDropdown && (
                   <FontAwesomeIcon
                     icon={faChevronDown}
-                    className="text-sm ml-1 w-3"
+                    className="ml-2 text-sm"
                   />
                 )}
-              </Link>
-              {/* Dropdown for Services */}
-              {name === "RESOURCES" && isServicesOpen && (
+              </div>
+              {isDropdown && isResourcesOpen && (
                 <ul
-                  className="absolute top-8 left-0 bg-blue-50 shadow-lg rounded-md mt-1 py-2 w-72"
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
+                  className="absolute top-full left-0 w-60 md:w-72 mt-2 bg-white shadow-md rounded-md z-50"
+                  // onMouseEnter={() => setIsResourcesOpen(true)}
+                  onMouseLeave={() => setIsResourcesOpen(false)} // close dropdown only when leaving the dropdown instead of item
                 >
-                  {serviceItems.map((service, index) => (
+                  {resourcesItems.map((item, idx) => (
                     <li
+                      key={idx}
+                      className="px-4 py-2 hover:bg-gray-200 text-gray-800 cursor-pointer"
                       onClick={() => {
-                        handleServicesToggle();
-                        setIsServicesOpen(false);
                         setIsMenuOpen(false);
-                      }} // Handle click on mobile
-                      onMouseEnter={() =>
-                        name === "RESOURCES" && setIsServicesOpen(true)
-                      }
-                      onMouseLeave={() =>
-                        name === "RESOURCES" && setIsServicesOpen(false)
-                      }
-                      key={index}
-                      className="p-5 text-gray-800 py-1 rounded-md hover:bg-[#91cbdd]"
+                        setIsResourcesOpen(false);
+                        router.push(item.route);
+                      }}
                     >
-                      <Link
-                        href={service.route}
-                        onClick={() => {
-                          setIsMenuOpen(false); // Close the main menu if open
-                        }}
-                      >
-                        {service.name}
-                      </Link>
+                      {item.name}
                     </li>
                   ))}
                 </ul>
               )}
-              {/* </div> */}
             </li>
           ))}
         </ul>
