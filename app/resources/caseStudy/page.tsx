@@ -42,7 +42,7 @@ const CaseStudy = () => {
         >
           <h3
             ref={headingRef}
-            className="animate-slide-up-fade hover-border font-bold text-2xl md:text-5xl"
+            className="animate-slide-up-fade hover-border font-bold w-72 md:w-full text-xl md:text-5xl"
           >
             Accrete Concierge Case Studies
           </h3>

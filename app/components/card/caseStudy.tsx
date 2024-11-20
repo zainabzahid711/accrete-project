@@ -8,9 +8,9 @@ interface StudyProps {
 
 const CaseStudyCard: React.FC<StudyProps> = ({ count, text, description }) => {
   return (
-    <div className="flex bg-blue-100 p-5 md:p-10 w-[100%] items-center">
+    <div className="flex flex-col md:flex-row bg-blue-100 p-5 md:p-10 w-[100%] items-center">
       {/* Count Number on the Left */}
-      <div className="icon-section flex-shrink-0 mr-6">
+      <div className="icon-section flex-shrink-0 mr-auto md:mr-6">
         <div className="icon-number">{count}</div>
       </div>
 
@@ -23,7 +23,7 @@ const CaseStudyCard: React.FC<StudyProps> = ({ count, text, description }) => {
       </div>
 
       {/* Arrow Icon on the Right */}
-      <div className="arrow-icon flex-shrink-0 ml-6 cursor-pointer">
+      <div className="arrow-icon flex-shrink-0 ml-auto md:ml-6 cursor-pointer">
         <img src={iconArrow.src} alt="Arrow Icon" />
       </div>
     </div>

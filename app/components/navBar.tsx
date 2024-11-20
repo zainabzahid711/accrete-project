@@ -146,7 +146,7 @@ const NavBar = () => {
       {/* -------navBar----------- */}
       <div
         className={`z-10 relative flex gap-16 md:gap-0 px-10 md:px-28 py-4 w-full items-center transition-colors duration-300 ${
-          isScrolled ? "bg-blue-300 fixed top-0 left-0" : "bg-transparent"
+          isScrolled ? "bg-blue-200 fixed top-0 left-0" : "bg-transparent"
         }`}
       >
         <Image
@@ -171,7 +171,7 @@ const NavBar = () => {
         </div>
 
         <ul
-          className={`flex md:flex-row flex-col md:gap-16 gap-3 justify-start items-start md:justify-end md:items-end md:ml-auto pl-8 absolute md:static top-[60px] left-0 h-screen md:h-auto w-full md:w-auto bg-blue-200 md:bg-transparent py-4 md:py-0 md:z-auto transition-all duration-500 ease-in-out ${
+          className={`flex md:flex-row flex-col md:gap-8 gap-3 justify-start items-start md:justify-end md:items-end md:ml-auto pl-8 absolute md:static top-[60px] left-0 h-screen md:h-auto w-full md:w-auto bg-blue-200 md:bg-transparent py-4 md:py-0 md:z-auto transition-all duration-500 ease-in-out ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } md:translate-x-0`}
         >
@@ -219,14 +219,14 @@ const NavBar = () => {
               </div>
               {isDropdown && isResourcesOpen && (
                 <ul
-                  className="absolute top-full left-0 w-60 md:w-72 mt-2 bg-white shadow-md rounded-md z-50"
+                  className="absolute top-full left-0 w-60 md:w-72 mt-2 bg-blue-200 shadow-lg rounded-md z-50"
                   // onMouseEnter={() => setIsResourcesOpen(true)}
                   onMouseLeave={() => setIsResourcesOpen(false)} // close dropdown only when leaving the dropdown instead of item
                 >
                   {resourcesItems.map((item, idx) => (
                     <li
                       key={idx}
-                      className="px-4 py-2 hover:bg-gray-200 text-gray-800 cursor-pointer"
+                      className="px-4 py-2 hover:bg-blue-300 text-gray-800 cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
                         setIsResourcesOpen(false);

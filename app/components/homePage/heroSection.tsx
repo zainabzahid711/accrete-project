@@ -30,7 +30,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     <>
       <section className=" relative max-h-full bg-cover bg-center opacity-90 bg-no-repeat">
         <div
-          // className="h-[560px] "
+          // className="h-[500px]"
           style={{
             backgroundImage: bgImage ? `url(${bgImage})` : "none",
           }}
@@ -71,13 +71,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 alt="Main"
               /> */}
 
-              <div className="relative w-full md:w-[30rem]">
+              <div className="relative w-full md:w-[24rem]">
                 <Image
                   src={mainImage}
                   alt="Main"
                   layout="responsive" // Makes the image responsive
                   width={800}
-                  height={600}
+                  height={20}
                 />
               </div>
 
