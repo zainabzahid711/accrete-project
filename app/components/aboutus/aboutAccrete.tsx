@@ -33,7 +33,7 @@ const AboutAccrete = () => {
               cycles, and improve overall practice efficiency.
             </p>
           </div>
-          <div className="z-50 absolute top-[48rem] md:top-[34rem] left-0 md:left-auto md:right-[30rem]">
+          <div className="z-50 absolute top-[38rem] md:top-[34rem] left-10 md:left-auto md:right-[30rem]">
             {<ServiceTwntyBySeven />}
           </div>
 

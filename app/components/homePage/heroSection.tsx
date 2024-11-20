@@ -30,13 +30,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     <>
       <section className=" relative max-h-full bg-cover bg-center opacity-90 bg-no-repeat">
         <div
-          // className="h-[500px]"
+          // className="h-[490px]"
           style={{
             backgroundImage: bgImage ? `url(${bgImage})` : "none",
           }}
         >
-          <div className="md:px-28 px-10 p-12 flex md:flex-row flex-col">
-            <div className="flex flex-col mt-5 md:mt-14 w-full">
+          <div className="customClass md:px-32 px-10 p-12 flex md:flex-row flex-col">
+            <div className="flex flex-col mt-5 md:mt-14 w-full md:w-[55rem]">
               <h1 className="animate-slide-up-fade text-ellipsis hover-border font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl w-[100%] md:w-[100%]">
                 <span style={{ color: "black" }}>
                   {mainText.split(" ")[0]}{" "}
@@ -71,7 +71,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 alt="Main"
               /> */}
 
-              <div className="relative w-full md:w-[24rem]">
+              <div className="relative w-full customImage md:w-[26rem]">
                 <Image
                   src={mainImage}
                   alt="Main"
@@ -93,7 +93,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative top-0 md:top-8">
           <VerticleCard />
         </div>
       </section>

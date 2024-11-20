@@ -332,3 +332,12 @@ body {
   z-index: 10;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+/*  md:px-32 px-10 p-12 flex md:flex-row flex-col */
+@media (min-width: 820px) and (max-width: 1024px) {
+  .customClass {
+    padding: 0px 2px 0px 2px;
+  }
+  .customImage {
+    width: 10rem;
+  }
+}
