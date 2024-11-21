@@ -47,8 +47,6 @@ const ContactItem = ({
 const Contact = () => {
   return (
     <>
-      {/* <section className="space-y-16"> */}
-      {/* Hero Section */}
       <HeroSection
         mainText="Connect with us for reliable support..."
         subText="Contact us anytime for quick and friendly support!"

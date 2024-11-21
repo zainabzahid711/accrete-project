@@ -46,10 +46,14 @@ const SocialMediaIcon = ({ icon }: SocialMediaIconProps) => (
 );
 
 const NavBar = () => {
+  const isClient = typeof window !== "undefined";
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isPending, startTransition] = useTransition();
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState<number | null>(null); // Window width state
+  const [isMounted, setIsMounted] = useState(false); // Track if component is mounted
 
   const router = useRouter();
 
@@ -70,6 +74,10 @@ const NavBar = () => {
       route: "/resources/caseStudy",
     },
   ];
+  useEffect(() => {
+    setIsMounted(true); // Component has mounted
+    return () => setIsMounted(false);
+  }, []);
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -77,25 +85,33 @@ const NavBar = () => {
   }, [pathname]);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768 && isMenuOpen) {
-        setIsMenuOpen(false);
-      }
-    };
+    if (isClient) {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+        if (window.innerWidth >= 768 && isMenuOpen) {
+          setIsMenuOpen(false);
+        }
+      };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", handleResize);
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, [isMenuOpen]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    if (isClient) {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 50);
+      };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, []);
 
   const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -122,6 +138,10 @@ const NavBar = () => {
     setIsResourcesOpen(false);
     router.push(route);
   };
+
+  if (!isMounted) {
+    return null; // Prevent SSR rendering
+  }
 
   return (
     <>
@@ -223,7 +243,7 @@ const NavBar = () => {
                 className="flex items-center"
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (isDropdown && window.innerWidth < 768) {
+                  if (isDropdown && windowWidth !== null && windowWidth < 768) {
                     handleDropdownClick(); // Toggle dropdown for mobile
                   } else if (route) {
                     setIsMenuOpen(false);
@@ -233,7 +253,11 @@ const NavBar = () => {
                   }
                 }}
                 onMouseEnter={() => {
-                  if (isDropdown && window.innerWidth >= 768) {
+                  if (
+                    isDropdown &&
+                    windowWidth !== null &&
+                    windowWidth >= 768
+                  ) {
                     setIsResourcesOpen(true); // Open dropdown for desktop
                   }
                 }}
