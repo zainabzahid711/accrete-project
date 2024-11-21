@@ -74,7 +74,7 @@ const Footer = () => {
               <div className="flex gap-1 ">
                 <div className="p-2 bg-blue-400 rounded-full">
                   <Image
-                    className="text-white" // This class won't affect the image but can be useful for other styles
+                    className="text-white"
                     src={location.src}
                     alt="phones"
                     width={12} // Width for the icon
