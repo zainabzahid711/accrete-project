@@ -18,7 +18,7 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Logo from "@/public/logoFinal.png";
-import { useState, useEffect, useTransition } from "react";
+import { useState, useEffect, useTransition, useRef } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { usePathname, useRouter } from "next/navigation";
 // import Link from "next/link";
@@ -98,14 +98,35 @@ const NavBar = () => {
     };
   }, []);
 
+  const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
+
   const handleDropdownClick = () => {
     setIsResourcesOpen((prev) => !prev);
+  };
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeout.current) {
+      clearTimeout(dropdownTimeout.current); // Clear any previous closing timeout
+    }
+    setIsResourcesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeout.current = setTimeout(() => {
+      setIsResourcesOpen(false);
+    }, 100);
+  };
+
+  const navigate = (route: string) => {
+    setIsMenuOpen(false);
+    setIsResourcesOpen(false);
+    router.push(route);
   };
 
   return (
     <>
       {/* ------header------------ */}
-      <div className="flex md:flex-row flex-col gap-6 p-2 px-10 md:px-28 bg-[#91cbdd]">
+      <div className="flex md:flex-row flex-col gap-6 p-2 2xl:px-52 px-10 md:px-28 bg-[#91cbdd]">
         <div className="flex md:flex-row flex-col md:gap-5 gap-2">
           <div className="flex items-center gap-2">
             <FontAwesomeIcon className="text-white w-4" icon={faPhone} />
@@ -145,7 +166,7 @@ const NavBar = () => {
 
       {/* -------navBar----------- */}
       <div
-        className={`z-10 relative flex gap-16 md:gap-0 px-10 md:px-28 py-4 w-full items-center transition-colors duration-300 ${
+        className={`z-10 relative flex gap-16 md:gap-0 2xl:px-52 px-10 md:px-28 py-4 w-full items-center transition-colors duration-300 ${
           isScrolled ? "bg-blue-200 fixed top-0 left-0" : "bg-transparent"
         }`}
       >
@@ -184,8 +205,21 @@ const NavBar = () => {
                   : "text-gray-600"
               } hover:text-[#6BD4F4] hover:border-[#6BD4F4] 
               `}
+              onMouseEnter={
+                isDropdown && window.innerWidth >= 768
+                  ? handleMouseEnter
+                  : undefined
+              }
+              onMouseLeave={
+                isDropdown && window.innerWidth >= 768
+                  ? handleMouseLeave
+                  : undefined
+              }
+              onClick={() => (route ? navigate(route) : handleDropdownClick())}
             >
               <div
+                role="button"
+                aria-expanded={isResourcesOpen}
                 className="flex items-center"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -220,18 +254,14 @@ const NavBar = () => {
               {isDropdown && isResourcesOpen && (
                 <ul
                   className="absolute top-full left-0 w-60 md:w-72 mt-2 bg-blue-200 shadow-lg rounded-md z-50"
-                  // onMouseEnter={() => setIsResourcesOpen(true)}
-                  onMouseLeave={() => setIsResourcesOpen(false)} // close dropdown only when leaving the dropdown instead of item
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave} // close dropdown only when leaving the dropdown instead of item
                 >
                   {resourcesItems.map((item, idx) => (
                     <li
                       key={idx}
                       className="px-4 py-2 hover:bg-blue-300 text-gray-800 cursor-pointer"
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        setIsResourcesOpen(false);
-                        router.push(item.route);
-                      }}
+                      onClick={() => navigate(item.route)}
                     >
                       {item.name}
                     </li>

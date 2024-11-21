@@ -35,7 +35,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             backgroundImage: bgImage ? `url(${bgImage})` : "none",
           }}
         >
-          <div className="customClass md:px-32 px-10 p-12 flex md:flex-row flex-col">
+          <div className="customClass 2xl:px-52 lg:px-28 px-10 p-12 flex md:flex-row flex-col">
             <div className="flex flex-col mt-5 md:mt-14 w-full md:w-[55rem]">
               <h1 className="animate-slide-up-fade text-ellipsis hover-border font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl w-[100%] md:w-[100%]">
                 <span style={{ color: "black" }}>
@@ -71,7 +71,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 alt="Main"
               /> */}
 
-              <div className="relative w-full customImage md:w-[26rem]">
+              <div className="relative w-full customImage 2xl:w-[26rem] md:w-[24rem]">
                 <Image
                   src={mainImage}
                   alt="Main"

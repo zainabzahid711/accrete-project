@@ -47,7 +47,7 @@ const Footer = () => {
           className="md:w-32 w-20 mx-auto z-10"
           alt="healthlogo"
         />
-        <div className="text-textColor md:px-28 md:py-12 px-10 flex md:flex-row flex-col z-10">
+        <div className="text-textColor 2xl:px-52 md:px-28 md:py-12 px-10 flex md:flex-row flex-col z-10">
           <div>
             <h2 className="font-bold text-2xl mt-12">ACCRETE CONCIERGE</h2>
             <p className="font-medium mt-5">
@@ -155,7 +155,7 @@ const Footer = () => {
         </div>
       </section>
 
-      <div className="bg-[#307BC4] px-4 md:px-28 flex py-2 flex-col md:flex-row items-center">
+      <div className="bg-[#307BC4] px-4 2xl:px-52 md:px-28 flex py-2 flex-col md:flex-row items-center">
         <div className="flex flex-col md:flex-row gap-4 mt-2 items-center">
           <h3 className="text-white">Follow us</h3>
           <div className="flex gap-4">
