@@ -1,6 +1,5 @@
 "use client";
 
-import IncrementingNumber from "../utils/incrementingNums";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver"; // Import the hook
 import rate from "@/public/homePage/fastRate.png";
 import revenue from "@/public/homePage/revenue.png";
@@ -8,6 +7,8 @@ import hoursClaim from "@/public/homePage/clock.png";
 import accounts from "@/public/homePage/accounting.png";
 import why from "@/public/homePage/why.jpg";
 import useAnimateOnScroll from "@/app/hooks/useAnimateOnScroll";
+import StatCard from "../card/stateCard";
+import React from "react";
 import Image from "next/image";
 
 const ChooseAccrete: React.FC = () => {
@@ -21,7 +22,7 @@ const ChooseAccrete: React.FC = () => {
   return (
     <section
       ref={ref}
-      className="animate-slide-up-fade rounded-3xl mx-10 my-8 p-8 md:mx-28 md:my-28 md:p-10 flex flex-col gap-5 md:gap-20"
+      className="animate-slide-up-fade rounded-3xl mx-10 my-8 p-8 md:mx-28 md:my-28 md:p-10 2xl:mx-52 flex flex-col gap-5 md:gap-20"
       style={{
         backgroundImage: `url(/homePage/heroBg.jpeg)`,
       }}
@@ -61,104 +62,48 @@ const ChooseAccrete: React.FC = () => {
       </div>
 
       {/* Container for the numbers ----------*/}
-      <div
-        className="bg-blue-300 animate-slide-up-fade rounded-3xl w-[100%] md:w-[100%] opacity-80 p-3 md:p-10 items-center justify-center flex flex-col md:flex-row gap-10 md:gap-16"
-        // style={{
-        //     // backgroundImage: `url(/homePage/heroBg.jpg)`,
-        //   }}
-      >
+      <div className="bg-blue-300 animate-slide-up-fade rounded-3xl w-[100%] md:w-[100%] opacity-80 p-3 md:p-10 items-center justify-center flex flex-col md:flex-row gap-10 md:gap-16">
         {isIntersecting && ( // Trigger animation only when in view
           <>
-            <div className="flex justify-center items-center gap-5">
-              {/* <Image className="w-8 md:w-12 opacity-70" src={rate.src} /> */}
-              <div className="relative w-8 md:w-12">
-                <Image
-                  src={rate.src}
-                  alt="choice"
-                  layout="responsive"
-                  width={32} // Base width for w-8
-                  height={32} // Base height for a square aspect ratio
-                  className="opacity-70"
-                />
-              </div>
-              <div className="flex flex-col md:gap-4 justify-center items-center">
-                <p className="font-bold md:text-6xl text-2xl">
-                  <IncrementingNumber
-                    targetValue={90}
-                    duration={2000}
-                    showPercentage={true}
-                  />
-                </p>
-                <p className="text-black font-medium">Client success metrics</p>
-              </div>
-            </div>
-
-            <div className="flex justify-center items-center gap-5">
-              {/* <Image className="w-8 md:w-12 opacity-70" src={revenue.src} /> */}
-              <div className="relative w-8 md:w-12">
-                <Image
-                  src={revenue.src}
-                  alt="choice"
-                  layout="responsive"
-                  width={32} // Base width for w-8
-                  height={32} // Base height for a square aspect ratio
-                  className="opacity-70"
-                />
-              </div>
-              <div className="flex flex-col md:gap-4 justify-center items-center">
-                <p className="font-bold md:text-6xl text-2xl">
-                  <IncrementingNumber
-                    targetValue={30}
-                    duration={2000}
-                    showPercentage={true}
-                  />
-                </p>
-                <p className="text-black font-medium">Increase in Revenue</p>
-              </div>
-            </div>
-
-            <div className="flex justify-center items-center gap-5">
-              {/* <img className="w-8 md:w-12 opacity-70" src={hoursClaim.src} /> */}
-              <div className="relative w-8 md:w-12">
-                <Image
-                  src={hoursClaim.src}
-                  alt="choice"
-                  layout="responsive"
-                  width={32} // Base width for w-8
-                  height={32} // Base height for a square aspect ratio
-                  className="opacity-70"
-                />
-              </div>
-              <div className="flex flex-col md:gap-4 justify-center items-center">
-                <p className="font-bold md:text-6xl text-2xl">
-                  <IncrementingNumber targetValue={24} duration={2000} />
-                </p>
-                <p className="text-black font-medium">Hours claimed</p>
-              </div>
-            </div>
-
-            <div className="flex justify-center items-center gap-5">
-              <div className="relative w-8 md:w-12">
-                <Image
-                  src={accounts.src}
-                  alt="choice"
-                  layout="responsive"
-                  width={32} // Base width for w-8
-                  height={32} // Base height for a square aspect ratio
-                  className="opacity-70"
-                />
-              </div>
-              <div className="flex flex-col md:gap-4 justify-center items-center">
-                <p className="font-bold md:text-6xl text-2xl">
-                  <IncrementingNumber
-                    targetValue={25}
-                    duration={2000}
-                    showGreaterThan={true}
-                  />
-                </p>
-                <p className="text-black font-medium">Days in A/R</p>
-              </div>
-            </div>
+            {[
+              {
+                src: rate.src,
+                alt: "Client success metrics",
+                targetValue: 90,
+                description: "Client success metrics",
+                showPercentage: true,
+              },
+              {
+                src: revenue.src,
+                alt: "Increase in Revenue",
+                targetValue: 30,
+                description: "Increase in Revenue",
+                showPercentage: true,
+              },
+              {
+                src: hoursClaim.src,
+                alt: "Hours claimed",
+                targetValue: 24,
+                description: "Hours claimed",
+              },
+              {
+                src: accounts.src,
+                alt: "Days in A/R",
+                targetValue: 25,
+                description: "Days in A/R",
+                showGreaterThan: true,
+              },
+            ].map((item, index) => (
+              <StatCard
+                key={index}
+                src={item.src}
+                alt={item.alt}
+                targetValue={item.targetValue}
+                description={item.description}
+                showPercentage={item.showPercentage}
+                showGreaterThan={item.showGreaterThan}
+              />
+            ))}
           </>
         )}
       </div>
