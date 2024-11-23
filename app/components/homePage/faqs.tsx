@@ -51,7 +51,7 @@ const FAQs: React.FC = () => {
   const headingRef = useAnimateOnScroll("animate-slide-up-fade");
 
   return (
-    <section id="faq" className="md:px-28 px-10" ref={sectionRef}>
+    <section id="faq" className="md:px-28 px-10 2xl:px-32" ref={sectionRef}>
       <div className="text-center">
         <p className="animate-slide-up-fade text-center  font-bold text-2xl md:text-5xl mb-1 md:mb-5">
           What People

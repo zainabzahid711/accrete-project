@@ -7,7 +7,7 @@ const HowWorks = () => {
 
   return (
     <>
-      <section className="md:px-28 px-4 py-10" ref={sectionRef}>
+      <section className="2xl:px-52 md:px-28 px-8 py-10" ref={sectionRef}>
         {/* Benefits Section */}
         <div className="container text-center py-10 px-4 rounded-lg shadow-lg">
           <h2 className="text-3xl font-semibold text-customBlue1 mb-8">

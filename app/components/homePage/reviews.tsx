@@ -40,7 +40,11 @@ const Reviews: React.FC = () => {
   const headingRef = useAnimateOnScroll("animate-slide-up-fade");
 
   return (
-    <section id="review" className="md:px-28 px-10 my-20" ref={sectionRef}>
+    <section
+      id="review"
+      className="md:px-28 md:mx-28 px-10 my-20"
+      ref={sectionRef}
+    >
       <div className="text-center mb-5">
         <h3
           ref={headingRef}

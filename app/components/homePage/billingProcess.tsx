@@ -30,7 +30,7 @@ const BillingProcess = () => {
     };
   }, [hasRotated]);
   return (
-    <section className="px-8 md:px-28 rounded-3xl py-4 md:py-10 bg-hero-gradient">
+    <section className="p-10 mx-10 md:mx-28 2xl:mx-52 rounded-3xl bg-hero-gradient">
       <div className="text-center">
         <h3 className="animate-slide-up-fade hover-border mt-6 font-bold text-2xl md:text-5xl mb-8">
           Our Medical Billing Process and Services
@@ -53,8 +53,8 @@ const BillingProcess = () => {
         </div>
 
         {/* ---text area */}
-        <div className="w-full text-justify leading-relaxed flex flex-col md:flex-row justify-center items-center">
-          <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-4 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-12">
+          <div className="flex flex-col gap-2">
             <p>
               <strong>
                 Comprehensive Patient Intake and Front Office Operation:
@@ -71,7 +71,7 @@ const BillingProcess = () => {
               reimbursements.
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-4 gap-8">
+          <div className="flex flex-col gap-7">
             <p>
               <strong>Credentialing and Compliance: </strong>Uses specialized
               software to manage the credentialing process, ensuring providers
@@ -85,7 +85,7 @@ const BillingProcess = () => {
             </p>
           </div>
         </div>
-        <p className="flex flex-col justify-start md:justify-center md:items-center w-full md:w-2/3 p-4">
+        <p className="flex flex-col justify-start md:justify-center md:items-center w-full md:w-2/3 p-0">
           <strong>Patient Intake and Front Office Operations: </strong>
           Utilizes advanced software to manage patient registration, insurance
           verification, scheduling, and front office tasks, ensuring accurate

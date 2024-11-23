@@ -9,10 +9,10 @@ const AboutAccrete = () => {
   const headingRef = useAnimateOnScroll("animate-slide-up-fade");
   return (
     <>
-      <section className="md:mx-28" ref={sectionRef}>
+      <section className="mx-8 md:mx-28 2xl:mx-52" ref={sectionRef}>
         <div className="relative rounded-xl flex flex-col md:flex-row bg-gradient-to-br from-blue-500 via-blue-300 to-blue-100">
           {/* Text Section with a gradient background */}
-          <div className="relative md:p-12 p-5 flex flex-col items-center justify-center text-white rounded-xl md:w-[60%]">
+          <div className="relative md:p-12 p-3 flex flex-col items-center justify-center text-white rounded-xl md:w-[60%]">
             <p className="text-lg font-semibold mb-4">About Us</p>
             <h1 className="text-4xl font-bold mb-6" ref={headingRef}>
               Leading Experts in Medical Billing Solutions
@@ -33,7 +33,7 @@ const AboutAccrete = () => {
               cycles, and improve overall practice efficiency.
             </p>
           </div>
-          <div className="z-50 absolute top-[38rem] md:top-[34rem] left-10 md:left-auto md:right-[30rem]">
+          <div className="z-50 absolute top-[40rem] md:top-[34rem] 2xl:top-[32rem] left-3 md:left-auto md:right-[30rem]">
             {<ServiceTwntyBySeven />}
           </div>
 

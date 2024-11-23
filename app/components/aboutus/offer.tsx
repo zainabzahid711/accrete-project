@@ -45,7 +45,7 @@ const OfferingsComponent = () => {
   ];
 
   return (
-    <div className="md:mx-28 mx-10 p-2 mt-10 mb-10">
+    <div className="md:mx-28 2xl:mx-52 mx-8 p-2 mt-10 mb-10">
       <div className="text-center">
         <h3 className="hover-border cursor-pointer font-bold text-center text-2xl md:text-3xl mb-8">
           Our EHRs
