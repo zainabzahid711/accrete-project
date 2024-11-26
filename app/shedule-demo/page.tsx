@@ -142,7 +142,7 @@ const ScheduleDemo = () => {
   // --------------------------fecth dataa-----------------------------------------
   return (
     <>
-      <div className="flex flex-col md:flex-row md:px-20 px-2">
+      <div className="flex flex-col md:flex-row 2xl:px-52 md:px-28 px-2 pb-10 2xl:pb-20">
         <div className="w-full md:w-[75%] flex flex-col items-center p-10">
           <h3
             ref={headingRef}
